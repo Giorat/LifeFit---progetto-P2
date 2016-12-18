@@ -2,7 +2,6 @@
 
 intervallo_tempo::intervallo_tempo(int durata, int minIniziali):OraInizio(minIniziali),OraFine(minIniziali+durata){}
 
-
 void  intervallo_tempo::Stampa() const{
     std::cout << std::endl;
     OraInizio.Stampa();

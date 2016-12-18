@@ -12,6 +12,8 @@ public:
     void Stampa() const{
         std::cout << Giorno()<<"/"<<Mese()<<"/"<<Anno();
     }
+    static date Oggi();
+
 protected:
     int giorno,mese,anno;
 private:
