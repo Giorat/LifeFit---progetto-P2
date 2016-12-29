@@ -7,10 +7,14 @@ class att_sonno : public att_base
 private:
     float perc_profondo;
 public:
-    att_sonno();
-    float profondo();
-    float leggero();
-    float qualita();
+    /**
+     * @param int calorie bruciate dormendo
+     * @param float percentuale sonno profondo intervallo
+     */
+    att_sonno(int,float);
+    float profondo() const;
+    float leggero() const ;
+    float qualita() const;
 };
 
 #endif // ATT_SONNO_H

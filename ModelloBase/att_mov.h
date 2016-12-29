@@ -10,11 +10,18 @@ private:
     float perc_camminata;
     //float perc_inattivo = 100-perc_camminata
 public:
-    att_mov(int,float,float);
-    int totale_passi();
-    float camminata();
-    float inattivo();
-    float distanza();
+    /**
+     * @param int numero di calorie
+     * @param int numero di passi
+     * @param float distanza percorsa
+     * @param float perc_camminata
+     */
+    att_mov(int,int,float,float);
+
+    int totale_passi() const;
+    float camminata() const;
+    float inattivo() const;
+    float distanza() const;
 };
 
 #endif // ATT_MOV_H
