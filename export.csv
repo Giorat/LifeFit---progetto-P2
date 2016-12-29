@@ -1,0 +1,3 @@
+dateTime,foods-log-caloriesIn,foods-log-water,activities-calories,activities-caloriesBMR,activities-steps,activities-distance,activities-floors,activities-elevation,activities-minutesSedentary,activities-minutesLightlyActive,activities-minutesFairlyActive,activities-minutesVeryActive,sleep-startTime,sleep-timeInBed,sleep-minutesAsleep,sleep-awakeningsCount,sleep-minutesAwake,sleep-minutesToFallAsleep,sleep-minutesAfterWakeup,sleep-efficiency,body-weight,body-bmi,body-fat
+2016-12-25,0,0.0,1865,1768,573,0.42344,0,0,1319,27,0,0,,0,0,0,0,0,0,0,75.0,23.671255111694336,0.0
+2016-12-26,0,0.0,2344,1575,7719,7.09908,7,21,665,114,1,37,22:26,560,547,10,13,0,0,98,75.0,23.671255111694336,0.0

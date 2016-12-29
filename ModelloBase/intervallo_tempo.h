@@ -2,7 +2,7 @@
 #define INTERVALLO_TEMPO_H
 #include <iostream>
 #include "orario.h"
-
+#include "att_base.h"
 
 
 class intervallo_tempo
@@ -19,6 +19,7 @@ public:
 private:
     orario OraInizio;
     orario OraFine;
+    att_base * attivita;
 };
 
 #endif // INTERVALLO_TEMPO_H

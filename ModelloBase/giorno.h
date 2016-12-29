@@ -19,6 +19,9 @@ public:
         }
 
     }
+
+
+
 private:
     const int numMinMaxGiorno = 1440;
     date data;
