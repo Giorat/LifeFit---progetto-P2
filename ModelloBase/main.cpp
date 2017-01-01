@@ -12,9 +12,12 @@
 int main(int argc, char *argv[])
 {
     std::cout << "Stampa giorno base:" << std::endl;
-    giorno ogg(date::Oggi(),96);
+    giorno ogg(date::Oggi());
     ogg.Stampa();
-QString path = QDir::currentPath();
+    giorno ogg2 (date(29,2,2015));
+    ogg2.Stampa();
+}
+/*QString path = QDir::currentPath();
     QFile file("debug/test1.xml");
     if(!file.open(QFile::ReadOnly | QFile::Text)){
         qDebug() << "prova" << path;
@@ -43,3 +46,4 @@ QString path = QDir::currentPath();
 
     return 0;
 }
+*/

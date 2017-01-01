@@ -9,7 +9,6 @@ CONFIG += console c++11
 #CONFIG -= qt
 
 SOURCES += main.cpp \
-    intervallo_tempo.cpp \
     giorno.cpp \
     orario.cpp \
     date.cpp \
@@ -18,7 +17,6 @@ SOURCES += main.cpp \
     att_sonno.cpp
 
 HEADERS += \
-    intervallo_tempo.h \
     giorno.h \
     orario.h \
     date.h \

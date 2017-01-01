@@ -1,7 +1,9 @@
 #include <ctime>
 #include "date.h"
 
-date::date(int g,int m,int a):giorno(g),mese(m),anno(a){}
+date::date(int g,int m,int a):giorno(g),mese(m),anno(a){
+    data_valida();
+}
 
 date date::Oggi(){
     time_t t = time(0);
