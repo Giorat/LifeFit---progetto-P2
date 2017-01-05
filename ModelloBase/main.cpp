@@ -14,11 +14,10 @@ int main(int argc, char *argv[])
     std::cout << "Stampa giorno base:" << std::endl;
     giorno ogg(date::Oggi());
     ogg.Stampa();
-    giorno ogg2 (date(29,2,2015));
-    ogg2.Stampa();
-}
-/*QString path = QDir::currentPath();
-    QFile file("debug/test1.xml");
+
+
+QString path = QDir::currentPath();
+    QFile file("DatiModelloBase.xml");
     if(!file.open(QFile::ReadOnly | QFile::Text)){
         qDebug() << "prova" << path;
         qDebug() << "Cannot read file" << file.errorString();
@@ -28,9 +27,9 @@ int main(int argc, char *argv[])
     QXmlStreamReader reader(&file);
 
     if (reader.readNextStartElement()) {
-        if (reader.name() == "giorno"){
+        if (reader.name() == "vita"){
             while(reader.readNextStartElement()){
-                if(reader.name() == "intervallo_tempo"){
+                if(reader.name() == "giorno"){
                     while(reader.readNextStartElement()){
                         QString s = reader.readElementText();
                         qDebug()<< reader.name() << "- " << s;
@@ -46,4 +45,3 @@ int main(int argc, char *argv[])
 
     return 0;
 }
-*/

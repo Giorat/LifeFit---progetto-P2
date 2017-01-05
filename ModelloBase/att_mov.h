@@ -9,6 +9,9 @@ private:
     float dist;
     float perc_camminata;
     //float perc_inattivo = 100-perc_camminata
+    int piani;
+
+
 public:
     /**
      * @param int numero di calorie
