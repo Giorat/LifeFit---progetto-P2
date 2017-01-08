@@ -1,47 +1,29 @@
-#include <QFile>
-#include <QDir>
-#include <QXmlStreamReader>
-#include <QDebug>
+
+#include <map>
+#include <string>
 
 #include <iostream>
 #include "giorno.h"
-#include "date.h"
+
 
 
 
 int main(int argc, char *argv[])
 {
-    std::cout << "Stampa giorno base:" << std::endl;
-    giorno ogg(date::Oggi());
-    ogg.Stampa();
+    std::cout << "Stampa giorno:" << std::endl;
+    att_mov m (100,190000,200.00,33.22,100);
+    std::cout << m;
 
+    /**
+     * @param int calorie bruciate dormendo
+     * @param orario ora andato a letto
+     * @param orario ora svegliato
+     * @param int minuti a letto
+     * @param int minuti dormito deve essere maggiore di minuti a letto
+     */
+    att_sonno sonnoprova (100,orario(200),orario(300),400,300);
+    std::cout << sonnoprova;
 
-QString path = QDir::currentPath();
-    QFile file("DatiModelloBase.xml");
-    if(!file.open(QFile::ReadOnly | QFile::Text)){
-        qDebug() << "prova" << path;
-        qDebug() << "Cannot read file" << file.errorString();
-        exit(0);
-    }
-
-    QXmlStreamReader reader(&file);
-
-    if (reader.readNextStartElement()) {
-        if (reader.name() == "vita"){
-            while(reader.readNextStartElement()){
-                if(reader.name() == "giorno"){
-                    while(reader.readNextStartElement()){
-                        QString s = reader.readElementText();
-                        qDebug()<< reader.name() << "- " << s;
-                    }
-                }
-                else
-                    reader.skipCurrentElement();
-            }
-        }
-        else
-            reader.raiseError(QObject::tr("Incorrect file"));
-    }
-
+std::map<QDate,giorno> fit;
     return 0;
 }

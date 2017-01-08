@@ -6,10 +6,28 @@
  * @param float distanza percorsa
  * @param float perc_camminata
  */
-att_mov::att_mov(int cal,int pass,float distperc,float percamm):att_base(cal),passi(pass),dist(distperc),perc_camminata(percamm){
+att_mov::att_mov(int cal,int pass,float distperc,float percamm,int p):att_base(cal),passi(pass),dist(distperc),perc_camminata(percamm),piani(p){
 }
 
 int att_mov::totale_passi() const{return passi;}
 float att_mov::camminata() const{ return perc_camminata;}
 float att_mov::inattivo() const{ return 100-camminata();}
 float att_mov::distanza() const{ return dist;}
+
+int att_mov::operator==(const att_mov &g) const
+{
+   if(!(this->dist == g.dist)) return 0;
+   if(!(this->passi == g.passi)) return 0;
+   if(!(this->perc_camminata == g.perc_camminata)) return 0;
+   if(!(this->piani == g.piani)) return 0;
+   return 1;
+}
+
+
+std::ostream& operator<<(std::ostream &output, const att_mov &s)
+{
+
+   output << static_cast<const att_base&>( s ) <<  "hai fatto "<< s.totale_passi()<< " passi per una distanza di "<< s.distanza() << " km facendo ben "<< s.piani  <<" piani."<<std::endl;
+
+    return output;
+}

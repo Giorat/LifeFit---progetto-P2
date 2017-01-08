@@ -9,9 +9,8 @@ public:
     orario(int m);
     int Ore() const ;
     int Minuti() const ;
-    void Stampa() const{
-        std::cout << Ore() <<":"<< Minuti();
-    }
+
+    friend std::ostream& operator<<(std::ostream &output, const orario &s);
 private:
     int minuti;
 };
