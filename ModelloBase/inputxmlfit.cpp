@@ -4,11 +4,15 @@
 #include <QDate>
 #include <QTime>
 
+
+#include <iostream>
+#include "utente.h"
+
 #include "inputxmlfit.h"
 
 
-void inputxmlfit::inputXMLdatiMovimSleep(string fileInputXml,utente user){
-    QFile file(fileInputXml);
+  void inputxmlfit::inputXMLdatiMovimSleep(std::string fileInputXml,utente& user){
+    QFile file(QString::fromStdString(fileInputXml));
     if(!file.open(QFile::ReadOnly | QFile::Text)){
         qDebug() << "Cannot read file" << file.errorString();
         exit(0);
@@ -35,7 +39,6 @@ void inputxmlfit::inputXMLdatiMovimSleep(string fileInputXml,utente user){
     att_sonno s;
 QTime t;
 
-
     if (reader.readNextStartElement()) {
         if (reader.name() == "vita"){
             while(reader.readNextStartElement()){
@@ -45,8 +48,6 @@ QTime t;
                         std::string s = qs.toUtf8().constData();
                         if(s.empty())
                             s="0";
-
-                        //qDebug()<< reader.name() << "- " << s;
                         if(reader.name() == "dateTime")
                           d = QDate::fromString(qs,"yyyy-MM-dd");
                         if(reader.name() == "activities-calories")
@@ -77,10 +78,7 @@ QTime t;
                     svegliaLetto = t.hour()*60+t.minute();
                     s = att_sonno(static_cast<int>(t.hour()*1.05180646446),orario(andatoLetto),orario(svegliaLetto),minuti_letto,minuti_dormito);
 
-                   fit[d]= giorno(d,m,s);
-                   std::cout << fit[d];
-
-
+                   user.insert_gg(d,giorno(d,m,s));
                 }
                 else
                     reader.skipCurrentElement();

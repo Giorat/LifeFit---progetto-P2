@@ -1,15 +1,13 @@
 #ifndef INPUTXMLFIT_H
 #define INPUTXMLFIT_H
 
-#include "utente.h";
+#include <string>
+#include "utente.h"
 
 class inputxmlfit{
-private:
 
 public:
-    void inputXMLdatiMovimSleep(string fileInputXml,utente user);
-
-
-}
+   void inputXMLdatiMovimSleep(std::string,utente&);
+};
 
 #endif // INPUTXMLFIT_H
