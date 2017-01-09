@@ -73,7 +73,6 @@ QTime t;
                             eff_sonno =  std::stoi(s);
                     }
                     m = att_mov(cal_mov,passi,dist,perc_camminata,piani);
-                    std::cout << piani<<" "<< dist <<std::endl;
                     t=t.addSecs(60*minuti_letto);
                     svegliaLetto = t.hour()*60+t.minute();
                     s = att_sonno(static_cast<int>(t.hour()*1.05180646446),orario(andatoLetto),orario(svegliaLetto),minuti_letto,minuti_dormito);

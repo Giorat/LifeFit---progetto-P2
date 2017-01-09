@@ -6,7 +6,10 @@ utente::utente(const std::string &n,const std::string &cn, QDate dN,bool s):codi
 
 
 void utente::insert_gg(QDate d,giorno gg){
+    if(d == gg.dataOd())
     fit[d]= gg;
+    // else eccezzione QDebug
+
 }
 giorno utente::giornoData(QDate d){
     return fit[d];

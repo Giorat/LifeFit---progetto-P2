@@ -16,6 +16,8 @@ public:
 
     giorno(QDate,att_mov,att_sonno);
 
+    QDate dataOd() const;
+
     std::string getDate() const;
 
     giorno(const giorno &copyin);
