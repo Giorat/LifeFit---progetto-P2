@@ -12,7 +12,9 @@
 
 
   void inputxmlfit::inputXMLdatiMovimSleep(std::string fileInputXml,utente& user){
-    QFile file(QString::fromStdString(fileInputXml));
+
+    QFile file;
+    file.setFileName(QString::fromStdString(fileInputXml));
     if(!file.open(QFile::ReadOnly | QFile::Text)){
         qDebug() << "Cannot read file" << file.errorString();
         exit(0);
@@ -87,6 +89,7 @@ QTime t;
             reader.raiseError(QObject::tr("Incorrect file"));
     }
 
+file.close();
 
 
 }
