@@ -7,8 +7,8 @@
 class att_sonno : public att_base
 {
 private:
-    int minuti_letto;
-    int minuti_dormito;
+    unsigned int minuti_letto;
+    unsigned int minuti_dormito;
     orario andatoLetto;
     orario svegliaLetto;
 
@@ -26,10 +26,10 @@ public:
      * @param int minuti a letto
      * @param int minuti dormito deve essere maggiore di minuti a letto
      */
-    att_sonno(int,orario,orario,int,int);
+    att_sonno(unsigned int,orario,orario,unsigned int,unsigned int);
 
     float qualita() const;
-    int getOre()const;
+    unsigned int getOre()const;
     int operator==(const att_sonno &g) const;
 
     orario ora_andato_a_letto()const;

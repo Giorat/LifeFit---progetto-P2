@@ -1,42 +1,41 @@
-#include "widget.h"
+#include "circularprogress.h"
 
 #include <QPaintEvent>
 #include <QPainter>
 #include <QLinearGradient>
 #include <QPen>
 
-Widget::Widget(QWidget *parent) :
-    QWidget(parent),
+CircularProgress::CircularProgress(QWidget *parent) :
     m_loadingAngle(0),
     m_width(0)
 {
 }
 
-Widget::~Widget()
+CircularProgress::~CircularProgress()
 {
 }
 
-void Widget::setLoadingAngle(int loadingAngle)
+void CircularProgress::setLoadingAngle(int loadingAngle)
 {
     m_loadingAngle = loadingAngle;
 }
 
-int Widget::loadingAngle() const
+int CircularProgress::loadingAngle() const
 {
     return m_loadingAngle;
 }
 
-void Widget::setDiscWidth(int width)
+void CircularProgress::setDiscWidth(int width)
 {
     m_width = width;
 }
 
-int Widget::discWidth() const
+int CircularProgress::discWidth() const
 {
     return m_width;
 }
 
-void Widget::paintEvent(QPaintEvent *)
+void CircularProgress::paintEvent(QPaintEvent *)
 {
     QRect drawingRect;
     drawingRect.setX(rect().x() + m_width);

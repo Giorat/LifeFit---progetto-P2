@@ -14,9 +14,9 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    widget.cpp
+    circularprogress.cpp
 
 HEADERS  += mainwindow.h \
-    widget.h
+    circularprogress.h
 
 FORMS    += mainwindow.ui

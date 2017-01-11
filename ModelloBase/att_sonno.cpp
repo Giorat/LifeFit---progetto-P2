@@ -3,7 +3,7 @@
 
 
 
-att_sonno::att_sonno(int c,orario aL,orario sL,int minletto,int minDorm):att_base(c),andatoLetto(aL), svegliaLetto(sL) ,minuti_letto(minletto), minuti_dormito(minDorm){};
+att_sonno::att_sonno(unsigned int c,orario aL,orario sL,unsigned int minletto,unsigned int minDorm):att_base(c),andatoLetto(aL), svegliaLetto(sL) ,minuti_letto(minletto), minuti_dormito(minDorm){};
 
 int att_sonno::operator==(const att_sonno &g) const
 {
@@ -11,7 +11,7 @@ int att_sonno::operator==(const att_sonno &g) const
    return 1;
 }
 
-int att_sonno::getOre()const{
+unsigned int att_sonno::getOre()const{
     return std::round(minuti_dormito/60);
 }
 

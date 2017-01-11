@@ -4,7 +4,7 @@
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "widget.h"
+#include "circularprogress.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
- Widget *w = ui->progressWidget;
+ CircularProgress *w = ui->progressWidget;
      w->setDiscWidth(20);
      w->setLoadingAngle(270);
      w->show();

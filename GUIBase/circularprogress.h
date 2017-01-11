@@ -5,13 +5,13 @@
 
 class QPaintEvent;
 
-class Widget : public QWidget
+class CircularProgress : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit Widget(QWidget *parent = 0);
-    ~Widget();
+    explicit CircularProgress(QWidget *parent = 0);
+    ~CircularProgress();
 
     void setLoadingAngle(int loadingAngle);
     int loadingAngle() const;

@@ -6,11 +6,11 @@
 class att_mov : public att_base
 {
 private:
-    int passi;
+    unsigned int passi;
     float dist;
     float perc_camminata;
     //float perc_inattivo = 100-perc_camminata
-    int piani;
+    unsigned int piani;
 
 
 public:
@@ -25,12 +25,13 @@ public:
      * @param float perc_camminata
      * @param int piani
      */
-    att_mov(int,int,float,float,int);
+    att_mov(unsigned int,unsigned int,float,float,unsigned int);
 
-    int totale_passi() const;
+    unsigned int totale_passi() const;
     float camminata() const;
     float inattivo() const;
     float distanza() const;
+    unsigned int piani_fatti(){return piani;}
 
     int operator==(const att_mov &g) const;
 

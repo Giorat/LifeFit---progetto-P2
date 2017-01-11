@@ -6,9 +6,9 @@ class orario
 {
 public:
     orario();
-    orario(int m);
-    int Ore() const ;
-    int Minuti() const ;
+    orario(unsigned int m);
+    unsigned int Ore() const ;
+    unsigned int Minuti() const ;
 
     friend std::ostream& operator<<(std::ostream &output, const orario &s);
 private:

@@ -6,10 +6,10 @@
  * @param float distanza percorsa
  * @param float perc_camminata
  */
-att_mov::att_mov(int cal,int pass,float distperc,float percamm,int p):att_base(cal),passi(pass),dist(distperc),perc_camminata(percamm),piani(p){
+att_mov::att_mov(unsigned int cal,unsigned int pass,float distperc,float percamm,unsigned int p):att_base(cal),passi(pass),dist(distperc),perc_camminata(percamm),piani(p){
 }
 
-int att_mov::totale_passi() const{return passi;}
+unsigned int att_mov::totale_passi() const{return passi;}
 float att_mov::camminata() const{ return perc_camminata;}
 float att_mov::inattivo() const{ return 100-camminata();}
 float att_mov::distanza() const{ return dist;}

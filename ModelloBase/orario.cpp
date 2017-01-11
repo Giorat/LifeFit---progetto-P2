@@ -2,13 +2,13 @@
 
 orario::orario():minuti(0){}
 
-orario::orario(int m):minuti(m){}
+orario::orario(unsigned int m):minuti(m){}
 
-int orario::Ore() const{
+unsigned int orario::Ore() const{
     return minuti/60;
 }
 
-int orario::Minuti() const{
+unsigned int orario::Minuti() const{
     return minuti%60;
 }
 
