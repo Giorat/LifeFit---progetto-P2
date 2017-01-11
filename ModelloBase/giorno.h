@@ -20,6 +20,10 @@ public:
 
     std::string getDate() const;
 
+    att_mov movim()const {return awake;}
+
+    att_sonno dormit()const {return sleep;}
+
     giorno(const giorno &copyin);
 
     giorno& operator=(const giorno &g);

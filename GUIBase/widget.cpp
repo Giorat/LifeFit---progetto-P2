@@ -61,6 +61,6 @@ void Widget::paintEvent(QPaintEvent *)
     pen.setCapStyle(Qt::RoundCap);
     painter.setPen(pen);
     painter.drawArc(drawingRect, 90 * 16 - arcLengthApproximation, -m_loadingAngle * 16);
-
-    painter.drawText(drawingRect,Qt::AlignCenter,QString::number(0.75*100)+" %");
+    int perc= 0.75;
+    painter.drawText(drawingRect,Qt::AlignCenter,QString::number(perc*100)+" %");
 }

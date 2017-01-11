@@ -11,6 +11,11 @@ void utente::insert_gg(QDate d,giorno gg){
     // else eccezzione QDebug
 
 }
-giorno utente::giornoData(QDate d){
-    return fit[d];
+
+giorno utente::giornoData(QDate d,float & perc){
+    giorno g =fit[d];
+    perc = (float)g.movim().totale_passi()/(float)this->obbiettivo_passi();
+    return g;
 }
+
+//for(auto iterator = m.begin(); iterator != m.end(); iterator++)

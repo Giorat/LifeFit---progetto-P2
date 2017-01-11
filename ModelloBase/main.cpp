@@ -14,7 +14,10 @@ int main(int argc, char *argv[])
     std::string nomeFile = "C:\\Users\\giora\\Documents\\GitHub\\progettoP2\\DatiModelloBase.xml";
     s.inputXMLdatiMovimSleep(nomeFile,user);
 
-    std::cout << user.giornoData(QDate(2016,12,31));
+    float perc = 0;
+    giorno g = user.giornoData(QDate(2016,12,31),perc);
+    std::cout << g;
+    std::cout << "Per un totale di " << g.movim().totale_passi() <<" sui " << user.obbiettivo_passi() <<" | "<< perc*100 << "% su obbiettivo utente" << std::endl;
 
     return 0;
 }
