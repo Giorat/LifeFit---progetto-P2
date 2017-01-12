@@ -18,7 +18,8 @@ public:
     friend std::ostream& operator<<(std::ostream& output, const att_mov &s);
 
     att_mov(){}
-    /**
+
+    /** Costruttore completo di una attivita di movimento
      * @param int numero di calorie
      * @param int numero di passi
      * @param float distanza percorsa
@@ -31,7 +32,7 @@ public:
     float camminata() const;
     float inattivo() const;
     float distanza() const;
-    unsigned int piani_fatti(){return piani;}
+    unsigned int piani_fatti();
 
     int operator==(const att_mov &g) const;
 

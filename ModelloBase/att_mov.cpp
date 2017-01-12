@@ -13,6 +13,7 @@ unsigned int att_mov::totale_passi() const{return passi;}
 float att_mov::camminata() const{ return perc_camminata;}
 float att_mov::inattivo() const{ return 100-camminata();}
 float att_mov::distanza() const{ return dist;}
+unsigned int att_mov::piani_fatti(){return piani;}
 
 int att_mov::operator==(const att_mov &g) const
 {

@@ -6,6 +6,7 @@
 #include <QPen>
 
 CircularProgress::CircularProgress(QWidget *parent) :
+    QWidget(parent),
     m_loadingAngle(0),
     m_width(0)
 {

@@ -14,10 +14,16 @@ public:
 
     giorno();
 
+    /** Costruttore completo di un giorno
+     *  @param QDate data del giorno
+     *  @param att_mov giornata movimento
+     *  @param att_sonno riposo sonno da ieri notte alla mattina del giorno attuale
     giorno(QDate,att_mov,att_sonno);
 
+    /** @return QDate la data del giorno*/
     QDate dataOd() const;
 
+    /** @return la data di questo giorno in formato stringa ANNO MESE GIORNO*/
     std::string getDate() const;
 
     att_mov movim()const {return awake;}

@@ -19,7 +19,7 @@ public:
     friend std::ostream& operator<<(std::ostream& output, const att_sonno &s);
 
     att_sonno(){}
-    /**
+    /** Costruttore completo attivita sonno
      * @param int calorie bruciate dormendo
      * @param orario ora andato a letto
      * @param orario ora svegliato
@@ -30,10 +30,13 @@ public:
 
     float qualita() const;
     unsigned int getOre()const;
+
     int operator==(const att_sonno &g) const;
 
+    /** @return orario ,del giorno precedente, in cui sono andato a letto*/
     orario ora_andato_a_letto()const;
 
+    /** @return orario ,del giorno attuale, in cui mi sono svegliato*/
     orario ora_svegliato_a_letto()const;
 };
 
