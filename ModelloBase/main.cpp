@@ -16,12 +16,16 @@ int main()
     std::string nomeFile = "C:\\Users\\giora\\Documents\\GitHub\\progettoP2\\DatiModelloBase.xml";
     s.inputXMLdatiMovimSleep(nomeFile,user);
 
+    std::cout << user;
 
     //Prova delle date dell'utente
     QDate dataProva = QDate(2016,12,31);
     giorno g = user.giornoData(dataProva);
     std::cout << g;
     std::cout << "Per un totale di " << g.movim().totale_passi() <<" sui " << user.obbiettivo_passi() <<" | "<< user.perc_giorno(dataProva)*100 << "% su obbiettivo utente" << std::endl;
+
+    int npassi = user.progressi_mese(QDate(2016,12,27));
+    std::cout << "a Dicembre hai fatto: " << npassi;
 
     return 0;
 }

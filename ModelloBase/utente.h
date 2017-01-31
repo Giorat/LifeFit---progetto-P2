@@ -44,6 +44,7 @@ public:
 
     std::string sesso_ut()const{if(sesso)return "uomo"; else return "donna";}
 
+    friend std::ostream& operator<<(std::ostream &output, const utente &s);
 };
 
 #endif // UTENTE_H

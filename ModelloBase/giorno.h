@@ -18,6 +18,7 @@ public:
      *  @param QDate data del giorno
      *  @param att_mov giornata movimento
      *  @param att_sonno riposo sonno da ieri notte alla mattina del giorno attuale
+     */
     giorno(QDate,att_mov,att_sonno);
 
     /** @return QDate la data del giorno*/
