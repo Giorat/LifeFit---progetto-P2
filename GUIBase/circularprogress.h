@@ -13,6 +13,8 @@ public:
     explicit CircularProgress(QWidget *parent = 0);
     ~CircularProgress();
 
+    void setColors(QString, QString);
+
     void setLoadingAngle(int loadingAngle);
     int loadingAngle() const;
 
@@ -25,6 +27,7 @@ protected:
 private:
     int m_loadingAngle;
     int m_width;
+    QLinearGradient gradient;
 };
 
 #endif // WIDGET_H

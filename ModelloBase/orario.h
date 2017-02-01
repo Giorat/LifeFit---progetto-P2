@@ -13,6 +13,7 @@ public:
     orario(unsigned int m);
     unsigned int Ore() const ;
     unsigned int Minuti() const ;
+    std::string orarioStr()const;
 
     friend std::ostream& operator<<(std::ostream &output, const orario &s);
 private:

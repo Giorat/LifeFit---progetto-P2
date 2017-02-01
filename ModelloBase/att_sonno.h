@@ -12,8 +12,6 @@ private:
     orario andatoLetto;
     orario svegliaLetto;
 
-
-
 public:
 
     friend std::ostream& operator<<(std::ostream& output, const att_sonno &s);
@@ -38,6 +36,11 @@ public:
 
     /** @return orario ,del giorno attuale, in cui mi sono svegliato*/
     orario ora_svegliato_a_letto()const;
+
+    int minLetto()const;
+    int minDormito()const;
+
+
 };
 
 #endif // ATT_SONNO_H

@@ -6,7 +6,7 @@
     <activities-steps>1556</activities-steps>
     <Activities-distance>1</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -72,7 +72,7 @@
     <activities-steps>7555</activities-steps>
     <Activities-distance>5</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -138,7 +138,7 @@
     <activities-steps>5203</activities-steps>
     <Activities-distance>3</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -303,7 +303,7 @@
     <activities-steps>7351</activities-steps>
     <Activities-distance>5</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -347,7 +347,7 @@
     <activities-steps>6164</activities-steps>
     <Activities-distance>4</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -391,7 +391,7 @@
     <activities-steps>9730</activities-steps>
     <Activities-distance>7</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -424,7 +424,7 @@
     <activities-steps>3709</activities-steps>
     <Activities-distance>2</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -479,7 +479,7 @@
     <activities-steps>7338</activities-steps>
     <Activities-distance>5</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -512,7 +512,7 @@
     <activities-steps>9891</activities-steps>
     <Activities-distance>7</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -534,7 +534,7 @@
     <activities-steps>4997</activities-steps>
     <Activities-distance>3</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -578,7 +578,7 @@
     <activities-steps>4771</activities-steps>
     <Activities-distance>3</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -600,7 +600,7 @@
     <activities-steps>4315</activities-steps>
     <Activities-distance>3</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -611,7 +611,7 @@
     <activities-steps>4133</activities-steps>
     <Activities-distance>3</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -677,7 +677,7 @@
     <activities-steps>13385</activities-steps>
     <Activities-distance>9</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -688,7 +688,7 @@
     <activities-steps>4748</activities-steps>
     <Activities-distance>3</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -721,7 +721,7 @@
     <activities-steps>4628</activities-steps>
     <Activities-distance>3</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -754,7 +754,7 @@
     <activities-steps>6147</activities-steps>
     <Activities-distance>4</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -809,7 +809,7 @@
     <activities-steps>4291</activities-steps>
     <Activities-distance>3</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -831,7 +831,7 @@
     <activities-steps>513</activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -864,7 +864,7 @@
     <activities-steps>7647</activities-steps>
     <Activities-distance>5</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -875,7 +875,7 @@
     <activities-steps>8284</activities-steps>
     <Activities-distance>6</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -897,7 +897,7 @@
     <activities-steps>7367</activities-steps>
     <Activities-distance>5</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -974,7 +974,7 @@
     <activities-steps>22199</activities-steps>
     <Activities-distance>16</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -985,7 +985,7 @@
     <activities-steps>1919</activities-steps>
     <Activities-distance>1</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -996,7 +996,7 @@
     <activities-steps>38</activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1007,7 +1007,7 @@
     <activities-steps>6731</activities-steps>
     <Activities-distance>4</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1051,7 +1051,7 @@
     <activities-steps>5660</activities-steps>
     <Activities-distance>4</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1117,7 +1117,7 @@
     <activities-steps>12061</activities-steps>
     <Activities-distance>8</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1128,7 +1128,7 @@
     <activities-steps>12603</activities-steps>
     <Activities-distance>9</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1249,7 +1249,7 @@
     <activities-steps>15556</activities-steps>
     <Activities-distance>11</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1260,7 +1260,7 @@
     <activities-steps>7090</activities-steps>
     <Activities-distance>5</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1271,7 +1271,7 @@
     <activities-steps>9336</activities-steps>
     <Activities-distance>6</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1282,7 +1282,7 @@
     <activities-steps>28164</activities-steps>
     <Activities-distance>20</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1337,7 +1337,7 @@
     <activities-steps>38</activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1370,7 +1370,7 @@
     <activities-steps>19408</activities-steps>
     <Activities-distance>14</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1392,7 +1392,7 @@
     <activities-steps>2797</activities-steps>
     <Activities-distance>2</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1425,7 +1425,7 @@
     <activities-steps>499</activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1436,7 +1436,7 @@
     <activities-steps>12</activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1502,7 +1502,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1513,7 +1513,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1524,7 +1524,7 @@
     <activities-steps>12</activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1535,7 +1535,7 @@
     <activities-steps>19</activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1601,7 +1601,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1612,7 +1612,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1623,7 +1623,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1634,7 +1634,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1645,7 +1645,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1656,7 +1656,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1667,7 +1667,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1678,7 +1678,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1689,7 +1689,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1744,7 +1744,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1755,7 +1755,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1766,7 +1766,7 @@
     <activities-steps>12</activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1843,7 +1843,7 @@
     <activities-steps>12794</activities-steps>
     <Activities-distance>9</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1909,7 +1909,7 @@
     <activities-steps>10950</activities-steps>
     <Activities-distance>8</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -1986,7 +1986,7 @@
     <activities-steps>7335</activities-steps>
     <Activities-distance>5</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -2074,7 +2074,7 @@
     <activities-steps>16598</activities-steps>
     <Activities-distance>12</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -2151,7 +2151,7 @@
     <activities-steps>22751</activities-steps>
     <Activities-distance>16</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -2228,7 +2228,7 @@
     <activities-steps>18176</activities-steps>
     <Activities-distance>13</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -2294,7 +2294,7 @@
     <activities-steps>16258</activities-steps>
     <Activities-distance>12</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -2371,7 +2371,7 @@
     <activities-steps>8630</activities-steps>
     <Activities-distance>6</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -2382,7 +2382,7 @@
     <activities-steps>17429</activities-steps>
     <Activities-distance>12</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -2415,7 +2415,7 @@
     <activities-steps>4065</activities-steps>
     <Activities-distance>3</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -2448,7 +2448,7 @@
     <activities-steps>3499</activities-steps>
     <Activities-distance>2</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -2525,7 +2525,7 @@
     <activities-steps>7093</activities-steps>
     <Activities-distance>5</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -2613,7 +2613,7 @@
     <activities-steps>7069</activities-steps>
     <Activities-distance>5</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -2690,7 +2690,7 @@
     <activities-steps>19488</activities-steps>
     <Activities-distance>14</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -2822,7 +2822,7 @@
     <activities-steps>12361</activities-steps>
     <Activities-distance>9</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -2921,7 +2921,7 @@
     <activities-steps>18204</activities-steps>
     <Activities-distance>13</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3130,7 +3130,7 @@
     <activities-steps>13062</activities-steps>
     <Activities-distance>9</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3152,7 +3152,7 @@
     <activities-steps>6069</activities-steps>
     <Activities-distance>4</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3306,7 +3306,7 @@
     <activities-steps>5195</activities-steps>
     <Activities-distance>3</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3438,7 +3438,7 @@
     <activities-steps>0</activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3449,7 +3449,7 @@
     <activities-steps>2407</activities-steps>
     <Activities-distance>1</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3493,7 +3493,7 @@
     <activities-steps>5543</activities-steps>
     <Activities-distance>4</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3537,7 +3537,7 @@
     <activities-steps>2818</activities-steps>
     <Activities-distance>2</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3592,7 +3592,7 @@
     <activities-steps>6388</activities-steps>
     <Activities-distance>4</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3658,7 +3658,7 @@
     <activities-steps>2813</activities-steps>
     <Activities-distance>2</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3669,7 +3669,7 @@
     <activities-steps>4256</activities-steps>
     <Activities-distance>3</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3834,7 +3834,7 @@
     <activities-steps>12885</activities-steps>
     <Activities-distance>9</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3878,7 +3878,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3889,7 +3889,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3900,7 +3900,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3911,7 +3911,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3922,7 +3922,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3933,7 +3933,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3944,7 +3944,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3955,7 +3955,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3966,7 +3966,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3977,7 +3977,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3988,7 +3988,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -3999,7 +3999,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4010,7 +4010,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4021,7 +4021,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4032,7 +4032,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4043,7 +4043,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4054,7 +4054,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4065,7 +4065,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4076,7 +4076,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4087,7 +4087,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4098,7 +4098,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4109,7 +4109,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4120,7 +4120,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4131,7 +4131,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4142,7 +4142,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4153,7 +4153,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4164,7 +4164,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4175,7 +4175,7 @@
     <activities-steps></activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4197,7 +4197,7 @@
     <activities-steps>7945</activities-steps>
     <Activities-distance>5</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4219,7 +4219,7 @@
     <activities-steps>14198</activities-steps>
     <Activities-distance>10</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4274,7 +4274,7 @@
     <activities-steps>9491</activities-steps>
     <Activities-distance>7</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4362,7 +4362,7 @@
     <activities-steps>12432</activities-steps>
     <Activities-distance>9</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4417,7 +4417,7 @@
     <activities-steps>11955</activities-steps>
     <Activities-distance>8</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4439,7 +4439,7 @@
     <activities-steps>11512</activities-steps>
     <Activities-distance>8</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4461,7 +4461,7 @@
     <activities-steps>6535</activities-steps>
     <Activities-distance>4</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4527,7 +4527,7 @@
     <activities-steps>0</activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4538,7 +4538,7 @@
     <activities-steps>0</activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4549,7 +4549,7 @@
     <activities-steps>0</activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4604,7 +4604,7 @@
     <activities-steps>1061</activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4615,7 +4615,7 @@
     <activities-steps>310</activities-steps>
     <Activities-distance>0</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4681,7 +4681,7 @@
     <activities-steps>17209</activities-steps>
     <Activities-distance>12</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4714,7 +4714,7 @@
     <activities-steps>9847</activities-steps>
     <Activities-distance>7</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4769,7 +4769,7 @@
     <activities-steps>4314</activities-steps>
     <Activities-distance>3</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -4846,7 +4846,7 @@
     <activities-steps>4958</activities-steps>
     <Activities-distance>3</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -5121,7 +5121,7 @@
     <activities-steps>14020</activities-steps>
     <Activities-distance>10</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -5143,7 +5143,7 @@
     <activities-steps>7517</activities-steps>
     <Activities-distance>5</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -5154,7 +5154,7 @@
     <activities-steps>10800</activities-steps>
     <Activities-distance>7</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -5198,7 +5198,7 @@
     <activities-steps>15747</activities-steps>
     <Activities-distance>11</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -5220,7 +5220,7 @@
     <activities-steps>21718</activities-steps>
     <Activities-distance>16</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -5253,7 +5253,7 @@
     <activities-steps>22002</activities-steps>
     <Activities-distance>16</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -5297,7 +5297,7 @@
     <activities-steps>14775</activities-steps>
     <Activities-distance>10</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -5308,7 +5308,7 @@
     <activities-steps>20149</activities-steps>
     <Activities-distance>14</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -5385,7 +5385,7 @@
     <activities-steps>4723</activities-steps>
     <Activities-distance>3</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -5418,7 +5418,7 @@
     <activities-steps>6355</activities-steps>
     <Activities-distance>4</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -5517,7 +5517,7 @@
     <activities-steps>17676</activities-steps>
     <Activities-distance>13</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -5528,7 +5528,7 @@
     <activities-steps>8692</activities-steps>
     <Activities-distance>6</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -5616,7 +5616,7 @@
     <activities-steps>14626</activities-steps>
     <Activities-distance>10</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -5759,7 +5759,7 @@
     <activities-steps>15502</activities-steps>
     <Activities-distance>11</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -5803,7 +5803,7 @@
     <activities-steps>7973</activities-steps>
     <Activities-distance>5</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -5825,7 +5825,7 @@
     <activities-steps>8085</activities-steps>
     <Activities-distance>5</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -5913,7 +5913,7 @@
     <activities-steps>17074</activities-steps>
     <Activities-distance>12</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -6001,7 +6001,7 @@
     <activities-steps>19859</activities-steps>
     <Activities-distance>14</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -6078,7 +6078,7 @@
     <activities-steps>7895</activities-steps>
     <Activities-distance>5</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -6133,7 +6133,7 @@
     <activities-steps>6571</activities-steps>
     <Activities-distance>4</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -6155,7 +6155,7 @@
     <activities-steps>6936</activities-steps>
     <Activities-distance>5</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -6177,7 +6177,7 @@
     <activities-steps>15334</activities-steps>
     <Activities-distance>11</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -6386,7 +6386,7 @@
     <activities-steps>5069</activities-steps>
     <Activities-distance>3</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -6529,7 +6529,7 @@
     <activities-steps>10831</activities-steps>
     <Activities-distance>8</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -6716,7 +6716,7 @@
     <activities-steps>2062</activities-steps>
     <Activities-distance>3</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -6727,7 +6727,7 @@
     <activities-steps>4137</activities-steps>
     <Activities-distance>6</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -6738,7 +6738,7 @@
     <activities-steps>7913,5</activities-steps>
     <Activities-distance>11</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -6749,7 +6749,7 @@
     <activities-steps>2627</activities-steps>
     <Activities-distance>3</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>
@@ -6760,7 +6760,7 @@
     <activities-steps>4824</activities-steps>
     <Activities-distance>7</Activities-distance>
     <activities-floors>0</activities-floors>
-    <sleep-startTime></sleep-startTime>
+    <sleep-startTime>00:00</sleep-startTime>
     <sleep-timeInBed>0</sleep-timeInBed>
     <sleep-minutesAsleep>0</sleep-minutesAsleep>
     <sleep-efficiency>0</sleep-efficiency>

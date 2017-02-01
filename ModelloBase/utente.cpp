@@ -25,29 +25,19 @@ unsigned int utente::progressi_mese(QDate d){
     int tot_passi =0;
     QDate primoGiornoMeseDataD (d.year(),d.month(),1);
     QDate ultimoGiornoMeseDataD (d.year(),d.month(),primoGiornoMeseDataD.daysInMonth());
-    std::cout <<" giorni in questo mese per ciclo: " <<primoGiornoMeseDataD.daysInMonth() << std::endl;
-
-    std::cout << primoGiornoMeseDataD.toString("yyyy-MM-dd").toUtf8().constData() << " &&& " << ultimoGiornoMeseDataD.toString("yyyy-MM-dd").toUtf8().constData()<<std::endl;
-    int i=0;
+     int i=0;
     for(auto it = fit.begin(); it != fit.end(); ++it){
         QDate dat = it->first;
         giorno g = it->second;
 
-        i++;
-
-        std::cout << dat.toString("yyyy-MM-dd").toUtf8().constData() << std::endl;
-
-        std::cout << dat.daysTo(primoGiornoMeseDataD) << std::endl;
-        std::cout << dat.daysTo(ultimoGiornoMeseDataD) << std::endl;
-
-
-       if( 0 < dat.daysTo(primoGiornoMeseDataD) < d.daysInMonth() && d.daysInMonth() > dat.daysTo(ultimoGiornoMeseDataD) > 0 ){
-            tot_passi+=g.movim().totale_passi();
-            std::cout << "fit[" << dat.toString("yyyy-MM-dd").toUtf8().constData()  << "] = " << g << '\n';
-
+       if( (0 >= dat.daysTo(primoGiornoMeseDataD) && dat.daysTo(primoGiornoMeseDataD) >= (-d.daysInMonth())) && (d.daysInMonth() >= dat.daysTo(ultimoGiornoMeseDataD) && dat.daysTo(ultimoGiornoMeseDataD) >= 0 ) ){
+           tot_passi+=g.movim().totale_passi();
+            std::cout << "fit[" << dat.toString("yyyy-MM-dd").toUtf8().constData()  << "] = " << g << '\n\n';
+            i++;
        }
-       if(i == primoGiornoMeseDataD.daysInMonth())
-            it=fit.end();
+
+
+
     }
 
 
@@ -59,7 +49,7 @@ unsigned int utente::progressi_mese(QDate d){
 std::ostream& operator<<(std::ostream &output, const utente &s)
 {
     for(auto it= s.fit.begin();it != s.fit.end();it++){
-        output << it->second;
+       output << it->second;
     }
     return output;
 }

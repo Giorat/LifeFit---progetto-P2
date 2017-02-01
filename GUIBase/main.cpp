@@ -8,5 +8,10 @@ int main(int argc, char *argv[])
     w.setWindowTitle("QCalendarWidget Get Selected Date");
     w.show();
 
+    QPalette pal = a.palette();
+    pal.setColor(QPalette::Window, Qt::white);
+    a.setPalette(pal);
+
     return a.exec();
+
 }

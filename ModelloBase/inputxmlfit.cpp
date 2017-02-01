@@ -1,5 +1,6 @@
 #include <QFile>
 #include <QXmlStreamReader>
+#include <QXmlStreamWriter>
 #include <QDebug>
 #include <QDate>
 #include <QTime>
@@ -93,3 +94,63 @@ file.close();
 
 
 }
+
+ void inputxmlfit::outputXMLdatiMovimSleep(std::string fileOutputXml,const utente& user){
+     QFile file;
+     file.setFileName(QString::fromStdString(fileOutputXml));
+     if(!file.open(QFile::WriteOnly | QFile::Text)){
+         qDebug() << "Cannot write to file" << file.errorString();
+         exit(0);
+     }
+
+     QXmlStreamWriter writer;
+     writer.setDevice(&file);
+
+     writer.writeStartDocument();
+
+     writer.writeStartElement("vita");
+for(auto it = user.fit.begin(); it != user.fit.end(); ++it){
+         writer.writeStartElement("giorno");
+
+             writer.writeStartElement("dateTime");
+             writer.writeCharacters (it->first.toString("yyyy-MM-dd").toUtf8().constData());
+             writer.writeEndElement();
+
+             writer.writeStartElement("activities-calories");
+             writer.writeCharacters (QString::number(it->second.movim().calorie()));
+             writer.writeEndElement();
+
+             writer.writeStartElement("activities-steps");
+             writer.writeCharacters (QString::number(it->second.movim().totale_passi()));
+             writer.writeEndElement();
+
+             writer.writeStartElement("Activities-distance");
+             writer.writeCharacters (QString::number(it->second.movim().distanza()));
+             writer.writeEndElement();
+
+             writer.writeStartElement("activities-floors");
+             writer.writeCharacters (QString::number(it->second.movim().piani_fatti()));
+             writer.writeEndElement();
+
+             writer.writeStartElement("sleep-startTime");
+             writer.writeCharacters (QString::fromStdString(it->second.dormit().ora_andato_a_letto().orarioStr()));
+             writer.writeEndElement();
+
+             writer.writeStartElement("sleep-timeInBed");
+             writer.writeCharacters (QString::number(it->second.dormit().minLetto()));
+             writer.writeEndElement();
+
+             writer.writeStartElement("sleep-minutesAsleep");
+             writer.writeCharacters (QString::number(it->second.dormit().minDormito()));
+             writer.writeEndElement();
+
+             writer.writeStartElement("sleep-efficiency");
+             writer.writeCharacters (QString::number(it->second.dormit().qualita()));
+             writer.writeEndElement();
+         writer.writeEndElement();
+}//for
+     writer.writeEndDocument();
+ file.close();
+ }
+
+
