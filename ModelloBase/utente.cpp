@@ -46,6 +46,34 @@ unsigned int utente::progressi_mese(QDate d){
 }
 
 
+unsigned int utente::getCodiceUtente()const{
+    return codiceUtente;
+}
+
+std::string utente::getNome()const{
+    return nome;
+}
+std::string utente::getCognome()const{
+    return cognome;
+}
+
+int utente::getAge()const{
+QDate currentDate= QDate::currentDate();
+int currentAge = currentDate.year() -  dataNascita.year();
+if ((dataNascita.month() > currentDate.month()||
+(dataNascita.month() == currentDate.month()
+&&
+dataNascita.day()>currentDate.day())))
+{
+currentAge --;
+}
+return currentAge;
+}
+
+
+
+
+
 std::ostream& operator<<(std::ostream &output, const utente &s)
 {
     for(auto it= s.fit.begin();it != s.fit.end();it++){
@@ -53,6 +81,7 @@ std::ostream& operator<<(std::ostream &output, const utente &s)
     }
     return output;
 }
+
 
 
 

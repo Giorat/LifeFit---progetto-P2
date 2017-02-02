@@ -28,7 +28,7 @@ int main()
     int npassi = user.progressi_mese(data);
     std::cout << "a Dicembre hai fatto: " << npassi << " su un totale previsto di " << (data.daysInMonth() * user.obbiettivo_passi());
 
-    std::string nomeFileOut = "C:\\Users\\giora\\Documents\\GitHub\\progettoP2\\OutProva.xml";
+    std::string nomeFileOut = "C:\\Users\\giora\\Documents\\GitHub\\progettoP2\\"+std::to_string(user.getCodiceUtente())+"OutProva.xml";
     s.outputXMLdatiMovimSleep(nomeFileOut,user);
 
     return 0;

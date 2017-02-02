@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
         //calendar->setFirstDayOfWeek();
         calendar->setGridVisible(true);
         calendar->setDateRange(QDate(2016,1,1),QDate(2017,2,1));
-
+        calendar->setStyleSheet("background-color: white;");
 
  QObject::connect(calendar,SIGNAL(clicked(const QDate)),this,SLOT(slotClicked(const QDate)));
 
@@ -30,18 +30,21 @@ MainWindow::MainWindow(QWidget *parent) :
      w->setLoadingAngle(270);
      w->show();
 
-     CircularProgress *progs = ui->progressoSonno;
-         progs->setColors("#0099ff","#0099ff");
-         progs->setDiscWidth(20);
-         progs->setLoadingAngle(340);
-         progs->show();
+ CircularProgress *progs = ui->progressoSonno;
+     progs->setColors("#0099ff","#0099ff");
+     progs->setDiscWidth(20);
+     progs->setLoadingAngle(340);
+     progs->show();
 
 
-         CircularProgress *progm = ui->progressoMese;
-             progm->setColors("#9999ff","#9999ff");
-             progm->setDiscWidth(20);
-             progm->setLoadingAngle(360);
-             progm->show();
+ CircularProgress *progm = ui->progressoMese;
+     progm->setColors("#9999ff","#9999ff");
+     progm->setDiscWidth(20);
+     progm->setLoadingAngle(360);
+     progm->show();
+
+
+
  //QStringList fileNames = QFileDialog::getOpenFileNames(this, tr("Apri il file"),"/",tr("XML Files (*.xml)"));
  //QMessageBox::information(NULL,"File!!",fileNames.first());
 

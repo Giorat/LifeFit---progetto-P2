@@ -26,8 +26,9 @@ public:
      * @param string cognome utente
      * @param QDate data di nascita
      * @param bool sesso della persona ==1 se uomo ==0 se donna
- */
+ */ 
     utente(const std::string &n,const std::string &cn, QDate dN,bool s);
+
     void insert_gg(QDate,giorno);
 
     /**Percentuale di passi effettuati rispetto all'obbiettivo di passi giornaliero impostato dall'admin
@@ -46,6 +47,12 @@ public:
     std::string sesso_ut()const{if(sesso)return "uomo"; else return "donna";}
 
     friend std::ostream& operator<<(std::ostream &output, const utente &s);
+
+    unsigned int getCodiceUtente()const;
+    std::string getNome()const;
+    std::string getCognome()const;
+    int getAge()const;
+
 };
 
 #endif // UTENTE_H

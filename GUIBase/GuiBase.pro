@@ -21,3 +21,5 @@ HEADERS  += mainwindow.h \
     circularprogress.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES +=  settings_icon.qrc

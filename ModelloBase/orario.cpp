@@ -13,7 +13,8 @@ unsigned int orario::Minuti() const{
 }
 
 std::string orario::orarioStr()const{
-    return Ore()+":"+Minuti();
+    std::string s = std::to_string(Ore())+":"+std::to_string(Minuti());
+    return s;
 }
 
 
