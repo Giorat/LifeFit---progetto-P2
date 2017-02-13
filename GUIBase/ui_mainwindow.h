@@ -18,6 +18,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
@@ -37,6 +38,7 @@ public:
     QLabel *avatar;
     QLabel *nome;
     QLabel *eta;
+    QPlainTextEdit *username;
     QSpacerItem *verticalSpacer;
     QWidget *centralWidget;
     QCalendarWidget *calendarWidget;
@@ -122,6 +124,15 @@ public:
 
         verticalLayout->addWidget(eta);
 
+        username = new QPlainTextEdit(widget);
+        username->setObjectName(QStringLiteral("username"));
+        username->setMaximumSize(QSize(16777215, 40));
+        QFont font2;
+        font2.setPointSize(11);
+        username->setFont(font2);
+
+        verticalLayout->addWidget(username);
+
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout->addItem(verticalSpacer);
@@ -132,12 +143,12 @@ public:
         centralWidget = new QWidget(horizontalLayoutWidget);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         centralWidget->setMinimumSize(QSize(600, 0));
-        QFont font2;
-        font2.setFamily(QStringLiteral("MS Sans Serif"));
-        font2.setPointSize(10);
-        font2.setBold(true);
-        font2.setWeight(75);
-        centralWidget->setFont(font2);
+        QFont font3;
+        font3.setFamily(QStringLiteral("MS Sans Serif"));
+        font3.setPointSize(10);
+        font3.setBold(true);
+        font3.setWeight(75);
+        centralWidget->setFont(font3);
         centralWidget->setStyleSheet(QStringLiteral(""));
         calendarWidget = new QCalendarWidget(centralWidget);
         calendarWidget->setObjectName(QStringLiteral("calendarWidget"));

@@ -4,6 +4,12 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    a.setOrganizationName("giorat");
+    a.setOrganizationDomain("www.riccardogiorato.com");
+    a.setApplicationName("lifefit");
+
+
     MainWindow w;
     w.setWindowTitle("QCalendarWidget Get Selected Date");
     w.show();

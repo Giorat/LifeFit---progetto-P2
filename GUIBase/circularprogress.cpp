@@ -63,6 +63,5 @@ void CircularProgress::paintEvent(QPaintEvent *)
     painter.setPen(pen);
     painter.drawArc(drawingRect, 90 * 16 - arcLengthApproximation, -m_loadingAngle * 16);
      float perc= round(((float)m_loadingAngle/360)*100);
-
     painter.drawText(drawingRect,Qt::AlignCenter, QString::fromStdString(std::to_string(perc)).left(3)+ " %");
 }

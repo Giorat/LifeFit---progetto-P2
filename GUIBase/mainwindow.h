@@ -5,7 +5,13 @@
 #include <QMessageBox>
 #include <QCalendarWidget>
 #include <QDate>
+#include <QFileDialog>
+#include <QSettings>
+#include <QCloseEvent>
 
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include "circularprogress.h"
 namespace Ui {
 class MainWindow;
 }
@@ -19,7 +25,18 @@ public:
     ~MainWindow();
 
 private:
+    QPlainTextEdit *user_edit;
+    QCalendarWidget *calendar;
+    struct SPreferences
+    {
+        QString last_user;
+        bool first_boot;
+    };
     Ui::MainWindow *ui;
+    void loadSettings();
+    void saveSettings();
+    void closeEvent(QCloseEvent* event);
+    SPreferences ultima_sess;
 private slots:
 
   void slotClicked(const QDate& date)

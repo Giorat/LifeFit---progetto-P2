@@ -1,10 +1,4 @@
-#include <QCalendarWidget>
-#include <QDate>
-#include <QFileDialog>
-
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include "circularprogress.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -12,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     QMainWindow::showMaximized();
-        QCalendarWidget *calendar = ui->calendarWidget;
+        calendar = ui->calendarWidget;
 
         //calendar->setFirstDayOfWeek();
         calendar->setGridVisible(true);
@@ -43,7 +37,9 @@ MainWindow::MainWindow(QWidget *parent) :
      progm->setLoadingAngle(360);
      progm->show();
 
+user_edit = ui->username;
 
+user_edit->setPlainText(ultima_sess.last_user);
 
  //QStringList fileNames = QFileDialog::getOpenFileNames(this, tr("Apri il file"),"/",tr("XML Files (*.xml)"));
  //QMessageBox::information(NULL,"File!!",fileNames.first());
@@ -67,7 +63,55 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->centralWidget->addWidget(setchartView,0,0);
    */
+loadSettings();
 
+QMessageBox::about(this, tr("About Application"),
+           tr("The <b>Application</b>:" ));
+
+QAction *m_ExitAction = new QAction(tr("E&xit"), this);
+m_ExitAction->setShortcut(tr("Ctrl+Q"));
+m_ExitAction->setStatusTip(tr("Exit the application"));
+connect(m_ExitAction, SIGNAL(triggered()), this, SLOT(close()));
+
+}
+
+
+void MainWindow::loadSettings()
+{
+  QSettings settings;
+  settings.beginGroup("app");
+  ultima_sess.last_user = (settings.value("lastuser","").toString()).toUtf8().constData();
+  ultima_sess.first_boot = settings.value("firstboot", 10).toInt();
+  settings.endGroup();
+
+  settings.beginGroup("MainWindow");
+  resize(settings.value("size", QSize(400, 400)).toSize());
+  move(settings.value("pos", QPoint(0, 0)).toPoint());
+  settings.endGroup();
+
+  ui->username->setPlainText(ultima_sess.last_user);
+  ui->nome->setText(ultima_sess.last_user);
+}
+
+void MainWindow::saveSettings()
+{
+    ultima_sess.last_user = ui->username->toPlainText();
+    QSettings settings;
+    settings.beginGroup("app");
+    settings.setValue("lastuser", ultima_sess.last_user);
+    settings.setValue("firstboot", ultima_sess.first_boot);
+    settings.endGroup();
+
+    settings.beginGroup("MainWindow");
+    settings.setValue("size", size());
+    settings.setValue("pos", pos());
+    settings.endGroup();
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+saveSettings();
+event->accept();
 }
 
 MainWindow::~MainWindow()
