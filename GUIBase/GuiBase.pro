@@ -15,11 +15,14 @@ QMAKE_CXXFLAGS += -std=c++11
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    circularprogress.cpp
+    circularprogress.cpp \
+    loginform.cpp
 
 HEADERS  += mainwindow.h \
-    circularprogress.h
+    circularprogress.h \
+    loginform.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    loginform.ui
 
 RESOURCES +=  settings_icon.qrc

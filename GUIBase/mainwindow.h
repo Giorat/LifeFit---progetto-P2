@@ -8,9 +8,10 @@
 #include <QFileDialog>
 #include <QSettings>
 #include <QCloseEvent>
+#include <QPlainTextEdit>
 
-#include "mainwindow.h"
 #include "ui_mainwindow.h"
+
 #include "circularprogress.h"
 namespace Ui {
 class MainWindow;

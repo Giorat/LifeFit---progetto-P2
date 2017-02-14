@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "loginform.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
@@ -10,8 +10,8 @@ int main(int argc, char *argv[])
     a.setApplicationName("lifefit");
 
 
-    MainWindow w;
-    w.setWindowTitle("QCalendarWidget Get Selected Date");
+    LoginForm w;
+    w.setWindowTitle("LIFE-FIT");
     w.show();
 
     QPalette pal = a.palette();

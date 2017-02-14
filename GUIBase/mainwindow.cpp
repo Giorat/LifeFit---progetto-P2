@@ -65,8 +65,7 @@ user_edit->setPlainText(ultima_sess.last_user);
    */
 loadSettings();
 
-QMessageBox::about(this, tr("About Application"),
-           tr("The <b>Application</b>:" ));
+//QMessageBox::about(this, tr("About Application"),           tr("The <b>Application</b>:" ));
 
 QAction *m_ExitAction = new QAction(tr("E&xit"), this);
 m_ExitAction->setShortcut(tr("Ctrl+Q"));
