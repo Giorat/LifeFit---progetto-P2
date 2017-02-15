@@ -1,0 +1,32 @@
+#include "register.h"
+#include "ui_register.h"
+
+Register::Register(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::Register)
+{
+    ui->setupUi(this);
+     connect( this->ui->man, SIGNAL( clicked() ), this, SLOT(SessoM() ));
+     connect( this->ui->woman, SIGNAL( clicked() ), this, SLOT(SessoD() ));
+     connect( this->ui->go_back, SIGNAL( clicked() ), this, SLOT(tornaLogin() ));
+}
+
+void Register::SessoM(){
+        QMessageBox::information(this, "SESSO", "UOMO");
+}
+
+void Register::SessoD(){
+        QMessageBox::information(this, "SESSO", "DONNA");
+}
+void Register::tornaLogin(){
+    loginF = new LoginForm();
+    loginF->setWindowTitle("LIFE-FIT LOGIN");
+    loginF->show();
+    this->close();
+}
+
+
+Register::~Register()
+{
+    delete ui;
+}

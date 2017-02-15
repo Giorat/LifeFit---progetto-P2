@@ -161,21 +161,6 @@ color: rgb(163, 180, 200);</string>
         </widget>
        </item>
        <item>
-        <widget class="QPlainTextEdit" name="username">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-          </font>
-         </property>
-        </widget>
-       </item>
-       <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>

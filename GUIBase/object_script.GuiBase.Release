@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\circularprogress.o
+./release\loginform.o
+./release\register.o
+./release\qrc_settings_icon.o
+./release\moc_mainwindow.o
+./release\moc_circularprogress.o
+./release\moc_loginform.o
+./release\moc_register.o
+);

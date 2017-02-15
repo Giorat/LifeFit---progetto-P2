@@ -1,5 +1,8 @@
 #include "loginform.h"
 #include <QApplication>
+#include <QStyle>
+#include <QDesktopWidget>
+
 
 int main(int argc, char *argv[])
 {
@@ -8,10 +11,20 @@ int main(int argc, char *argv[])
     a.setOrganizationName("giorat");
     a.setOrganizationDomain("www.riccardogiorato.com");
     a.setApplicationName("lifefit");
-
+    a.setQuitOnLastWindowClosed(false);
 
     LoginForm w;
-    w.setWindowTitle("LIFE-FIT");
+    w.setWindowTitle("LIFE-FIT LOGIN");
+
+    w.setGeometry(
+        QStyle::alignedRect(
+            Qt::LeftToRight,
+            Qt::AlignCenter,
+            w.size(),
+            a.desktop()->availableGeometry()
+        )
+    );
+
     w.show();
 
     QPalette pal = a.palette();

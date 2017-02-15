@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(QWidget *parent,QString user) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
@@ -14,8 +14,6 @@ MainWindow::MainWindow(QWidget *parent) :
         calendar->setStyleSheet("background-color: white;");
 
  QObject::connect(calendar,SIGNAL(clicked(const QDate)),this,SLOT(slotClicked(const QDate)));
-
-
 
 
  CircularProgress *w = ui->progressoMovim;
@@ -36,10 +34,6 @@ MainWindow::MainWindow(QWidget *parent) :
      progm->setDiscWidth(20);
      progm->setLoadingAngle(360);
      progm->show();
-
-user_edit = ui->username;
-
-user_edit->setPlainText(ultima_sess.last_user);
 
  //QStringList fileNames = QFileDialog::getOpenFileNames(this, tr("Apri il file"),"/",tr("XML Files (*.xml)"));
  //QMessageBox::information(NULL,"File!!",fileNames.first());
@@ -63,21 +57,24 @@ user_edit->setPlainText(ultima_sess.last_user);
 
     ui->centralWidget->addWidget(setchartView,0,0);
    */
-loadSettings();
 
 //QMessageBox::about(this, tr("About Application"),           tr("The <b>Application</b>:" ));
 
-QAction *m_ExitAction = new QAction(tr("E&xit"), this);
-m_ExitAction->setShortcut(tr("Ctrl+Q"));
-m_ExitAction->setStatusTip(tr("Exit the application"));
-connect(m_ExitAction, SIGNAL(triggered()), this, SLOT(close()));
+loadSettings();
 
+ultima_sess.last_user = user;
+ui->nome->setText(ultima_sess.last_user);
 }
 
 
 void MainWindow::loadSettings()
 {
+
   QSettings settings;
+QString config_dir = QFileInfo(settings.fileName()).filePath() + "/";
+  QMessageBox::about(this, tr("SETTINGS"),           tr(config_dir.toUtf8().constData() ));
+
+
   settings.beginGroup("app");
   ultima_sess.last_user = (settings.value("lastuser","").toString()).toUtf8().constData();
   ultima_sess.first_boot = settings.value("firstboot", 10).toInt();
@@ -87,14 +84,11 @@ void MainWindow::loadSettings()
   resize(settings.value("size", QSize(400, 400)).toSize());
   move(settings.value("pos", QPoint(0, 0)).toPoint());
   settings.endGroup();
-
-  ui->username->setPlainText(ultima_sess.last_user);
-  ui->nome->setText(ultima_sess.last_user);
 }
 
 void MainWindow::saveSettings()
 {
-    ultima_sess.last_user = ui->username->toPlainText();
+    ultima_sess.last_user = ui->nome->text();
     QSettings settings;
     settings.beginGroup("app");
     settings.setValue("lastuser", ultima_sess.last_user);

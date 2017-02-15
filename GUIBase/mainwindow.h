@@ -22,11 +22,10 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent,QString user);
     ~MainWindow();
 
 private:
-    QPlainTextEdit *user_edit;
     QCalendarWidget *calendar;
     struct SPreferences
     {

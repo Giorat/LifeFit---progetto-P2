@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
@@ -31,6 +32,7 @@ public:
     QLineEdit *username;
     QLineEdit *password;
     QPushButton *forgotpass;
+    QLabel *label;
     QPushButton *register_n;
     QPushButton *login;
 
@@ -46,6 +48,7 @@ public:
         LoginForm->setSizePolicy(sizePolicy);
         LoginForm->setMinimumSize(QSize(404, 254));
         LoginForm->setMaximumSize(QSize(404, 254));
+        LoginForm->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
         login_center = new QWidget(LoginForm);
         login_center->setObjectName(QStringLiteral("login_center"));
         sizePolicy.setHeightForWidth(login_center->sizePolicy().hasHeightForWidth());
@@ -57,7 +60,7 @@ public:
         login_center->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
         form = new QWidget(login_center);
         form->setObjectName(QStringLiteral("form"));
-        form->setGeometry(QRect(0, 0, 401, 161));
+        form->setGeometry(QRect(0, 40, 401, 161));
         verticalLayout = new QVBoxLayout(form);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         username = new QLineEdit(form);
@@ -68,7 +71,9 @@ public:
         sizePolicy1.setHeightForWidth(username->sizePolicy().hasHeightForWidth());
         username->setSizePolicy(sizePolicy1);
         username->setMinimumSize(QSize(239, 25));
-        username->setFont(font);
+        QFont font1;
+        font1.setPointSize(11);
+        username->setFont(font1);
         username->setFrame(false);
 
         verticalLayout->addWidget(username);
@@ -76,7 +81,7 @@ public:
         password = new QLineEdit(form);
         password->setObjectName(QStringLiteral("password"));
         password->setMinimumSize(QSize(239, 25));
-        password->setFont(font);
+        password->setFont(font1);
         password->setFrame(false);
 
         verticalLayout->addWidget(password);
@@ -85,13 +90,23 @@ public:
         forgotpass->setObjectName(QStringLiteral("forgotpass"));
         sizePolicy1.setHeightForWidth(forgotpass->sizePolicy().hasHeightForWidth());
         forgotpass->setSizePolicy(sizePolicy1);
-        forgotpass->setFont(font);
+        forgotpass->setFont(font1);
         forgotpass->setStyleSheet(QStringLiteral("color:rgb(140,140,140);"));
         forgotpass->setCheckable(false);
         forgotpass->setFlat(true);
 
         verticalLayout->addWidget(forgotpass);
 
+        label = new QLabel(login_center);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(10, 0, 111, 41));
+        QSizePolicy sizePolicy2(QSizePolicy::Maximum, QSizePolicy::Maximum);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
+        label->setSizePolicy(sizePolicy2);
+        label->setFont(font);
+        label->setStyleSheet(QStringLiteral("color:rgb(102,102,102);"));
         register_n = new QPushButton(login_center);
         register_n->setObjectName(QStringLiteral("register_n"));
         register_n->setGeometry(QRect(0, 210, 201, 51));
@@ -125,11 +140,12 @@ public:
     void retranslateUi(QMainWindow *LoginForm)
     {
         LoginForm->setWindowTitle(QApplication::translate("LoginForm", "MainWindow", 0));
-        username->setPlaceholderText(QApplication::translate("LoginForm", "username", 0));
-        password->setPlaceholderText(QApplication::translate("LoginForm", "password", 0));
-        forgotpass->setText(QApplication::translate("LoginForm", "Forgot your Password", 0));
-        register_n->setText(QApplication::translate("LoginForm", "REGISTER", 0));
-        login->setText(QApplication::translate("LoginForm", "LOGIN", 0));
+        username->setPlaceholderText(QApplication::translate("LoginForm", "USERNAME", 0));
+        password->setPlaceholderText(QApplication::translate("LoginForm", "PASSWORD", 0));
+        forgotpass->setText(QApplication::translate("LoginForm", "FORGOT YOUR PASSWORD", 0));
+        label->setText(QApplication::translate("LoginForm", "LOGIN", 0));
+        register_n->setText(QApplication::translate("LoginForm", "  REGISTER", 0));
+        login->setText(QApplication::translate("LoginForm", "LOGIN   ", 0));
     } // retranslateUi
 
 };

@@ -6,8 +6,10 @@
 #include <QLineEdit>
 #include <QtGui>
 
-#include "loginform.h"
+#include "register.h"
 #include "ui_loginform.h"
+
+class Register;
 
 namespace Ui {
 class LoginForm;
@@ -28,12 +30,16 @@ public:
 
 public slots:
     void loginclick();
+    void loginclick2();
+    void psetFocus();
+    void registerTo();
 
 private:
     QString user;
     QString pass;
     Ui::LoginForm *ui;
     MainWindow *mainapp;
+    Register *registerapp;
 };
 
 #endif // LOGINFORM_H
