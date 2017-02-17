@@ -1,16 +1,21 @@
 #include "mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent,QString user) :
+MainWindow::MainWindow(QWidget *parent,QString user,bool firstboot) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    //solo nel caso si venga reindirizzati dalla registrazione per la prima volta si mostra
+    //una serie di azioni per introdurre l'utente all'applicazione
+    if(firstboot)
+        QMessageBox::about(this, tr("HELLO"),tr(user.toUtf8().constData()));
+
     ui->setupUi(this);
     QMainWindow::showMaximized();
         calendar = ui->calendarWidget;
 
         //calendar->setFirstDayOfWeek();
         calendar->setGridVisible(true);
-        calendar->setDateRange(QDate(2016,1,1),QDate(2017,2,1));
+        calendar->setDateRange(QDate(2017,1,1),QDate::currentDate());
         calendar->setStyleSheet("background-color: white;");
 
  QObject::connect(calendar,SIGNAL(clicked(const QDate)),this,SLOT(slotClicked(const QDate)));

@@ -13,6 +13,7 @@ class utente
 friend class inputxmlfit;
 private:
     unsigned int codiceUtente;
+    std::string username;
     std::string nome;
     std::string cognome;
     QDate dataNascita;
@@ -51,6 +52,8 @@ public:
     unsigned int getCodiceUtente()const;
     std::string getNome()const;
     std::string getCognome()const;
+    std::string getUsername()const;
+    QDate getDataNascita()const;
     int getAge()const;
 
 };

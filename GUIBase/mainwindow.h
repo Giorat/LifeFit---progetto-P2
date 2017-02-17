@@ -22,7 +22,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent,QString user);
+    explicit MainWindow(QWidget *parent,QString user,bool firstboot=false);
     ~MainWindow();
 
 private:

@@ -1,12 +1,25 @@
 #ifndef INPUTXMLFIT_H
 #define INPUTXMLFIT_H
 
+#include <QFile>
+#include <QCryptographicHash>
 #include <string>
 #include "utente.h"
 
 class inputxmlfit{
+private:
+    std::string DirectoryToSave;
+    std::string xmlUsers;
+    QFile usersXMLFile;
+
+    bool utenteGiaPresente(const utente &user);
 
 public:
+
+   /**
+    *@param string con cartella in cui salvare dati utenti e xml dati attivita utente
+    */
+   inputxmlfit(std::string);
 
    /**
     * @brief Inserimento in input da xml dei dati di un utente nel suo contenitore usato
@@ -23,19 +36,25 @@ public:
      */
     bool createUser(const utente&);
 
+
+    /**
+     * @brief ritorna il numero del codice dell'ultimo utente creato
+     * @return il numero di codice dell'utente creato per ultimo
+     */
+    int LastCodUtente();
+
    /**
     * @brief Salva dati utente sia le sue attività
-    * @param string nome della directory in cui salvare dati utenti
     * @param utente del quale salvare le informazioni
     */
-   void saveUser(std::string,const utente&);
+   void saveUser(const utente&);
 
    /**
     * @brief Salva i soli dati di movimento e di sonno dell'utente
     * @param string nome file in cui salvare movimenti utente
     * @param utente del quale salvare i dati di movimento
     */
-   void outputXMLdatiMovimSleep(std::string,const utente&);
+   void outputXMLdatiMovimSleep(const utente&);
 };
 
 #endif // INPUTXMLFIT_H

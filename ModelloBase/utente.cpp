@@ -35,13 +35,7 @@ unsigned int utente::progressi_mese(QDate d){
             std::cout << "fit[" << dat.toString("yyyy-MM-dd").toUtf8().constData()  << "] = " << g << '\n\n';
             i++;
        }
-
-
-
     }
-
-
-
     return tot_passi;
 }
 
@@ -56,6 +50,13 @@ std::string utente::getNome()const{
 std::string utente::getCognome()const{
     return cognome;
 }
+std::string utente::getUsername()const{
+    return nome+cognome;
+}
+QDate utente::getDataNascita()const{
+    return dataNascita;
+}
+
 
 int utente::getAge()const{
 QDate currentDate= QDate::currentDate();
@@ -69,9 +70,6 @@ currentAge --;
 }
 return currentAge;
 }
-
-
-
 
 
 std::ostream& operator<<(std::ostream &output, const utente &s)

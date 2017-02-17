@@ -23,11 +23,12 @@ public:
 private:
     LoginForm* loginF;
     Ui::Register *ui;
+    MainWindow *mainw;
 private slots :
     void SessoM();
     void SessoD();
     void tornaLogin();
-
+    void vaiApp();
 };
 
 #endif // REGISTER_H

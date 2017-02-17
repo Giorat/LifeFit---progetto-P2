@@ -12,6 +12,178 @@
 
 #include "inputxmlfit.h"
 
+bool inputxmlfit::utenteGiaPresente(const utente &user){
+
+     usersXMLFile.open(QFile::ReadOnly | QFile::Text);
+
+     bool nom,cognom=nom=false;
+
+    QXmlStreamReader reader(&usersXMLFile);
+        if (reader.readNextStartElement()) {
+            if (reader.name() == "utenti")
+                while(reader.readNextStartElement())
+                    if(reader.name() == "utente" && !(nom && cognom)){
+
+                        cognom=nom=false;
+                        while(reader.readNextStartElement()){
+                            QString qs = reader.readElementText();
+                            std::string s = qs.toUtf8().constData();
+                            if(reader.name() == "nome" && user.getNome() == s)
+                                nom=true;
+                            if(reader.name() == "cognome" && user.getCognome() == s)
+                                cognom=true;
+                        }//dati utente
+                    }//utente
+            }//documento utenti
+  usersXMLFile.close();
+  return (nom && cognom);
+}
+
+
+  inputxmlfit::inputxmlfit(std::string dir):DirectoryToSave(dir), xmlUsers(DirectoryToSave+"users.xml")
+{
+
+      usersXMLFile.setFileName(QString::fromStdString(xmlUsers));
+
+
+         if(!usersXMLFile.open(QFile::ReadOnly |
+                       QFile::Text))
+         {
+
+            usersXMLFile.close();
+                if(!usersXMLFile.open(QFile::WriteOnly |
+                              QFile::Text))
+                {
+                    qDebug() << " Could not open file for writing";
+                    return;
+                }
+
+
+                QXmlStreamWriter writer;
+                writer.setDevice(&usersXMLFile);
+                writer.setAutoFormatting(true);
+                writer.writeStartDocument();
+                    writer.writeStartElement("utenti");
+                        writer.writeStartElement("utente");
+                        writer.writeTextElement("codiceutente", "0" );
+                        writer.writeTextElement("nome", "root" );
+                        writer.writeTextElement("cognome", "admin");
+                        writer.writeTextElement("datanascita", "1996-12-20");
+                QString pass = QString(QCryptographicHash::hash(("root"),QCryptographicHash::Md5).toHex());
+                        writer.writeTextElement("password", pass);
+                        writer.writeEndElement();
+
+                    writer.writeEndElement();
+
+                writer.writeEndDocument();
+
+                usersXMLFile.close();
+
+         }
+
+
+}
+
+
+  bool inputxmlfit::createUser(const utente &user){
+
+      if(!utenteGiaPresente(user)){
+        std::cout << "creo l'utente!";
+     int nNuovoUtente = this->LastCodUtente();
+
+      usersXMLFile.open(QFile::ReadOnly | QFile::Text);
+
+      QString outS;
+      QXmlStreamWriter writer(&outS);
+      writer.setAutoFormatting(true);
+
+      QXmlStreamReader reader(&usersXMLFile);
+      while(!reader.atEnd())
+      {
+        if(reader.isStartDocument())
+          writer.writeStartDocument();
+
+        if(reader.isStartElement())
+        {
+          writer.writeStartElement(reader.name().toString());
+
+          // New elements are appended here
+          if(reader.name() == "utenti")
+          {
+            writer.writeStartElement("utente");
+
+            writer.writeTextElement("codiceutente", QString::number(nNuovoUtente+1) );
+            writer.writeTextElement("nome", QString::fromStdString(user.getNome()) );
+            writer.writeTextElement("cognome", QString::fromStdString(user.getCognome()) );
+            writer.writeTextElement("datanascita", user.getDataNascita().toString("yyyy-MM-dd").toUtf8().constData());
+            QString pass = QString(QCryptographicHash::hash(("password"),QCryptographicHash::Md5).toHex());
+            writer.writeTextElement("password", pass);
+
+            writer.writeEndElement();
+          }
+        }
+
+        if(reader.isCharacters())
+          writer.writeCharacters(reader.text().toString());
+
+        if(reader.isEndElement())
+          writer.writeEndElement();
+
+        if(reader.isEndDocument())
+          writer.writeEndElement();
+
+        reader.readNext();
+      }
+
+    usersXMLFile.close();
+
+
+    usersXMLFile.open(QFile::WriteOnly |QFile::Text);
+
+
+    QTextStream out(&usersXMLFile);
+    out << outS;
+    usersXMLFile.flush();
+    usersXMLFile.close();
+    }//fine if utente non ancora creato
+  }
+  
+  
+  
+  int inputxmlfit::LastCodUtente(){
+    int codUt = -1;
+    usersXMLFile.close();
+    usersXMLFile.open(QFile::ReadOnly | QFile::Text);
+    QXmlStreamReader reader(&usersXMLFile);
+
+    if (reader.readNextStartElement()) {
+        if (reader.name() == "utenti"){
+            reader.readNextStartElement();
+                if(reader.name() == "utente")
+                    while(reader.readNextStartElement()){
+
+                            QString qs = reader.readElementText();
+                            std::string s = qs.toUtf8().constData();
+                            if(reader.name() == "codiceutente"){
+                            int n = std::stoi(s);
+                            if(n > codUt)
+                               codUt = n;
+                            }
+                    }
+                }
+
+    }
+    usersXMLFile.close();
+    return codUt;
+  }
+
+
+
+
+  void inputxmlfit::saveUser(const utente &user){
+    usersXMLFile.open(QFile::ReadOnly | QFile::Text);
+  }
+
 
   void inputxmlfit::inputXMLdatiMovimSleep(std::string fileInputXml,utente& user){
 
@@ -96,7 +268,9 @@ file.close();
 
 }
 
- void inputxmlfit::outputXMLdatiMovimSleep(std::string fileOutputXml,const utente& user){
+ void inputxmlfit::outputXMLdatiMovimSleep(const utente& user){
+     std::string fileOutputXml = DirectoryToSave+std::to_string(user.getCodiceUtente())+"att.xml";
+
      QFile file;
      file.setFileName(QString::fromStdString(fileOutputXml));
      if(!file.open(QFile::WriteOnly | QFile::Text)){
@@ -106,7 +280,7 @@ file.close();
 
      QXmlStreamWriter writer;
      writer.setDevice(&file);
-
+     writer.setAutoFormatting(true);
      writer.writeStartDocument();
 
      writer.writeStartElement("vita");
