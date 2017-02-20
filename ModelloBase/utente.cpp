@@ -1,7 +1,7 @@
 #include "utente.h"
 
 
-utente::utente(const std::string &n,const std::string &cn, QDate dN,bool s):codiceUtente(0),nome(n),cognome(cn),dataNascita(dN),sesso(s){}
+utente::utente(const std::string &n,const std::string &cn, QDate dN,bool s,QString pass):codiceUtente(0),nome(n),cognome(cn),dataNascita(dN),sesso(s),password(pass){}
 
 
 
@@ -55,6 +55,9 @@ std::string utente::getUsername()const{
 }
 QDate utente::getDataNascita()const{
     return dataNascita;
+}
+QString utente::getPassword()const{
+    return password;
 }
 
 

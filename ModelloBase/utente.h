@@ -17,6 +17,7 @@ private:
     std::string nome;
     std::string cognome;
     QDate dataNascita;
+    QString password;
     bool sesso;
     std::map<QDate,giorno> fit;
     unsigned int obb_pass_giornalieri = 10000;
@@ -28,7 +29,7 @@ public:
      * @param QDate data di nascita
      * @param bool sesso della persona ==1 se uomo ==0 se donna
  */ 
-    utente(const std::string &n,const std::string &cn, QDate dN,bool s);
+    utente(const std::string &n,const std::string &cn, QDate dN,bool s,QString pass);
 
     void insert_gg(QDate,giorno);
 
@@ -55,6 +56,7 @@ public:
     std::string getUsername()const;
     QDate getDataNascita()const;
     int getAge()const;
+    QString getPassword()const;
 
 };
 

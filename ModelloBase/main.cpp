@@ -8,19 +8,18 @@
 int main()
 {
     //Creazione di un utente
-    std::string n = "kaltrina", cn = "collaku";
-    utente user (n,cn,QDate(1996,12,20),true);
+    std::string n = "root", cn = "admin";
+    utente user (n,cn,QDate(1996,8,24),true,"password");
 
     //Lettura in input da file xml dati giornate passate utente
     std::string dir="C:\\Users\\giora\\Documents\\GitHub\\progettoP2\\";
     inputxmlfit s(dir);
 
-    std::cout << s.LastCodUtente();
 
-    s.createUser(user);
+    std::string nomeFile = "C:\\Users\\giora\\Documents\\GitHub\\progettoP2\\DatiModelloBase.xml";
+    s.inputXMLdatiMovimSleep(nomeFile,user);
+    s.saveUserFit(user);
 
-//    std::string nomeFile = "C:\\Users\\giora\\Documents\\GitHub\\progettoP2\\DatiModelloBase.xml";
-//    s.inputXMLdatiMovimSleep(nomeFile,user);
 
 //    std::cout << user;
 
@@ -34,7 +33,6 @@ int main()
 //    int npassi = user.progressi_mese(data);
 //    std::cout << "a Dicembre hai fatto: " << npassi << " su un totale previsto di " << (data.daysInMonth() * user.obbiettivo_passi());
 
-//    s.outputXMLdatiMovimSleep(user);
 
     return 0;
 }

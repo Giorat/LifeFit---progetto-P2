@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version='1.0'?>
 <utenti>
     <utente>
         <codiceutente>2</codiceutente>
@@ -18,7 +18,7 @@
         <codiceutente>0</codiceutente>
         <nome>root</nome>
         <cognome>admin</cognome>
-        <datanascita>1996-12-20</datanascita>
-        <password>63a9f0ea7bb98050796b649e85481845</password>
+        <datanascita>1996-08-24</datanascita>
+        <password>5f4dcc3b5aa765d61d8327deb882cf99</password>
     </utente>
 </utenti>
