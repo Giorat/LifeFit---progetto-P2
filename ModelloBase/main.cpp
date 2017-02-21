@@ -1,38 +1,50 @@
 
 #include <iostream>
 #include "giorno.h"
-#include "utente.h"
+#include "admin.h"
 #include "inputxmlfit.h"
 
 
 int main()
 {
     //Creazione di un utente
-    std::string n = "root", cn = "admin";
-    utente user (n,cn,QDate(1996,8,24),true,"password");
 
     //Lettura in input da file xml dati giornate passate utente
     std::string dir="C:\\Users\\giora\\Documents\\GitHub\\progettoP2\\";
     inputxmlfit s(dir);
+    utente * user = s.loadUser("rootadmin","password");
+    s.loadUserFit(user);
+    if(user){
 
 
-    std::string nomeFile = "C:\\Users\\giora\\Documents\\GitHub\\progettoP2\\DatiModelloBase.xml";
-    s.inputXMLdatiMovimSleep(nomeFile,user);
+        std::cout << "giorni inseriti:" << user->getGiorniFit() << std::endl;
+
+    if(dynamic_cast<admin*>(user))
+        std::cout << "bungiorno signor admin";
+    else
+        std::cout << "user:" << user->getUsername() << std::endl;
+
+    if(s.saveUser(user))
+       std::cout << "salvato utente"<< std::endl;
+    else
+       std::cout << "non salvato utente"<< std::endl;
+
+    QDate dataProva = QDate(2017,1,1);
+    giorno * g = user->giornoData(dataProva);
+    if(g)
+    std::cout << "Per un totale di " << g->movim().totale_passi() <<" sui " << user->obbiettivo_passi() <<" | "<< user->perc_giorno(dataProva)*100 << "% su obbiettivo utente" << std::endl;
+
+    user->delete_gg(dataProva);
+     g = user->giornoData(dataProva);
+    if(!g)
+        std::cout <<"giorno non trovato" << std::endl;
+
+
+
     s.saveUserFit(user);
 
-
-//    std::cout << user;
-
-//    //Prova delle date dell'utente
-//    QDate dataProva = QDate(2017,1,1);
-//    giorno g = user.giornoData(dataProva);
-//    std::cout << g;
-//    std::cout << "Per un totale di " << g.movim().totale_passi() <<" sui " << user.obbiettivo_passi() <<" | "<< user.perc_giorno(dataProva)*100 << "% su obbiettivo utente" << std::endl;
-
-//    QDate data = QDate(2016,12,27);
-//    int npassi = user.progressi_mese(data);
-//    std::cout << "a Dicembre hai fatto: " << npassi << " su un totale previsto di " << (data.daysInMonth() * user.obbiettivo_passi());
-
+    }else
+    std::cout <<"utente non trovato" << std::endl;
 
     return 0;
 }

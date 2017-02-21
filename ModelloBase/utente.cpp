@@ -1,23 +1,37 @@
 #include "utente.h"
 
 
-utente::utente(const std::string &n,const std::string &cn, QDate dN,bool s,QString pass):codiceUtente(0),nome(n),cognome(cn),dataNascita(dN),sesso(s),password(pass){}
-
+utente::utente(const int codU,const std::string &n,const std::string &cn, QDate dN,bool s,QString pass):codiceUtente(codU),nome(n),cognome(cn),dataNascita(dN),sesso(s),password(pass){}
 
 
 void utente::insert_gg(QDate d,giorno gg){
     if(d == gg.dataOd())
     fit[d]= gg;
     // else eccezzione QDebug
+}
+
+void utente::modify_gg(QDate d,giorno gg){
+    if(d == gg.dataOd())
+    fit[d]= gg;
+}
+
+void utente::delete_gg(QDate d){
+    auto it = fit.find (d);
+    if(it !=fit.end())
+        fit.erase (it);
 
 }
 
 float utente::perc_giorno(QDate d){
-    return (float)giornoData(d).movim().totale_passi()/(float)this->obbiettivo_passi();
+    return (float)giornoData(d)->movim().totale_passi()/(float)this->obbiettivo_passi();
 }
 
-giorno utente::giornoData(QDate d){
-    return giorno(fit[d]);
+giorno * utente::giornoData(QDate d){
+    auto it = fit.find(d);
+    if(it !=fit.end())
+        return &(fit[d]);
+    else
+        return nullptr;
 }
 
 
@@ -73,6 +87,22 @@ currentAge --;
 }
 return currentAge;
 }
+
+bool utente::getSesso()const{
+    return sesso;
+}
+
+int utente::getGiorniFit()const{
+    return fit.size();
+}
+
+
+
+void utente::setNome(const std::string n){nome=n;}
+void utente::setCognome(const std::string cgn){cognome=cgn;}
+void utente::setDataNascita(const QDate dn){dataNascita=dn;}
+void utente::setSesso(const bool s){sesso=s;}
+void utente::setPassword(const QString p){password=p;}
 
 
 std::ostream& operator<<(std::ostream &output, const utente &s)

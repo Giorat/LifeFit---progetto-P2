@@ -22,11 +22,12 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent,QString user,bool firstboot=false);
+    explicit MainWindow(QString user,bool firstboot=false,QWidget *parent = 0);
     ~MainWindow();
 
 private:
     QCalendarWidget *calendar;
+    bool inSettings;
     struct SPreferences
     {
         QString last_user;
@@ -38,7 +39,7 @@ private:
     void closeEvent(QCloseEvent* event);
     SPreferences ultima_sess;
 private slots:
-
+  void vaiImpostazioni();
   void slotClicked(const QDate& date)
   {
     QMessageBox::information(NULL,"New Date Selected!",date.toString());

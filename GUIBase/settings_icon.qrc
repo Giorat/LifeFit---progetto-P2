@@ -2,5 +2,6 @@
     <qresource prefix="/new/settings">
         <file>resources/settings.png</file>
         <file>resources/avatar-df.png</file>
+        <file>resources/life_icon.ico</file>
     </qresource>
 </RCC>

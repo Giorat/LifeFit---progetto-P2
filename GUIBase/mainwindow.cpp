@@ -1,15 +1,16 @@
 #include "mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent,QString user,bool firstboot) :
+MainWindow::MainWindow(QString user,bool firstboot,QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),inSettings(false)
 {
     //solo nel caso si venga reindirizzati dalla registrazione per la prima volta si mostra
     //una serie di azioni per introdurre l'utente all'applicazione
-    if(firstboot)
-        QMessageBox::about(this, tr("HELLO"),tr(user.toUtf8().constData()));
+    //if(firstboot)
+    //    QMessageBox::about(this, tr("HELLO"),tr(user.toUtf8().constData()));
 
     ui->setupUi(this);
+    this->ui->right_settings->hide();
     QMainWindow::showMaximized();
         calendar = ui->calendarWidget;
 
@@ -17,9 +18,6 @@ MainWindow::MainWindow(QWidget *parent,QString user,bool firstboot) :
         calendar->setGridVisible(true);
         calendar->setDateRange(QDate(2017,1,1),QDate::currentDate());
         calendar->setStyleSheet("background-color: white;");
-
- QObject::connect(calendar,SIGNAL(clicked(const QDate)),this,SLOT(slotClicked(const QDate)));
-
 
  CircularProgress *w = ui->progressoMovim;
      w->setColors("#00cc66","#00cc66");
@@ -69,6 +67,22 @@ loadSettings();
 
 ultima_sess.last_user = user;
 ui->nome->setText(ultima_sess.last_user);
+
+QObject::connect(calendar,SIGNAL(clicked(const QDate)),this,SLOT(slotClicked(const QDate)));
+QObject::connect(this->ui->settings,SIGNAL(clicked()),this,SLOT(vaiImpostazioni()));
+}
+
+
+void MainWindow::vaiImpostazioni(){
+if(inSettings){
+    this->ui->right_settings->hide();
+    this->ui->right_container->show();
+}
+else{
+    this->ui->right_container->hide();
+    this->ui->right_settings->show();
+}
+inSettings=!inSettings;
 }
 
 
@@ -76,8 +90,8 @@ void MainWindow::loadSettings()
 {
 
   QSettings settings;
-QString config_dir = QFileInfo(settings.fileName()).filePath() + "/";
-  QMessageBox::about(this, tr("SETTINGS"),           tr(config_dir.toUtf8().constData() ));
+  QString config_dir = QFileInfo(settings.fileName()).filePath() + "/";
+  //QMessageBox::about(this, tr("SETTINGS"),           tr(config_dir.toUtf8().constData() ));
 
 
   settings.beginGroup("app");

@@ -19,7 +19,7 @@ class LoginForm : public QMainWindow
 {
     Q_OBJECT
 public:
-    LoginForm(QWidget *parent = 0);
+    explicit LoginForm(QWidget *parent = 0);
 
     QPushButton *loginbtn;
     QPushButton *registerbtn;

@@ -48,6 +48,9 @@ public:
         LoginForm->setSizePolicy(sizePolicy);
         LoginForm->setMinimumSize(QSize(404, 254));
         LoginForm->setMaximumSize(QSize(404, 254));
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/new/settings/resources/life_icon.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        LoginForm->setWindowIcon(icon);
         LoginForm->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
         login_center = new QWidget(LoginForm);
         login_center->setObjectName(QStringLiteral("login_center"));

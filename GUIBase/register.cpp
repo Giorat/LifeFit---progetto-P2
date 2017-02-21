@@ -26,7 +26,7 @@ void Register::tornaLogin(){
     this->close();
 }
 void Register::vaiApp(){
-    mainw = new MainWindow(this,this->ui->nome->text(),true);
+    mainw = new MainWindow(this->ui->nome->text(),true);
     mainw->setWindowTitle("LIFE-FIT APP");
     mainw->show();
     this->close();

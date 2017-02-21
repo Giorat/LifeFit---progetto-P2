@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vita>
+  <giorno>
+    <dateTime>2015-04-20</dateTime>
+    <activities-calories>1811</activities-calories>
+    <activities-steps>1556</activities-steps>
+    <Activities-distance>1</Activities-distance>
+    <activities-floors>0</activities-floors>
+    <sleep-startTime>00:00</sleep-startTime>
+    <sleep-timeInBed>0</sleep-timeInBed>
+    <sleep-minutesAsleep>0</sleep-minutesAsleep>
+    <sleep-efficiency>0</sleep-efficiency>
+  </giorno>
+</vita>

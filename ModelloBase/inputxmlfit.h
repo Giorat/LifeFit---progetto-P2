@@ -18,7 +18,7 @@ private:
      * @param user utente del quale bisogna controllare presenza di un omonimo
      * @return -1 se l'utente non è presente altrimenti ritorna il codice utente dell'utente gia presente
      */
-    int utenteGiaPresente(const utente &user);
+    int utenteGiaPresente(const utente *);
 
 public:
 
@@ -28,11 +28,20 @@ public:
    inputxmlfit(std::string);
 
    /**
+    * @brief loadUser
+    * @param u username della persona da cercare
+    * @param p password in chiaro dell'utente
+    * @return user
+    */
+   utente* loadUser(const std::string u,const std::string p);
+
+
+   /**
     * @brief Inserimento in input da xml dei dati di un utente nel suo contenitore usato
     * @param string nome del file compresa la directory tutto unito
     * @param utente nel quale inserire le informazioni prese dal relativo file xml scelto
     */
-   void inputXMLdatiMovimSleep(std::string,utente&);
+   void inputXMLdatiMovimSleep(std::string,utente*);
 
    /**
      * @brief crea l'utente con relative informazioni pure sul file
@@ -40,7 +49,7 @@ public:
      * @param utente che deve essere aggiunto al sistemas
      * @return 1 se creazione positiva 0 se non possibile creare utente
      */
-    bool createUser(const utente&);
+    bool createUser(const utente*);
 
     /**
      * @brief ritorna il numero del codice dell'ultimo utente creato
@@ -53,20 +62,27 @@ public:
     * @param utente del quale salvare le informazioni
     * @return 1 se utente salvato correttamente 0 se l'utente è doppione omonimo non potendo essere salvato
     */
-   bool saveUser(const utente&);
+   bool saveUser(const utente*);
 
    /**
     * @brief deleteUser
     * @param utente da eliminare dal file xml utenti sia il suo file fit
     */
-   void deleteUser(const utente&);
+   void deleteUser(const utente*);
+
+
+   /**
+    * @brief Carica i soli dati di movimento e di sonno dell'utente
+    * @param utente del quale caricare i dati di movimento e di sonno
+    */
+   void loadUserFit(utente*);
 
    /**
     * @brief Salva i soli dati di movimento e di sonno dell'utente
     * @param string nome file in cui salvare movimenti utente
-    * @param utente del quale salvare i dati di movimento
+    * @param utente del quale salvare i dati di movimento e di sonno
     */
-   void saveUserFit(const utente&);
+   void saveUserFit(const utente*);
 
 };
 

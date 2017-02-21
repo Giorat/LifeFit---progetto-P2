@@ -42,8 +42,8 @@ void LoginForm::loginclick()
     passtext->blockSignals(true);
     if (usernametext->text() == "root" && passtext->text() == "root")
     {
-        mainapp = new MainWindow(this,usernametext->text());
-        mainapp->setWindowTitle("LIFE-FIT APPLICATION");
+        mainapp = new MainWindow(usernametext->text());
+        mainapp->setWindowTitle("LIFE-FIT APP");
         mainapp->show();
         this->close();
     }
@@ -75,8 +75,8 @@ void LoginForm::loginclick2()
     passtext->blockSignals(true);
     if (usernametext->text() == "root" && passtext->text() == "root")
     {
-        mainapp = new MainWindow(this,usernametext->text());
-        mainapp->setWindowTitle("LIFE-FIT APPLICATION");
+        mainapp = new MainWindow(usernametext->text());
+        mainapp->setWindowTitle("LIFE-FIT APP");
         mainapp->show();
         this->close();
     }

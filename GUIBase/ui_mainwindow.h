@@ -14,12 +14,11 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCalendarWidget>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include "circularprogress.h"
@@ -30,120 +29,130 @@ class Ui_MainWindow
 {
 public:
     QWidget *horizontalLayoutWidget;
-    QHBoxLayout *horizontalLayout;
-    QWidget *widget;
-    QVBoxLayout *verticalLayout;
+    QWidget *left_menu;
     QPushButton *settings;
     QLabel *avatar;
     QLabel *nome;
     QLabel *eta;
-    QSpacerItem *verticalSpacer;
-    QWidget *centralWidget;
+    QLabel *label_4;
+    QLabel *label_5;
+    QWidget *right_container;
     QCalendarWidget *calendarWidget;
     CircularProgress *progressoMovim;
     CircularProgress *progressoSonno;
     CircularProgress *progressoMese;
-    QPushButton *mesePrec;
-    QPushButton *meseSucc;
+    QWidget *right_settings;
+    QWidget *verticalLayoutWidget;
+    QVBoxLayout *verticalLayout_2;
+    QLabel *label_3;
+    QLineEdit *lineEdit_3;
+    QLabel *label;
+    QLineEdit *lineEdit_2;
+    QLabel *label_2;
+    QLineEdit *lineEdit;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(850, 750);
+        MainWindow->resize(860, 750);
         MainWindow->setMinimumSize(QSize(800, 750));
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/new/settings/resources/life_icon.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        MainWindow->setWindowIcon(icon);
         MainWindow->setAutoFillBackground(false);
         MainWindow->setStyleSheet(QStringLiteral("background-color: rgb(236, 242, 246);"));
         horizontalLayoutWidget = new QWidget(MainWindow);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Preferred);
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(horizontalLayoutWidget->sizePolicy().hasHeightForWidth());
         horizontalLayoutWidget->setSizePolicy(sizePolicy);
-        horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(6, -1, 181, -1);
-        widget = new QWidget(horizontalLayoutWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setMaximumSize(QSize(400, 16777215));
-        widget->setStyleSheet(QLatin1String("background-color: rgb(53, 64, 82);\n"
-"color: rgb(163, 180, 200);"));
-        verticalLayout = new QVBoxLayout(widget);
-        verticalLayout->setSpacing(6);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        settings = new QPushButton(widget);
-        settings->setObjectName(QStringLiteral("settings"));
-        QSizePolicy sizePolicy1(QSizePolicy::Maximum, QSizePolicy::Maximum);
+        left_menu = new QWidget(horizontalLayoutWidget);
+        left_menu->setObjectName(QStringLiteral("left_menu"));
+        left_menu->setGeometry(QRect(0, 0, 260, 741));
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Maximum);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(settings->sizePolicy().hasHeightForWidth());
-        settings->setSizePolicy(sizePolicy1);
+        sizePolicy1.setHeightForWidth(left_menu->sizePolicy().hasHeightForWidth());
+        left_menu->setSizePolicy(sizePolicy1);
+        left_menu->setMaximumSize(QSize(400, 16777215));
+        left_menu->setStyleSheet(QLatin1String("background-color: rgb(53, 64, 82);\n"
+"color: rgb(163, 180, 200);"));
+        settings = new QPushButton(left_menu);
+        settings->setObjectName(QStringLiteral("settings"));
+        settings->setGeometry(QRect(6, 6, 40, 39));
+        QSizePolicy sizePolicy2(QSizePolicy::Maximum, QSizePolicy::Maximum);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(settings->sizePolicy().hasHeightForWidth());
+        settings->setSizePolicy(sizePolicy2);
         settings->setMinimumSize(QSize(0, 30));
         settings->setMaximumSize(QSize(40, 39));
         settings->setStyleSheet(QStringLiteral(""));
-        QIcon icon;
-        icon.addFile(QStringLiteral(":/new/settings/resources/settings.png"), QSize(), QIcon::Normal, QIcon::Off);
-        settings->setIcon(icon);
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/new/settings/resources/settings.png"), QSize(), QIcon::Normal, QIcon::Off);
+        settings->setIcon(icon1);
         settings->setIconSize(QSize(41, 39));
         settings->setFlat(true);
-
-        verticalLayout->addWidget(settings);
-
-        avatar = new QLabel(widget);
+        avatar = new QLabel(left_menu);
         avatar->setObjectName(QStringLiteral("avatar"));
+        avatar->setGeometry(QRect(68, 50, 125, 125));
         avatar->setMinimumSize(QSize(125, 125));
         avatar->setMaximumSize(QSize(125, 125));
         avatar->setSizeIncrement(QSize(0, 0));
         avatar->setStyleSheet(QStringLiteral("background-image: url(:/new/settings/resources/avatar-df.png)"));
-
-        verticalLayout->addWidget(avatar);
-
-        nome = new QLabel(widget);
+        nome = new QLabel(left_menu);
         nome->setObjectName(QStringLiteral("nome"));
+        nome->setGeometry(QRect(10, 180, 241, 35));
+        sizePolicy2.setHeightForWidth(nome->sizePolicy().hasHeightForWidth());
+        nome->setSizePolicy(sizePolicy2);
+        nome->setMinimumSize(QSize(241, 35));
         nome->setMaximumSize(QSize(400, 16777215));
         QFont font;
-        font.setPointSize(20);
+        font.setPointSize(16);
         nome->setFont(font);
         nome->setTextFormat(Qt::AutoText);
+        nome->setAlignment(Qt::AlignCenter);
         nome->setMargin(5);
         nome->setIndent(-1);
-
-        verticalLayout->addWidget(nome);
-
-        eta = new QLabel(widget);
+        eta = new QLabel(left_menu);
         eta->setObjectName(QStringLiteral("eta"));
+        eta->setGeometry(QRect(10, 230, 41, 20));
+        eta->setFont(font);
+        eta->setAlignment(Qt::AlignCenter);
+        label_4 = new QLabel(left_menu);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(10, 260, 41, 20));
         QFont font1;
-        font1.setPointSize(16);
-        eta->setFont(font1);
-
-        verticalLayout->addWidget(eta);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout->addItem(verticalSpacer);
-
-
-        horizontalLayout->addWidget(widget);
-
-        centralWidget = new QWidget(horizontalLayoutWidget);
-        centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        centralWidget->setMinimumSize(QSize(600, 0));
+        font1.setPointSize(10);
+        label_4->setFont(font1);
+        label_4->setAlignment(Qt::AlignCenter);
+        label_5 = new QLabel(left_menu);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(20, 310, 151, 31));
+        label_5->setFont(font1);
+        right_container = new QWidget(horizontalLayoutWidget);
+        right_container->setObjectName(QStringLiteral("right_container"));
+        right_container->setGeometry(QRect(260, 0, 600, 738));
+        right_container->setMinimumSize(QSize(600, 0));
         QFont font2;
         font2.setFamily(QStringLiteral("MS Sans Serif"));
         font2.setPointSize(10);
         font2.setBold(true);
         font2.setWeight(75);
-        centralWidget->setFont(font2);
-        centralWidget->setStyleSheet(QStringLiteral(""));
-        calendarWidget = new QCalendarWidget(centralWidget);
+        right_container->setFont(font2);
+        right_container->setAutoFillBackground(false);
+        right_container->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
+        calendarWidget = new QCalendarWidget(right_container);
         calendarWidget->setObjectName(QStringLiteral("calendarWidget"));
-        calendarWidget->setGeometry(QRect(0, 0, 600, 400));
+        calendarWidget->setGeometry(QRect(0, 0, 600, 451));
         calendarWidget->setMinimumSize(QSize(600, 400));
         calendarWidget->setMaximumSize(QSize(640, 16777215));
+        QFont font3;
+        font3.setPointSize(9);
+        calendarWidget->setFont(font3);
         calendarWidget->setStyleSheet(QLatin1String("color: rgb(67, 72, 88);\n"
 "background-color: rgb(255, 255, 255);"));
         calendarWidget->setGridVisible(true);
@@ -151,31 +160,68 @@ public:
         calendarWidget->setVerticalHeaderFormat(QCalendarWidget::NoVerticalHeader);
         calendarWidget->setNavigationBarVisible(true);
         calendarWidget->setDateEditEnabled(true);
-        progressoMovim = new CircularProgress(centralWidget);
+        progressoMovim = new CircularProgress(right_container);
         progressoMovim->setObjectName(QStringLiteral("progressoMovim"));
-        progressoMovim->setGeometry(QRect(10, 470, 191, 191));
-        progressoSonno = new CircularProgress(centralWidget);
+        progressoMovim->setGeometry(QRect(8, 470, 191, 191));
+        progressoSonno = new CircularProgress(right_container);
         progressoSonno->setObjectName(QStringLiteral("progressoSonno"));
-        progressoSonno->setGeometry(QRect(220, 470, 191, 191));
-        progressoMese = new CircularProgress(centralWidget);
+        progressoSonno->setGeometry(QRect(208, 470, 191, 191));
+        progressoMese = new CircularProgress(right_container);
         progressoMese->setObjectName(QStringLiteral("progressoMese"));
-        progressoMese->setGeometry(QRect(420, 470, 191, 191));
-        mesePrec = new QPushButton(centralWidget);
-        mesePrec->setObjectName(QStringLiteral("mesePrec"));
-        mesePrec->setGeometry(QRect(10, 410, 191, 41));
-        meseSucc = new QPushButton(centralWidget);
-        meseSucc->setObjectName(QStringLiteral("meseSucc"));
-        meseSucc->setGeometry(QRect(410, 410, 191, 41));
+        progressoMese->setGeometry(QRect(408, 470, 191, 191));
         progressoMovim->raise();
         progressoSonno->raise();
         progressoMese->raise();
-        mesePrec->raise();
-        meseSucc->raise();
         calendarWidget->raise();
+        right_settings = new QWidget(horizontalLayoutWidget);
+        right_settings->setObjectName(QStringLiteral("right_settings"));
+        right_settings->setEnabled(true);
+        right_settings->setGeometry(QRect(260, 0, 600, 738));
+        right_settings->setMinimumSize(QSize(600, 0));
+        right_settings->setFont(font2);
+        right_settings->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255); "));
+        verticalLayoutWidget = new QWidget(right_settings);
+        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
+        verticalLayoutWidget->setGeometry(QRect(30, 170, 321, 211));
+        verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget);
+        verticalLayout_2->setSpacing(6);
+        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        label_3 = new QLabel(verticalLayoutWidget);
+        label_3->setObjectName(QStringLiteral("label_3"));
 
-        horizontalLayout->addWidget(centralWidget);
+        verticalLayout_2->addWidget(label_3);
+
+        lineEdit_3 = new QLineEdit(verticalLayoutWidget);
+        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+
+        verticalLayout_2->addWidget(lineEdit_3);
+
+        label = new QLabel(verticalLayoutWidget);
+        label->setObjectName(QStringLiteral("label"));
+
+        verticalLayout_2->addWidget(label);
+
+        lineEdit_2 = new QLineEdit(verticalLayoutWidget);
+        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+
+        verticalLayout_2->addWidget(lineEdit_2);
+
+        label_2 = new QLabel(verticalLayoutWidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+
+        verticalLayout_2->addWidget(label_2);
+
+        lineEdit = new QLineEdit(verticalLayoutWidget);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+
+        verticalLayout_2->addWidget(lineEdit);
 
         MainWindow->setCentralWidget(horizontalLayoutWidget);
+        right_settings->raise();
+        right_container->raise();
+        left_menu->raise();
 
         retranslateUi(MainWindow);
 
@@ -187,10 +233,13 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "LIFE-FIT", 0));
         settings->setText(QString());
         avatar->setText(QString());
-        nome->setText(QApplication::translate("MainWindow", "Riccardo", 0));
-        eta->setText(QApplication::translate("MainWindow", "20 ANNI", 0));
-        mesePrec->setText(QApplication::translate("MainWindow", "MESE PRECEDENTE", 0));
-        meseSucc->setText(QApplication::translate("MainWindow", "MESE SUCCESSIVO", 0));
+        nome->setText(QApplication::translate("MainWindow", "Riccardo Giorato", 0));
+        eta->setText(QApplication::translate("MainWindow", "20", 0));
+        label_4->setText(QApplication::translate("MainWindow", "ETA", 0));
+        label_5->setText(QApplication::translate("MainWindow", "OBBIETTIVO  questa settimana:", 0));
+        label_3->setText(QApplication::translate("MainWindow", "cambia password", 0));
+        label->setText(QApplication::translate("MainWindow", "cambia data di nascita", 0));
+        label_2->setText(QApplication::translate("MainWindow", "cambia sesso", 0));
     } // retranslateUi
 
 };

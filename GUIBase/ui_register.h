@@ -45,6 +45,9 @@ public:
         if (Register->objectName().isEmpty())
             Register->setObjectName(QStringLiteral("Register"));
         Register->resize(540, 310);
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/new/settings/resources/life_icon.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        Register->setWindowIcon(icon);
         center_form = new QWidget(Register);
         center_form->setObjectName(QStringLiteral("center_form"));
         verticalLayoutWidget = new QWidget(center_form);
