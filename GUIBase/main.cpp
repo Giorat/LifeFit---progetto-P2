@@ -13,17 +13,18 @@ int main(int argc, char *argv[])
     a.setApplicationName("lifefit");
     a.setQuitOnLastWindowClosed(false);
 
-    LoginForm w;
+    //LoginForm w;
+    MainWindow w("riccardo");
     w.setWindowTitle("LIFE-FIT LOGIN");
 
-    w.setGeometry(
-        QStyle::alignedRect(
-            Qt::LeftToRight,
-            Qt::AlignCenter,
-            w.size(),
-            a.desktop()->availableGeometry()
-        )
-    );
+//    w.setGeometry(
+//        QStyle::alignedRect(
+//            Qt::LeftToRight,
+//            Qt::AlignCenter,
+//            w.size(),
+//            a.desktop()->availableGeometry()
+//        )
+//    );
 
     w.show();
 

@@ -15,9 +15,10 @@ SOURCES += main.cpp \
     att_base.cpp \
     att_mov.cpp \
     att_sonno.cpp \
-    inputxmlfit.cpp \
     utente.cpp \
-    admin.cpp
+    admin.cpp \
+    iofit.cpp \
+    admin_iofit.cpp
 
 HEADERS += \
     giorno.h \
@@ -25,6 +26,7 @@ HEADERS += \
     att_base.h \
     att_mov.h \
     att_sonno.h \
-    inputxmlfit.h \
     utente.h \
-    admin.h
+    admin.h \
+    iofit.h \
+    admin_iofit.h

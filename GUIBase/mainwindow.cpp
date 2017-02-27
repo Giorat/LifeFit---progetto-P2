@@ -17,18 +17,21 @@ MainWindow::MainWindow(QString user,bool firstboot,QWidget *parent) :
         //calendar->setFirstDayOfWeek();
         calendar->setGridVisible(true);
         calendar->setDateRange(QDate(2017,1,1),QDate::currentDate());
-        calendar->setStyleSheet("background-color: white;");
+        calendar->setStyleSheet("background-color: rgb(255, 255, 255);");
 
  CircularProgress *w = ui->progressoMovim;
      w->setColors("#00cc66","#00cc66");
      w->setDiscWidth(20);
      w->setLoadingAngle(270);
+     w->setStyleSheet("background-color: rgb(255, 255, 255);");
      w->show();
+
 
  CircularProgress *progs = ui->progressoSonno;
      progs->setColors("#0099ff","#0099ff");
      progs->setDiscWidth(20);
      progs->setLoadingAngle(340);
+     progs->setStyleSheet("background-color: rgb(255, 255, 255);");
      progs->show();
 
 
@@ -36,6 +39,7 @@ MainWindow::MainWindow(QString user,bool firstboot,QWidget *parent) :
      progm->setColors("#9999ff","#9999ff");
      progm->setDiscWidth(20);
      progm->setLoadingAngle(360);
+     progm->setStyleSheet("background-color: rgb(255, 255, 255);");
      progm->show();
 
  //QStringList fileNames = QFileDialog::getOpenFileNames(this, tr("Apri il file"),"/",tr("XML Files (*.xml)"));
@@ -63,15 +67,22 @@ MainWindow::MainWindow(QString user,bool firstboot,QWidget *parent) :
 
 //QMessageBox::about(this, tr("About Application"),           tr("The <b>Application</b>:" ));
 
-loadSettings();
+//loadSettings();
 
 ultima_sess.last_user = user;
 ui->nome->setText(ultima_sess.last_user);
 
 QObject::connect(calendar,SIGNAL(clicked(const QDate)),this,SLOT(slotClicked(const QDate)));
 QObject::connect(this->ui->settings,SIGNAL(clicked()),this,SLOT(vaiImpostazioni()));
+QObject::connect(this->ui->logout,SIGNAL(clicked()),this,SLOT(vaiLogout()));
 }
 
+void MainWindow::vaiLogout(){
+    loginF = new LoginForm();
+    loginF->setWindowTitle("LIFE-FIT LOGIN");
+    loginF->show();
+    this->close();
+}
 
 void MainWindow::vaiImpostazioni(){
 if(inSettings){

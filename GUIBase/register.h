@@ -7,6 +7,7 @@
 #include <QMessageBox>
 
 class LoginForm;
+class MainWindow;
 
 namespace Ui {
 class Register;

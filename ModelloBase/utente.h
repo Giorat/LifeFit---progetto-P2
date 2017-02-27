@@ -10,7 +10,7 @@
 
 class utente
 {
-friend class inputxmlfit;
+friend class iofit;
 private:
     unsigned int codiceUtente;
     std::string username;

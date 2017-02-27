@@ -10,9 +10,9 @@
 #include "admin.h"
 
 
-#include "inputxmlfit.h"
+#include "iofit.h"
 
-int inputxmlfit::utenteGiaPresente(const utente * user){
+int iofit::utenteGiaPresente(const utente * user){
 
      usersXMLFile.open(QFile::ReadOnly | QFile::Text);
 
@@ -47,7 +47,7 @@ int inputxmlfit::utenteGiaPresente(const utente * user){
 }
 
 
-  inputxmlfit::inputxmlfit(std::string dir):DirectoryToSave(dir), xmlUsers(DirectoryToSave+"users.xml")
+  iofit::iofit(std::string dir):DirectoryToSave(dir), xmlUsers(DirectoryToSave+"users.xml")
 {
 
       usersXMLFile.setFileName(QString::fromStdString(xmlUsers));
@@ -94,7 +94,7 @@ int inputxmlfit::utenteGiaPresente(const utente * user){
 }
 
 
- utente* inputxmlfit::loadUser(const std::string u,const std::string p){
+ utente* iofit::loadUser(const std::string u,const std::string p){
   utente * utenteR;
   usersXMLFile.open(QFile::ReadOnly | QFile::Text);
   QString passCh= QString::fromUtf8(p.c_str()),pass = QString(QCryptographicHash::hash((passCh).toUtf8().constData(),QCryptographicHash::Md5).toHex());
@@ -154,7 +154,7 @@ return nullptr;
  }
 
 
-  bool inputxmlfit::createUser(const utente *user){
+  bool iofit::createUser(const utente *user){
 
       if(utenteGiaPresente(user)== -1){
      int nNuovoUtente = this->LastCodUtente();
@@ -218,7 +218,7 @@ return nullptr;
   
   
   
-  int inputxmlfit::LastCodUtente(){
+  int iofit::LastCodUtente(){
     int codUt = -1;
     usersXMLFile.open(QFile::ReadOnly | QFile::Text);
     QXmlStreamReader reader(&usersXMLFile);
@@ -245,7 +245,7 @@ return nullptr;
   }
 
 
-  bool inputxmlfit::saveUser(const utente * user){
+  bool iofit::saveUser(const utente * user){
       unsigned int cod = utenteGiaPresente(user);
     if(cod == user->getCodiceUtente()){
          usersXMLFile.open(QIODevice::ReadWrite | QIODevice::Text);
@@ -265,7 +265,6 @@ return nullptr;
                  QDomElement e = childNode.toElement();
 
                  if(std::stoi(e.text().toUtf8().constData()) == user->getCodiceUtente()){
-
 
                   utenteE.childNodes().item(1).firstChild().setNodeValue(QString::fromStdString(user->getNome()));
                   utenteE.childNodes().item(2).firstChild().setNodeValue(QString::fromStdString(user->getCognome()));
@@ -292,7 +291,7 @@ return nullptr;
 
 
 
-   void inputxmlfit::deleteUser(const utente * user){
+   void iofit::deleteUser(const utente * user){
 
        usersXMLFile.open(QIODevice::ReadWrite | QIODevice::Text);
 
@@ -342,7 +341,7 @@ return nullptr;
 
 
 
-  void inputxmlfit::inputXMLdatiMovimSleep(std::string fileInputXml,utente * user){
+  void iofit::inputXMLdatiMovimSleep(std::string fileInputXml,utente * user){
 
     QFile file;
     file.setFileName(QString::fromStdString(fileInputXml));
@@ -425,13 +424,13 @@ file.close();
 
 }
 
- void inputxmlfit::loadUserFit(utente* user){
+ void iofit::loadUserFit(utente* user){
     std::string fileInputXml = DirectoryToSave+std::to_string(user->getCodiceUtente())+"att.xml";
     this->inputXMLdatiMovimSleep(fileInputXml,user);
  }
 
 
- void inputxmlfit::saveUserFit(const utente * user){
+ void iofit::saveUserFit(const utente * user){
      std::string fileOutputXml = DirectoryToSave+std::to_string(user->getCodiceUtente())+"att.xml";
 
      QFile file;

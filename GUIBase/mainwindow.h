@@ -11,8 +11,12 @@
 #include <QPlainTextEdit>
 
 #include "ui_mainwindow.h"
+#include "loginform.h"
 
 #include "circularprogress.h"
+
+class LoginForm;
+
 namespace Ui {
 class MainWindow;
 }
@@ -28,6 +32,7 @@ public:
 private:
     QCalendarWidget *calendar;
     bool inSettings;
+    LoginForm *loginF;
     struct SPreferences
     {
         QString last_user;
@@ -40,6 +45,7 @@ private:
     SPreferences ultima_sess;
 private slots:
   void vaiImpostazioni();
+  void vaiLogout();
   void slotClicked(const QDate& date)
   {
     QMessageBox::information(NULL,"New Date Selected!",date.toString());

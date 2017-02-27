@@ -10,6 +10,7 @@
 #include "ui_loginform.h"
 
 class Register;
+class MainWindow;
 
 namespace Ui {
 class LoginForm;

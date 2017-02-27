@@ -5,6 +5,8 @@
 
 class admin : public utente
 {
+private:
+    utente* utentiFamiglia;
 public:
     /**Costruttore completo di utente tranne obb_pass_giornalieri
      * @param int codice utente
@@ -14,6 +16,7 @@ public:
      * @param bool sesso della persona ==1 se uomo ==0 se donna
  */
    admin(const int codU,const std::string &n,const std::string &cn, QDate dN,bool s,QString pass);
+
 
 };
 

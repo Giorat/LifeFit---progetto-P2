@@ -2,7 +2,7 @@
 #include <iostream>
 #include "giorno.h"
 #include "admin.h"
-#include "inputxmlfit.h"
+#include "iofit.h"
 
 
 int main()
@@ -11,7 +11,7 @@ int main()
 
     //Lettura in input da file xml dati giornate passate utente
     std::string dir="C:\\Users\\giora\\Documents\\GitHub\\progettoP2\\";
-    inputxmlfit s(dir);
+    iofit s(dir);
     utente * user = s.loadUser("rootadmin","password");
     s.loadUserFit(user);
     if(user){

@@ -1,5 +1,5 @@
-#ifndef INPUTXMLFIT_H
-#define INPUTXMLFIT_H
+#ifndef IOFIT_H
+#define IOFIT_H
 
 #include <QFile>
 #include <QDomDocument>
@@ -7,7 +7,7 @@
 #include <string>
 #include "utente.h"
 
-class inputxmlfit{
+class iofit{
 private:
     std::string DirectoryToSave;
     std::string xmlUsers;
@@ -25,7 +25,7 @@ public:
    /**
     *@param string con cartella in cui salvare dati utenti e xml dati attivita utente
     */
-   inputxmlfit(std::string);
+   iofit(std::string);
 
    /**
     * @brief loadUser
@@ -86,4 +86,4 @@ public:
 
 };
 
-#endif // INPUTXMLFIT_H
+#endif // IOFIT_H

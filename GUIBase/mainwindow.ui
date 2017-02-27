@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>860</width>
-    <height>750</height>
+    <width>1097</width>
+    <height>1207</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+    <horstretch>0</horstretch>
+    <verstretch>1</verstretch>
+   </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
@@ -27,13 +33,15 @@
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(236, 242, 246);</string>
+   <string notr="true">background-color: rgb(236, 242, 246);
+border-top-color: rgb(53, 64, 82);
+;</string>
   </property>
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
      <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
+     <verstretch>1</verstretch>
     </sizepolicy>
    </property>
    <widget class="QWidget" name="left_menu" native="true">
@@ -42,19 +50,37 @@
       <x>0</x>
       <y>0</y>
       <width>260</width>
-      <height>750</height>
+      <height>167772</height>
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+     <sizepolicy hsizetype="Fixed" vsizetype="Maximum">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
     </property>
     <property name="maximumSize">
      <size>
       <width>400</width>
       <height>16777215</height>
+     </size>
+    </property>
+    <property name="sizeIncrement">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="baseSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
      </size>
     </property>
     <property name="styleSheet">
@@ -64,8 +90,8 @@ color: rgb(163, 180, 200);</string>
     <widget class="QPushButton" name="settings">
      <property name="geometry">
       <rect>
-       <x>6</x>
-       <y>6</y>
+       <x>10</x>
+       <y>15</y>
        <width>40</width>
        <height>39</height>
       </rect>
@@ -112,7 +138,7 @@ color: rgb(163, 180, 200);</string>
      <property name="geometry">
       <rect>
        <x>68</x>
-       <y>50</y>
+       <y>125</y>
        <width>125</width>
        <height>125</height>
       </rect>
@@ -146,7 +172,7 @@ color: rgb(163, 180, 200);</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>180</y>
+       <y>250</y>
        <width>241</width>
        <height>35</height>
       </rect>
@@ -175,10 +201,13 @@ color: rgb(163, 180, 200);</string>
       </font>
      </property>
      <property name="text">
-      <string>Riccardo Giorato</string>
+      <string>RICCARDO GIORATO</string>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -194,14 +223,14 @@ color: rgb(163, 180, 200);</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>230</y>
-       <width>41</width>
-       <height>20</height>
+       <y>300</y>
+       <width>40</width>
+       <height>25</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>16</pointsize>
+       <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
@@ -215,9 +244,9 @@ color: rgb(163, 180, 200);</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>260</y>
-       <width>41</width>
-       <height>20</height>
+       <y>330</y>
+       <width>40</width>
+       <height>25</height>
       </rect>
      </property>
      <property name="font">
@@ -235,29 +264,76 @@ color: rgb(163, 180, 200);</string>
     <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>310</y>
-       <width>151</width>
-       <height>31</height>
+       <x>10</x>
+       <y>370</y>
+       <width>241</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>9</pointsize>
       </font>
      </property>
      <property name="text">
       <string>OBBIETTIVO  questa settimana:</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="logout">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>15</y>
+       <width>35</width>
+       <height>39</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>40</width>
+       <height>39</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="settings_icon.qrc">
+       <normaloff>:/new/settings/resources/quit.png</normaloff>:/new/settings/resources/quit.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>41</width>
+       <height>39</height>
+      </size>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="right_container" native="true">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>0</y>
+      <x>300</x>
+      <y>150</y>
       <width>600</width>
-      <height>750</height>
+      <height>451</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -308,7 +384,11 @@ color: rgb(163, 180, 200);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(67, 72, 88);
-background-color: rgb(255, 255, 255);</string>
+background-color: rgb(255, 255, 255);
+
+
+
+</string>
      </property>
      <property name="gridVisible">
       <bool>true</bool>
@@ -326,44 +406,6 @@ background-color: rgb(255, 255, 255);</string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="CircularProgress" name="progressoMovim" native="true">
-     <property name="geometry">
-      <rect>
-       <x>8</x>
-       <y>470</y>
-       <width>191</width>
-       <height>191</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="CircularProgress" name="progressoSonno" native="true">
-     <property name="geometry">
-      <rect>
-       <x>208</x>
-       <y>470</y>
-       <width>191</width>
-       <height>191</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="CircularProgress" name="progressoMese" native="true">
-     <property name="geometry">
-      <rect>
-       <x>408</x>
-       <y>470</y>
-       <width>191</width>
-       <height>191</height>
-      </rect>
-     </property>
-    </widget>
-    <zorder>progressoMovim</zorder>
-    <zorder>progressoSonno</zorder>
-    <zorder>progressoMese</zorder>
-    <zorder>calendarWidget</zorder>
-    <zorder>right_settings</zorder>
-    <zorder>right_settings</zorder>
-    <zorder>right_settings</zorder>
-    <zorder>right_settings</zorder>
    </widget>
    <widget class="QWidget" name="right_settings" native="true">
     <property name="enabled">
@@ -371,8 +413,8 @@ background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>0</y>
+      <x>300</x>
+      <y>150</y>
       <width>600</width>
       <height>750</height>
      </rect>
@@ -400,7 +442,7 @@ background-color: rgb(255, 255, 255);</string>
        <x>30</x>
        <y>170</y>
        <width>321</width>
-       <height>211</height>
+       <height>220</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -437,9 +479,246 @@ background-color: rgb(255, 255, 255);</string>
      </layout>
     </widget>
    </widget>
+   <widget class="QWidget" name="top_header" native="true">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>0</y>
+      <width>16777215</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+border-top: 3px solid  rgb(53, 64, 82);
+border-bottom: 3px solid  rgb(214, 220, 224);</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="leftMargin">
+      <number>46</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="app_name">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(25, 173, 250);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>LIFE-FIT</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="calendario_titolo">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>99</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(68, 60, 75);</string>
+    </property>
+    <property name="text">
+     <string>Calendario</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="right_progress" native="true">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>622</y>
+      <width>601</width>
+      <height>271</height>
+     </rect>
+    </property>
+    <widget class="CircularProgress" name="progressoMese" native="true">
+     <property name="geometry">
+      <rect>
+       <x>408</x>
+       <y>50</y>
+       <width>191</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="CircularProgress" name="progressoSonno" native="true">
+     <property name="geometry">
+      <rect>
+       <x>208</x>
+       <y>50</y>
+       <width>191</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="CircularProgress" name="progressoMovim" native="true">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>191</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="calendario_titolo_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>131</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(68, 60, 75);</string>
+     </property>
+     <property name="text">
+      <string>Passi</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="calendario_titolo_3">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>10</y>
+       <width>131</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(68, 60, 75);</string>
+     </property>
+     <property name="text">
+      <string>Sonno</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="calendario_titolo_4">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>10</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(68, 60, 75);</string>
+     </property>
+     <property name="text">
+      <string>Progressi complessivi mese</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="ricc_g">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>940</y>
+      <width>461</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-width: 1px;
+border-style: solid;
+border-radius: 20px;
+border-color:red;
+background: white;</string>
+    </property>
+    <property name="text">
+     <string>Riccardo Giorato 73.580 passi</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ricc_g_2">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>990</y>
+      <width>261</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-width: 1px;
+border-style: solid;
+border-radius: 20px;
+border-color:red;
+background: white;</string>
+    </property>
+    <property name="text">
+     <string>Utente Prova 40.800 passi</string>
+    </property>
+   </widget>
    <zorder>right_settings</zorder>
    <zorder>right_container</zorder>
    <zorder>left_menu</zorder>
+   <zorder>top_header</zorder>
+   <zorder>calendario_titolo</zorder>
+   <zorder>right_progress</zorder>
+   <zorder>ricc_g</zorder>
+   <zorder>ricc_g_2</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

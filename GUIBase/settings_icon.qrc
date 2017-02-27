@@ -3,5 +3,6 @@
         <file>resources/settings.png</file>
         <file>resources/avatar-df.png</file>
         <file>resources/life_icon.ico</file>
+        <file>resources/quit.png</file>
     </qresource>
 </RCC>
