@@ -10,6 +10,7 @@ CircularProgress::CircularProgress(QWidget *parent) :
     m_loadingAngle(0),
     m_width(0)
 {
+    this->setStyleSheet("background:white;");
 }
 
 CircularProgress::~CircularProgress()
@@ -43,6 +44,12 @@ int CircularProgress::discWidth() const
 
 void CircularProgress::paintEvent(QPaintEvent *)
 {
+    QRect backgroundRect;
+    backgroundRect.setX(rect().x());
+    backgroundRect.setY(rect().y());
+    backgroundRect.setWidth(rect().width());
+    backgroundRect.setHeight(rect().height());
+
     QRect drawingRect;
     drawingRect.setX(rect().x() + m_width);
     drawingRect.setY(rect().y() + m_width);
@@ -51,6 +58,7 @@ void CircularProgress::paintEvent(QPaintEvent *)
 
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
+    painter.fillRect(backgroundRect,QBrush(Qt::white));
 
     const QRectF bounds(0, 0, width(), height());
 

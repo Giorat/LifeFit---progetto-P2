@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1097</width>
+    <width>1280</width>
     <height>1207</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>800</width>
+    <width>1200</width>
     <height>750</height>
    </size>
   </property>
@@ -326,158 +326,14 @@ color: rgb(163, 180, 200);</string>
       <bool>true</bool>
      </property>
     </widget>
-   </widget>
-   <widget class="QWidget" name="right_container" native="true">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>150</y>
-      <width>600</width>
-      <height>451</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>600</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <family>MS Sans Serif</family>
-      <pointsize>10</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-    <widget class="QCalendarWidget" name="calendarWidget">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>600</width>
-       <height>451</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>600</width>
-       <height>400</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>640</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>9</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(67, 72, 88);
-background-color: rgb(255, 255, 255);
-
-
-
-</string>
-     </property>
-     <property name="gridVisible">
-      <bool>true</bool>
-     </property>
-     <property name="horizontalHeaderFormat">
-      <enum>QCalendarWidget::LongDayNames</enum>
-     </property>
-     <property name="verticalHeaderFormat">
-      <enum>QCalendarWidget::NoVerticalHeader</enum>
-     </property>
-     <property name="navigationBarVisible">
-      <bool>true</bool>
-     </property>
-     <property name="dateEditEnabled">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="right_settings" native="true">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>150</y>
-      <width>600</width>
-      <height>750</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>600</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <family>MS Sans Serif</family>
-      <pointsize>10</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255); </string>
-    </property>
-    <widget class="QWidget" name="verticalLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>170</y>
-       <width>321</width>
-       <height>220</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>cambia password</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="lineEdit_3"/>
-      </item>
-      <item>
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>cambia data di nascita</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="lineEdit_2"/>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>cambia sesso</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="lineEdit"/>
-      </item>
-     </layout>
-    </widget>
+    <zorder>settings</zorder>
+    <zorder>avatar</zorder>
+    <zorder>nome</zorder>
+    <zorder>eta</zorder>
+    <zorder>label_4</zorder>
+    <zorder>label_5</zorder>
+    <zorder>logout</zorder>
+    <zorder>content2</zorder>
    </widget>
    <widget class="QWidget" name="top_header" native="true">
     <property name="geometry">
@@ -538,187 +394,427 @@ border: none;</string>
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="calendario_titolo">
+   <widget class="QWidget" name="content" native="true">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>99</y>
-      <width>131</width>
-      <height>41</height>
+      <x>260</x>
+      <y>70</y>
+      <width>1021</width>
+      <height>1181</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>14</pointsize>
-     </font>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
     </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(68, 60, 75);</string>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>16777215</height>
+     </size>
     </property>
-    <property name="text">
-     <string>Calendario</string>
-    </property>
+    <widget class="QWidget" name="right_progress" native="true">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>590</y>
+       <width>601</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <widget class="CircularProgress" name="progressoMese" native="true">
+      <property name="geometry">
+       <rect>
+        <x>408</x>
+        <y>50</y>
+        <width>191</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="CircularProgress" name="progressoSonno" native="true">
+      <property name="geometry">
+       <rect>
+        <x>208</x>
+        <y>50</y>
+        <width>191</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="CircularProgress" name="progressoMovim" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>191</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="calendario_titolo_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(68, 60, 75);</string>
+      </property>
+      <property name="text">
+       <string>Passi</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="calendario_titolo_3">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>10</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(68, 60, 75);</string>
+      </property>
+      <property name="text">
+       <string>Sonno</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="calendario_titolo_4">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>10</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(68, 60, 75);</string>
+      </property>
+      <property name="text">
+       <string>Progressi complessivi mese</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="right_calendar" native="true">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>70</y>
+       <width>600</width>
+       <height>451</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>600</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>MS Sans Serif</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <widget class="QCalendarWidget" name="calendarWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>600</width>
+        <height>451</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>600</width>
+        <height>400</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>640</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(67, 72, 88);
+background-color: rgb(255, 255, 255);
+</string>
+      </property>
+      <property name="gridVisible">
+       <bool>true</bool>
+      </property>
+      <property name="horizontalHeaderFormat">
+       <enum>QCalendarWidget::LongDayNames</enum>
+      </property>
+      <property name="verticalHeaderFormat">
+       <enum>QCalendarWidget::NoVerticalHeader</enum>
+      </property>
+      <property name="navigationBarVisible">
+       <bool>true</bool>
+      </property>
+      <property name="dateEditEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <zorder>calendarWidget</zorder>
+     <zorder></zorder>
+    </widget>
+    <widget class="QLabel" name="calendario_titolo">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>20</y>
+       <width>131</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(68, 60, 75);</string>
+     </property>
+     <property name="text">
+      <string>Calendario</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ricc_g">
+     <property name="geometry">
+      <rect>
+       <x>650</x>
+       <y>70</y>
+       <width>331</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-width: 1px;
+border-style: solid;
+border-radius: 20px;
+border-color: rgb(53,64,82);
+background: white;
+padding-left: 10px;</string>
+     </property>
+     <property name="text">
+      <string>Riccardo Giorato 73.580 passi</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="user2">
+     <property name="geometry">
+      <rect>
+       <x>650</x>
+       <y>130</y>
+       <width>201</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-width: 1px;
+border-style: solid;
+border-radius: 20px;
+border-color: rgb(53,64,82);
+background: white;
+padding-left: 10px;</string>
+     </property>
+     <property name="text">
+      <string>Utente 2 43.580 passi</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="amici_t">
+     <property name="geometry">
+      <rect>
+       <x>660</x>
+       <y>20</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(68, 60, 75);</string>
+     </property>
+     <property name="text">
+      <string>Classifica Amici</string>
+     </property>
+    </widget>
+    <zorder>right_progress</zorder>
+    <zorder>right_calendar</zorder>
+    <zorder>calendario_titolo</zorder>
+    <zorder>ricc_g</zorder>
+    <zorder>user2</zorder>
+    <zorder>amici_t</zorder>
+    <zorder></zorder>
+    <zorder>impostazioni</zorder>
+    <zorder>content2</zorder>
    </widget>
-   <widget class="QWidget" name="right_progress" native="true">
+   <widget class="QWidget" name="content2" native="true">
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>622</y>
-      <width>601</width>
-      <height>271</height>
+      <y>80</y>
+      <width>941</width>
+      <height>400</height>
      </rect>
     </property>
-    <widget class="CircularProgress" name="progressoMese" native="true">
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <widget class="QWidget" name="right_settings" native="true">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="geometry">
       <rect>
-       <x>408</x>
-       <y>50</y>
-       <width>191</width>
-       <height>191</height>
+       <x>0</x>
+       <y>45</y>
+       <width>700</width>
+       <height>450</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <property name="minimumSize">
+      <size>
+       <width>600</width>
+       <height>450</height>
+      </size>
      </property>
-    </widget>
-    <widget class="CircularProgress" name="progressoSonno" native="true">
-     <property name="geometry">
-      <rect>
-       <x>208</x>
-       <y>50</y>
-       <width>191</width>
-       <height>191</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-    </widget>
-    <widget class="CircularProgress" name="progressoMovim" native="true">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>50</y>
-       <width>191</width>
-       <height>191</height>
-      </rect>
+     <property name="font">
+      <font>
+       <family>MS Sans Serif</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
+      <string notr="true">background-color: rgb(255, 255, 255); </string>
      </property>
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>321</width>
+        <height>220</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>cambia password</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_3"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>cambia data di nascita</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_2"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>cambia sesso</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit"/>
+       </item>
+      </layout>
+     </widget>
     </widget>
-    <widget class="QLabel" name="calendario_titolo_2">
+    <widget class="QLabel" name="impostazioni">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>10</y>
-       <width>131</width>
-       <height>41</height>
+       <x>0</x>
+       <y>5</y>
+       <width>171</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <pointsize>14</pointsize>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(68, 60, 75);</string>
      </property>
      <property name="text">
-      <string>Passi</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="calendario_titolo_3">
-     <property name="geometry">
-      <rect>
-       <x>210</x>
-       <y>10</y>
-       <width>131</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(68, 60, 75);</string>
-     </property>
-     <property name="text">
-      <string>Sonno</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="calendario_titolo_4">
-     <property name="geometry">
-      <rect>
-       <x>410</x>
-       <y>10</y>
-       <width>181</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(68, 60, 75);</string>
-     </property>
-     <property name="text">
-      <string>Progressi complessivi mese</string>
+      <string>Impostazioni</string>
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="ricc_g">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>940</y>
-      <width>461</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-width: 1px;
-border-style: solid;
-border-radius: 20px;
-border-color:red;
-background: white;</string>
-    </property>
-    <property name="text">
-     <string>Riccardo Giorato 73.580 passi</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="ricc_g_2">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>990</y>
-      <width>261</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-width: 1px;
-border-style: solid;
-border-radius: 20px;
-border-color:red;
-background: white;</string>
-    </property>
-    <property name="text">
-     <string>Utente Prova 40.800 passi</string>
-    </property>
-   </widget>
-   <zorder>right_settings</zorder>
-   <zorder>right_container</zorder>
+   <zorder>impostazioni</zorder>
+   <zorder>content</zorder>
    <zorder>left_menu</zorder>
    <zorder>top_header</zorder>
-   <zorder>calendario_titolo</zorder>
-   <zorder>right_progress</zorder>
-   <zorder>ricc_g</zorder>
-   <zorder>ricc_g_2</zorder>
+   <zorder>right_settings</zorder>
+   <zorder>content2</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

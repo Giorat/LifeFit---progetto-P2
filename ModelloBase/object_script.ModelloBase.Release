@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\giorno.o
+./release\orario.o
+./release\att_base.o
+./release\att_mov.o
+./release\att_sonno.o
+./release\utente.o
+./release\admin.o
+./release\iofit.o
+./release\admin_iofit.o
+);

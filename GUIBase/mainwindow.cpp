@@ -10,7 +10,7 @@ MainWindow::MainWindow(QString user,bool firstboot,QWidget *parent) :
     //    QMessageBox::about(this, tr("HELLO"),tr(user.toUtf8().constData()));
 
     ui->setupUi(this);
-    this->ui->right_settings->hide();
+    this->ui->content2->hide();
     QMainWindow::showMaximized();
         calendar = ui->calendarWidget;
 
@@ -67,10 +67,10 @@ MainWindow::MainWindow(QString user,bool firstboot,QWidget *parent) :
 
 //QMessageBox::about(this, tr("About Application"),           tr("The <b>Application</b>:" ));
 
-//loadSettings();
+loadSettings();
 
-ultima_sess.last_user = user;
-ui->nome->setText(ultima_sess.last_user);
+ultima_sess.user = user;
+ui->nome->setText(ultima_sess.user);
 
 QObject::connect(calendar,SIGNAL(clicked(const QDate)),this,SLOT(slotClicked(const QDate)));
 QObject::connect(this->ui->settings,SIGNAL(clicked()),this,SLOT(vaiImpostazioni()));
@@ -86,12 +86,12 @@ void MainWindow::vaiLogout(){
 
 void MainWindow::vaiImpostazioni(){
 if(inSettings){
-    this->ui->right_settings->hide();
-    this->ui->right_container->show();
+    this->ui->content2->hide();
+    this->ui->content->show();
 }
 else{
-    this->ui->right_container->hide();
-    this->ui->right_settings->show();
+    this->ui->content->hide();
+    this->ui->content2->show();
 }
 inSettings=!inSettings;
 }
@@ -99,16 +99,18 @@ inSettings=!inSettings;
 
 void MainWindow::loadSettings()
 {
-
   QSettings settings;
   QString config_dir = QFileInfo(settings.fileName()).filePath() + "/";
   //QMessageBox::about(this, tr("SETTINGS"),           tr(config_dir.toUtf8().constData() ));
 
-
   settings.beginGroup("app");
-  ultima_sess.last_user = (settings.value("lastuser","").toString()).toUtf8().constData();
-  ultima_sess.first_boot = settings.value("firstboot", 10).toInt();
+  ultima_sess.user = (settings.value("user","root").toString()).toUtf8().constData();
+  ultima_sess.first_boot = settings.value("firstboot", 0).toInt();
+  ultima_sess.obb_pass_giorn = settings.value("obb_pass_giorn", 10000).toInt();
   settings.endGroup();
+
+  QMessageBox::about(this, tr("PASSI CONSIGLIATI:"), tr((QString::number(ultima_sess.obb_pass_giorn)).toUtf8().constData()));
+
 
   settings.beginGroup("MainWindow");
   resize(settings.value("size", QSize(400, 400)).toSize());
@@ -118,11 +120,14 @@ void MainWindow::loadSettings()
 
 void MainWindow::saveSettings()
 {
-    ultima_sess.last_user = ui->nome->text();
+    ultima_sess.obb_pass_giorn = 10000;
+    ultima_sess.user = ui->nome->text();
     QSettings settings;
+
     settings.beginGroup("app");
-    settings.setValue("lastuser", ultima_sess.last_user);
+    settings.setValue("user", ultima_sess.user);
     settings.setValue("firstboot", ultima_sess.first_boot);
+    settings.setValue("obb_pass_giorn", ultima_sess.obb_pass_giorn);
     settings.endGroup();
 
     settings.beginGroup("MainWindow");

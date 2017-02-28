@@ -26,7 +26,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QString user,bool firstboot=false,QWidget *parent = 0);
+    explicit MainWindow(QString user,bool firstboot=0,QWidget *parent = 0);
     ~MainWindow();
 
 private:
@@ -35,7 +35,8 @@ private:
     LoginForm *loginF;
     struct SPreferences
     {
-        QString last_user;
+        QString user;
+        unsigned int obb_pass_giorn;
         bool first_boot;
     };
     Ui::MainWindow *ui;

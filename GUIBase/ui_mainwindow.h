@@ -37,8 +37,24 @@ public:
     QLabel *label_4;
     QLabel *label_5;
     QPushButton *logout;
-    QWidget *right_container;
+    QWidget *top_header;
+    QVBoxLayout *verticalLayout;
+    QLabel *app_name;
+    QWidget *content;
+    QWidget *right_progress;
+    CircularProgress *progressoMese;
+    CircularProgress *progressoSonno;
+    CircularProgress *progressoMovim;
+    QLabel *calendario_titolo_2;
+    QLabel *calendario_titolo_3;
+    QLabel *calendario_titolo_4;
+    QWidget *right_calendar;
     QCalendarWidget *calendarWidget;
+    QLabel *calendario_titolo;
+    QLabel *ricc_g;
+    QLabel *user2;
+    QLabel *amici_t;
+    QWidget *content2;
     QWidget *right_settings;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout_2;
@@ -48,31 +64,19 @@ public:
     QLineEdit *lineEdit_2;
     QLabel *label_2;
     QLineEdit *lineEdit;
-    QWidget *top_header;
-    QVBoxLayout *verticalLayout;
-    QLabel *app_name;
-    QLabel *calendario_titolo;
-    QWidget *right_progress;
-    CircularProgress *progressoMese;
-    CircularProgress *progressoSonno;
-    CircularProgress *progressoMovim;
-    QLabel *calendario_titolo_2;
-    QLabel *calendario_titolo_3;
-    QLabel *calendario_titolo_4;
-    QLabel *ricc_g;
-    QLabel *ricc_g_2;
+    QLabel *impostazioni;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1097, 1207);
+        MainWindow->resize(1280, 1207);
         QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(1);
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
-        MainWindow->setMinimumSize(QSize(800, 750));
+        MainWindow->setMinimumSize(QSize(1200, 750));
         QIcon icon;
         icon.addFile(QStringLiteral(":/new/settings/resources/life_icon.ico"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -169,19 +173,96 @@ public:
         logout->setIcon(icon2);
         logout->setIconSize(QSize(41, 39));
         logout->setFlat(true);
-        right_container = new QWidget(horizontalLayoutWidget);
-        right_container->setObjectName(QStringLiteral("right_container"));
-        right_container->setGeometry(QRect(300, 150, 600, 451));
-        right_container->setMinimumSize(QSize(600, 0));
+        settings->raise();
+        avatar->raise();
+        nome->raise();
+        eta->raise();
+        label_4->raise();
+        label_5->raise();
+        logout->raise();
+        top_header = new QWidget(horizontalLayoutWidget);
+        top_header->setObjectName(QStringLiteral("top_header"));
+        top_header->setGeometry(QRect(260, 0, 16777215, 75));
+        QSizePolicy sizePolicy3(QSizePolicy::Maximum, QSizePolicy::Preferred);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(top_header->sizePolicy().hasHeightForWidth());
+        top_header->setSizePolicy(sizePolicy3);
+        top_header->setMinimumSize(QSize(0, 0));
+        top_header->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
+"border-top: 3px solid  rgb(53, 64, 82);\n"
+"border-bottom: 3px solid  rgb(214, 220, 224);"));
+        verticalLayout = new QVBoxLayout(top_header);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(46, -1, -1, -1);
+        app_name = new QLabel(top_header);
+        app_name->setObjectName(QStringLiteral("app_name"));
+        app_name->setEnabled(true);
+        QSizePolicy sizePolicy4(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(app_name->sizePolicy().hasHeightForWidth());
+        app_name->setSizePolicy(sizePolicy4);
         QFont font4;
-        font4.setFamily(QStringLiteral("MS Sans Serif"));
-        font4.setPointSize(10);
+        font4.setPointSize(18);
         font4.setBold(true);
         font4.setWeight(75);
-        right_container->setFont(font4);
-        right_container->setAutoFillBackground(false);
-        right_container->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
-        calendarWidget = new QCalendarWidget(right_container);
+        app_name->setFont(font4);
+        app_name->setStyleSheet(QLatin1String("color: rgb(25, 173, 250);\n"
+"border: none;"));
+
+        verticalLayout->addWidget(app_name);
+
+        content = new QWidget(horizontalLayoutWidget);
+        content->setObjectName(QStringLiteral("content"));
+        content->setGeometry(QRect(260, 70, 1021, 1181));
+        content->setMinimumSize(QSize(100, 100));
+        content->setMaximumSize(QSize(16777215, 16777215));
+        right_progress = new QWidget(content);
+        right_progress->setObjectName(QStringLiteral("right_progress"));
+        right_progress->setGeometry(QRect(40, 590, 601, 271));
+        progressoMese = new CircularProgress(right_progress);
+        progressoMese->setObjectName(QStringLiteral("progressoMese"));
+        progressoMese->setGeometry(QRect(408, 50, 191, 191));
+        progressoMese->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
+        progressoSonno = new CircularProgress(right_progress);
+        progressoSonno->setObjectName(QStringLiteral("progressoSonno"));
+        progressoSonno->setGeometry(QRect(208, 50, 191, 191));
+        progressoSonno->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
+        progressoMovim = new CircularProgress(right_progress);
+        progressoMovim->setObjectName(QStringLiteral("progressoMovim"));
+        progressoMovim->setGeometry(QRect(10, 50, 191, 191));
+        progressoMovim->setStyleSheet(QStringLiteral("background: rgb(255, 255, 255);"));
+        calendario_titolo_2 = new QLabel(right_progress);
+        calendario_titolo_2->setObjectName(QStringLiteral("calendario_titolo_2"));
+        calendario_titolo_2->setGeometry(QRect(20, 10, 131, 41));
+        calendario_titolo_2->setFont(font2);
+        calendario_titolo_2->setStyleSheet(QStringLiteral("color: rgb(68, 60, 75);"));
+        calendario_titolo_3 = new QLabel(right_progress);
+        calendario_titolo_3->setObjectName(QStringLiteral("calendario_titolo_3"));
+        calendario_titolo_3->setGeometry(QRect(210, 10, 131, 41));
+        calendario_titolo_3->setFont(font2);
+        calendario_titolo_3->setStyleSheet(QStringLiteral("color: rgb(68, 60, 75);"));
+        calendario_titolo_4 = new QLabel(right_progress);
+        calendario_titolo_4->setObjectName(QStringLiteral("calendario_titolo_4"));
+        calendario_titolo_4->setGeometry(QRect(410, 10, 201, 41));
+        calendario_titolo_4->setFont(font2);
+        calendario_titolo_4->setStyleSheet(QStringLiteral("color: rgb(68, 60, 75);"));
+        right_calendar = new QWidget(content);
+        right_calendar->setObjectName(QStringLiteral("right_calendar"));
+        right_calendar->setGeometry(QRect(40, 70, 600, 451));
+        right_calendar->setMinimumSize(QSize(600, 0));
+        QFont font5;
+        font5.setFamily(QStringLiteral("MS Sans Serif"));
+        font5.setPointSize(10);
+        font5.setBold(true);
+        font5.setWeight(75);
+        right_calendar->setFont(font5);
+        right_calendar->setAutoFillBackground(false);
+        right_calendar->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
+        calendarWidget = new QCalendarWidget(right_calendar);
         calendarWidget->setObjectName(QStringLiteral("calendarWidget"));
         calendarWidget->setGeometry(QRect(0, 0, 600, 451));
         calendarWidget->setMinimumSize(QSize(600, 400));
@@ -189,25 +270,61 @@ public:
         calendarWidget->setFont(font3);
         calendarWidget->setStyleSheet(QLatin1String("color: rgb(67, 72, 88);\n"
 "background-color: rgb(255, 255, 255);\n"
-"\n"
-"\n"
-"\n"
 ""));
         calendarWidget->setGridVisible(true);
         calendarWidget->setHorizontalHeaderFormat(QCalendarWidget::LongDayNames);
         calendarWidget->setVerticalHeaderFormat(QCalendarWidget::NoVerticalHeader);
         calendarWidget->setNavigationBarVisible(true);
         calendarWidget->setDateEditEnabled(true);
-        right_settings = new QWidget(horizontalLayoutWidget);
+        calendarWidget->raise();
+        calendario_titolo = new QLabel(content);
+        calendario_titolo->setObjectName(QStringLiteral("calendario_titolo"));
+        calendario_titolo->setGeometry(QRect(40, 20, 131, 41));
+        calendario_titolo->setFont(font1);
+        calendario_titolo->setStyleSheet(QStringLiteral("color: rgb(68, 60, 75);"));
+        ricc_g = new QLabel(content);
+        ricc_g->setObjectName(QStringLiteral("ricc_g"));
+        ricc_g->setGeometry(QRect(650, 70, 331, 51));
+        ricc_g->setStyleSheet(QLatin1String("border-width: 1px;\n"
+"border-style: solid;\n"
+"border-radius: 20px;\n"
+"border-color: rgb(53,64,82);\n"
+"background: white;\n"
+"padding-left: 10px;"));
+        user2 = new QLabel(content);
+        user2->setObjectName(QStringLiteral("user2"));
+        user2->setGeometry(QRect(650, 130, 201, 51));
+        user2->setStyleSheet(QLatin1String("border-width: 1px;\n"
+"border-style: solid;\n"
+"border-radius: 20px;\n"
+"border-color: rgb(53,64,82);\n"
+"background: white;\n"
+"padding-left: 10px;"));
+        amici_t = new QLabel(content);
+        amici_t->setObjectName(QStringLiteral("amici_t"));
+        amici_t->setGeometry(QRect(660, 20, 221, 41));
+        amici_t->setFont(font1);
+        amici_t->setStyleSheet(QStringLiteral("color: rgb(68, 60, 75);"));
+        right_progress->raise();
+        right_calendar->raise();
+        calendario_titolo->raise();
+        ricc_g->raise();
+        user2->raise();
+        amici_t->raise();
+        content2 = new QWidget(horizontalLayoutWidget);
+        content2->setObjectName(QStringLiteral("content2"));
+        content2->setGeometry(QRect(300, 80, 941, 400));
+        content2->setMinimumSize(QSize(100, 100));
+        right_settings = new QWidget(content2);
         right_settings->setObjectName(QStringLiteral("right_settings"));
         right_settings->setEnabled(true);
-        right_settings->setGeometry(QRect(300, 150, 600, 750));
-        right_settings->setMinimumSize(QSize(600, 0));
-        right_settings->setFont(font4);
+        right_settings->setGeometry(QRect(0, 45, 700, 450));
+        right_settings->setMinimumSize(QSize(600, 450));
+        right_settings->setFont(font5);
         right_settings->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255); "));
         verticalLayoutWidget = new QWidget(right_settings);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(30, 170, 321, 220));
+        verticalLayoutWidget->setGeometry(QRect(10, 20, 321, 220));
         verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -243,103 +360,18 @@ public:
 
         verticalLayout_2->addWidget(lineEdit);
 
-        top_header = new QWidget(horizontalLayoutWidget);
-        top_header->setObjectName(QStringLiteral("top_header"));
-        top_header->setGeometry(QRect(260, 0, 16777215, 75));
-        QSizePolicy sizePolicy3(QSizePolicy::Maximum, QSizePolicy::Preferred);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(top_header->sizePolicy().hasHeightForWidth());
-        top_header->setSizePolicy(sizePolicy3);
-        top_header->setMinimumSize(QSize(0, 0));
-        top_header->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
-"border-top: 3px solid  rgb(53, 64, 82);\n"
-"border-bottom: 3px solid  rgb(214, 220, 224);"));
-        verticalLayout = new QVBoxLayout(top_header);
-        verticalLayout->setSpacing(6);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(46, -1, -1, -1);
-        app_name = new QLabel(top_header);
-        app_name->setObjectName(QStringLiteral("app_name"));
-        app_name->setEnabled(true);
-        QSizePolicy sizePolicy4(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
-        sizePolicy4.setHorizontalStretch(0);
-        sizePolicy4.setVerticalStretch(0);
-        sizePolicy4.setHeightForWidth(app_name->sizePolicy().hasHeightForWidth());
-        app_name->setSizePolicy(sizePolicy4);
-        QFont font5;
-        font5.setPointSize(18);
-        font5.setBold(true);
-        font5.setWeight(75);
-        app_name->setFont(font5);
-        app_name->setStyleSheet(QLatin1String("color: rgb(25, 173, 250);\n"
-"border: none;"));
-
-        verticalLayout->addWidget(app_name);
-
-        calendario_titolo = new QLabel(horizontalLayoutWidget);
-        calendario_titolo->setObjectName(QStringLiteral("calendario_titolo"));
-        calendario_titolo->setGeometry(QRect(310, 99, 131, 41));
-        calendario_titolo->setFont(font1);
-        calendario_titolo->setStyleSheet(QStringLiteral("color: rgb(68, 60, 75);"));
-        right_progress = new QWidget(horizontalLayoutWidget);
-        right_progress->setObjectName(QStringLiteral("right_progress"));
-        right_progress->setGeometry(QRect(300, 622, 601, 271));
-        progressoMese = new CircularProgress(right_progress);
-        progressoMese->setObjectName(QStringLiteral("progressoMese"));
-        progressoMese->setGeometry(QRect(408, 50, 191, 191));
-        progressoMese->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
-        progressoSonno = new CircularProgress(right_progress);
-        progressoSonno->setObjectName(QStringLiteral("progressoSonno"));
-        progressoSonno->setGeometry(QRect(208, 50, 191, 191));
-        progressoSonno->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
-        progressoMovim = new CircularProgress(right_progress);
-        progressoMovim->setObjectName(QStringLiteral("progressoMovim"));
-        progressoMovim->setGeometry(QRect(10, 50, 191, 191));
-        progressoMovim->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
-        calendario_titolo_2 = new QLabel(right_progress);
-        calendario_titolo_2->setObjectName(QStringLiteral("calendario_titolo_2"));
-        calendario_titolo_2->setGeometry(QRect(20, 10, 131, 41));
-        QFont font6;
-        font6.setPointSize(11);
-        calendario_titolo_2->setFont(font6);
-        calendario_titolo_2->setStyleSheet(QStringLiteral("color: rgb(68, 60, 75);"));
-        calendario_titolo_3 = new QLabel(right_progress);
-        calendario_titolo_3->setObjectName(QStringLiteral("calendario_titolo_3"));
-        calendario_titolo_3->setGeometry(QRect(210, 10, 131, 41));
-        calendario_titolo_3->setFont(font6);
-        calendario_titolo_3->setStyleSheet(QStringLiteral("color: rgb(68, 60, 75);"));
-        calendario_titolo_4 = new QLabel(right_progress);
-        calendario_titolo_4->setObjectName(QStringLiteral("calendario_titolo_4"));
-        calendario_titolo_4->setGeometry(QRect(410, 10, 181, 41));
-        calendario_titolo_4->setFont(font6);
-        calendario_titolo_4->setStyleSheet(QStringLiteral("color: rgb(68, 60, 75);"));
-        ricc_g = new QLabel(horizontalLayoutWidget);
-        ricc_g->setObjectName(QStringLiteral("ricc_g"));
-        ricc_g->setGeometry(QRect(320, 940, 461, 41));
-        ricc_g->setStyleSheet(QLatin1String("border-width: 1px;\n"
-"border-style: solid;\n"
-"border-radius: 20px;\n"
-"border-color:red;\n"
-"background: white;"));
-        ricc_g_2 = new QLabel(horizontalLayoutWidget);
-        ricc_g_2->setObjectName(QStringLiteral("ricc_g_2"));
-        ricc_g_2->setGeometry(QRect(320, 990, 261, 41));
-        ricc_g_2->setStyleSheet(QLatin1String("border-width: 1px;\n"
-"border-style: solid;\n"
-"border-radius: 20px;\n"
-"border-color:red;\n"
-"background: white;"));
+        impostazioni = new QLabel(content2);
+        impostazioni->setObjectName(QStringLiteral("impostazioni"));
+        impostazioni->setGeometry(QRect(0, 5, 171, 31));
+        impostazioni->setFont(font1);
+        impostazioni->setStyleSheet(QStringLiteral("color: rgb(68, 60, 75);"));
         MainWindow->setCentralWidget(horizontalLayoutWidget);
-        right_settings->raise();
-        right_container->raise();
+        impostazioni->raise();
+        content->raise();
         left_menu->raise();
         top_header->raise();
-        calendario_titolo->raise();
-        right_progress->raise();
-        ricc_g->raise();
-        ricc_g_2->raise();
+        right_settings->raise();
+        content2->raise();
 
         retranslateUi(MainWindow);
 
@@ -356,16 +388,18 @@ public:
         label_4->setText(QApplication::translate("MainWindow", "ETA", 0));
         label_5->setText(QApplication::translate("MainWindow", "OBBIETTIVO  questa settimana:", 0));
         logout->setText(QString());
-        label_3->setText(QApplication::translate("MainWindow", "cambia password", 0));
-        label->setText(QApplication::translate("MainWindow", "cambia data di nascita", 0));
-        label_2->setText(QApplication::translate("MainWindow", "cambia sesso", 0));
         app_name->setText(QApplication::translate("MainWindow", "LIFE-FIT", 0));
-        calendario_titolo->setText(QApplication::translate("MainWindow", "Calendario", 0));
         calendario_titolo_2->setText(QApplication::translate("MainWindow", "Passi", 0));
         calendario_titolo_3->setText(QApplication::translate("MainWindow", "Sonno", 0));
         calendario_titolo_4->setText(QApplication::translate("MainWindow", "Progressi complessivi mese", 0));
+        calendario_titolo->setText(QApplication::translate("MainWindow", "Calendario", 0));
         ricc_g->setText(QApplication::translate("MainWindow", "Riccardo Giorato 73.580 passi", 0));
-        ricc_g_2->setText(QApplication::translate("MainWindow", "Utente Prova 40.800 passi", 0));
+        user2->setText(QApplication::translate("MainWindow", "Utente 2 43.580 passi", 0));
+        amici_t->setText(QApplication::translate("MainWindow", "Classifica Amici", 0));
+        label_3->setText(QApplication::translate("MainWindow", "cambia password", 0));
+        label->setText(QApplication::translate("MainWindow", "cambia data di nascita", 0));
+        label_2->setText(QApplication::translate("MainWindow", "cambia sesso", 0));
+        impostazioni->setText(QApplication::translate("MainWindow", "Impostazioni", 0));
     } // retranslateUi
 
 };

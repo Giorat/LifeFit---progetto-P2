@@ -1,0 +1,12 @@
+INPUT(
+./debug\main.o
+./debug\giorno.o
+./debug\orario.o
+./debug\att_base.o
+./debug\att_mov.o
+./debug\att_sonno.o
+./debug\utente.o
+./debug\admin.o
+./debug\iofit.o
+./debug\admin_iofit.o
+);
