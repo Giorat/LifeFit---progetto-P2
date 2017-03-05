@@ -13,13 +13,18 @@ unsigned int orario::Minuti() const{
 }
 
 std::string orario::orarioStr()const{
-    std::string s = std::to_string(Ore())+":"+std::to_string(Minuti());
+    std::string s,sO,sM=sO=s="";
+    if(Ore()<10)
+     sO="0";
+    if(Minuti()<10)
+     sM="0";
+    s = sO+std::to_string(Ore())+":"+sM+std::to_string(Minuti());
     return s;
 }
 
 
 std::ostream& operator<<(std::ostream &output, const orario &s)
 {
-    output << s.Ore() <<":"<< s.Minuti();
+    output << s.orarioStr();
     return output;
 }

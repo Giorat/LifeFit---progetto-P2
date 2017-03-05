@@ -8,11 +8,10 @@
 #include "utente.h"
 
 class iofit{
-private:
+protected:
     std::string DirectoryToSave;
     std::string xmlUsers;
     QFile usersXMLFile;
-
     /**
      * @brief utenteGiaPresente permette di determinare se un utente sia già presente ossia omonimo
      * @param user utente del quale bisogna controllare presenza di un omonimo
@@ -74,8 +73,9 @@ public:
    /**
     * @brief Carica i soli dati di movimento e di sonno dell'utente
     * @param utente del quale caricare i dati di movimento e di sonno
+    * @return 1 se caricati dati utente 0 se non è stato possibile
     */
-   void loadUserFit(utente*);
+   bool loadUserFit(utente*);
 
    /**
     * @brief Salva i soli dati di movimento e di sonno dell'utente

@@ -2,17 +2,16 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QMessageBox>
 #include <QCalendarWidget>
 #include <QDate>
 #include <QFileDialog>
 #include <QSettings>
 #include <QCloseEvent>
 #include <QPlainTextEdit>
+#include <QMessageBox>
 
 #include "ui_mainwindow.h"
 #include "loginform.h"
-
 #include "circularprogress.h"
 
 class LoginForm;
@@ -44,9 +43,11 @@ private:
     void saveSettings();
     void closeEvent(QCloseEvent* event);
     SPreferences ultima_sess;
+
 private slots:
   void vaiImpostazioni();
   void vaiLogout();
+  void caricaDatiFitXml();
   void slotClicked(const QDate& date)
   {
     QMessageBox::information(NULL,"New Date Selected!",date.toString());

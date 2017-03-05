@@ -22,11 +22,11 @@ void utente::delete_gg(QDate d){
 
 }
 
-float utente::perc_giorno(QDate d){
+float utente::perc_giorno(const QDate d){
     return (float)giornoData(d)->movim().totale_passi()/(float)this->obbiettivo_passi();
 }
 
-giorno * utente::giornoData(QDate d){
+giorno * utente::giornoData(const QDate d){
     auto it = fit.find(d);
     if(it !=fit.end())
         return &(fit[d]);
@@ -34,6 +34,14 @@ giorno * utente::giornoData(QDate d){
         return nullptr;
 }
 
+giorno * utente::giornoDataConst(const QDate d)const{
+    auto it = fit.find(d);
+    if(it !=fit.end()){
+        giorno * gg = new giorno(fit.at(d));
+        return (gg);
+    }else
+        return nullptr;
+}
 
 unsigned int utente::progressi_mese(QDate d){
     int tot_passi =0;
@@ -105,13 +113,62 @@ void utente::setSesso(const bool s){sesso=s;}
 void utente::setPassword(const QString p){password=p;}
 
 
-std::ostream& operator<<(std::ostream &output, const utente &s)
+std::ostream& operator<<(std::ostream &output, const utente *s)
 {
-    for(auto it= s.fit.begin();it != s.fit.end();it++){
+    for(auto it= s->fit.begin();it != s->fit.end();it++){
        output << it->second;
     }
     return output;
 }
+
+std::vector<std::pair<int,int>> utente::ultimiSetteGiorniUtenti(const std::vector<const utente*> utenti ,const QDate data){
+QDate inizioSetteG;
+std::vector<std::pair<int,int>> codUpassi;
+
+
+for(auto it=utenti.begin();it != utenti.end();it++){
+    int numPassiSett=0;
+     inizioSetteG= data.addDays(-7);
+        while(inizioSetteG < data){
+        const giorno * g = (*it)->giornoDataConst(inizioSetteG);
+        if(g){
+            numPassiSett+=(*g).movim().totale_passi();
+        }
+        inizioSetteG=inizioSetteG.addDays(1);
+    }
+    codUpassi.push_back( std::pair<int, int>((*it)->getCodiceUtente(),numPassiSett) );
+}
+
+std::sort( codUpassi.begin(), codUpassi.end(),
+           []( const std::pair<int, int> &p1, const std::pair<int, int> &p2 )
+           {
+               return ( p1.second > p2.second ||
+                      ( !( p2.second > p1.second ) && p1.first < p2.first ) );
+           } );
+
+
+return codUpassi;
+}
+
+std::pair<int,int> utente::massimoGiornoUtenti(const std::vector<const utente*> utenti,const QDate data ){
+
+    std::pair<int,int> massimoPassi = std::pair<int, int>(-1,-2);
+
+    for(auto it=utenti.begin();it != utenti.end();it++){
+            const giorno * g = (*it)->giornoDataConst(data);
+            if(g){
+                int numPassi=(*g).movim().totale_passi();
+                if ( numPassi > massimoPassi.second )
+                    massimoPassi =  std::pair<int, int>((*it)->getCodiceUtente(),numPassi);
+            }//if
+    }//for
+
+    return massimoPassi;
+}
+
+
+
+
 
 
 

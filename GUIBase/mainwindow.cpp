@@ -1,40 +1,41 @@
 #include "mainwindow.h"
 
+#include <QGraphicsPixmapItem>
+
 MainWindow::MainWindow(QString user,bool firstboot,QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),inSettings(false)
 {
+    ui->setupUi(this);
+    this->ui->no_data_img->hide();
+    this->ui->content2->hide();
     //solo nel caso si venga reindirizzati dalla registrazione per la prima volta si mostra
     //una serie di azioni per introdurre l'utente all'applicazione
-    //if(firstboot)
-    //    QMessageBox::about(this, tr("HELLO"),tr(user.toUtf8().constData()));
+    if(firstboot){
+        QImage image(":/resources/no_data.png");
+        this->ui->no_data_img->setPixmap(QPixmap::fromImage(image));
+        this->ui->no_data_img->show();
+    }
 
-    ui->setupUi(this);
-    this->ui->content2->hide();
     QMainWindow::showMaximized();
         calendar = ui->calendarWidget;
-
-        //calendar->setFirstDayOfWeek();
         calendar->setGridVisible(true);
         calendar->setDateRange(QDate(2017,1,1),QDate::currentDate());
         calendar->setStyleSheet("background-color: rgb(255, 255, 255);");
 
+ //gestione progressi ultimo giorno o giorno attuale
  CircularProgress *w = ui->progressoMovim;
      w->setColors("#00cc66","#00cc66");
      w->setDiscWidth(20);
      w->setLoadingAngle(270);
      w->setStyleSheet("background-color: rgb(255, 255, 255);");
      w->show();
-
-
  CircularProgress *progs = ui->progressoSonno;
      progs->setColors("#0099ff","#0099ff");
      progs->setDiscWidth(20);
      progs->setLoadingAngle(340);
      progs->setStyleSheet("background-color: rgb(255, 255, 255);");
      progs->show();
-
-
  CircularProgress *progm = ui->progressoMese;
      progm->setColors("#9999ff","#9999ff");
      progm->setDiscWidth(20);
@@ -42,39 +43,17 @@ MainWindow::MainWindow(QString user,bool firstboot,QWidget *parent) :
      progm->setStyleSheet("background-color: rgb(255, 255, 255);");
      progm->show();
 
- //QStringList fileNames = QFileDialog::getOpenFileNames(this, tr("Apri il file"),"/",tr("XML Files (*.xml)"));
- //QMessageBox::information(NULL,"File!!",fileNames.first());
-
-
-  /*QLineSeries *series = new QLineSeries();
-  series->append(0, 6);
-      series->append(2, 4);
-      series->append(3, 8);
-      series->append(7, 4);
-      series->append(10, 5);
-      *series << QPointF(11, 1) << QPointF(13, 3) << QPointF(17, 6) << QPointF(18, 3) << QPointF(20, 2);
-        QChart *chart = new QChart();
-        chart->legend()->hide();
-        chart->addSeries(series);
-        chart->createDefaultAxes();
-        chart->setTitle("Simple line chart example");
-
-        QChartView *chartView = new QChartView(chart);
-          chartView->setRenderHint(QPainter::Antialiasing);
-
-    ui->centralWidget->addWidget(setchartView,0,0);
-   */
-
-//QMessageBox::about(this, tr("About Application"),           tr("The <b>Application</b>:" ));
 
 loadSettings();
 
 ultima_sess.user = user;
 ui->nome->setText(ultima_sess.user);
 
+//gestione eventi
 QObject::connect(calendar,SIGNAL(clicked(const QDate)),this,SLOT(slotClicked(const QDate)));
 QObject::connect(this->ui->settings,SIGNAL(clicked()),this,SLOT(vaiImpostazioni()));
 QObject::connect(this->ui->logout,SIGNAL(clicked()),this,SLOT(vaiLogout()));
+QObject::connect(this->ui->aggiungi_dati,SIGNAL(clicked()),this,SLOT(caricaDatiFitXml()));
 }
 
 void MainWindow::vaiLogout(){
@@ -96,12 +75,11 @@ else{
 inSettings=!inSettings;
 }
 
-
 void MainWindow::loadSettings()
 {
   QSettings settings;
   QString config_dir = QFileInfo(settings.fileName()).filePath() + "/";
-  //QMessageBox::about(this, tr("SETTINGS"),           tr(config_dir.toUtf8().constData() ));
+  //cartella settings config_dir.toUtf8().constData();
 
   settings.beginGroup("app");
   ultima_sess.user = (settings.value("user","root").toString()).toUtf8().constData();
@@ -111,12 +89,30 @@ void MainWindow::loadSettings()
 
   QMessageBox::about(this, tr("PASSI CONSIGLIATI:"), tr((QString::number(ultima_sess.obb_pass_giorn)).toUtf8().constData()));
 
-
   settings.beginGroup("MainWindow");
   resize(settings.value("size", QSize(400, 400)).toSize());
   move(settings.value("pos", QPoint(0, 0)).toPoint());
   settings.endGroup();
 }
+
+void MainWindow::caricaDatiFitXml(){
+
+    if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "INSERIMENTO DATI FIT", "Hai controllato il file xml?", QMessageBox::Yes|QMessageBox::No).exec())
+    {
+     QStringList fileNames = QFileDialog::getOpenFileNames(this, tr("Apri il file"),"/",tr("XML Files (*.xml)"));
+     if(!fileNames.empty())
+        QMessageBox::information(NULL,"File!!",fileNames.first());
+     QString fileScelto = fileNames.first();
+     if(fileScelto.endsWith(".xml", Qt::CaseInsensitive))
+         QMessageBox::information(NULL,"File GIUSTO!!",fileScelto);
+
+    }
+    //else
+    //    qDebug() << "Yes was *not* clicked";
+}
+
+
+
 
 void MainWindow::saveSettings()
 {

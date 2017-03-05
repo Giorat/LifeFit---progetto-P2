@@ -424,9 +424,18 @@ file.close();
 
 }
 
- void iofit::loadUserFit(utente* user){
+ bool iofit::loadUserFit(utente* user){
     std::string fileInputXml = DirectoryToSave+std::to_string(user->getCodiceUtente())+"att.xml";
+
+    QFile file;
+    file.setFileName(QString::fromStdString(fileInputXml));
+    if(!file.open(QFile::ReadOnly | QFile::Text)){
+        return false;
+    }
+    file.close();
+
     this->inputXMLdatiMovimSleep(fileInputXml,user);
+    return true;
  }
 
 

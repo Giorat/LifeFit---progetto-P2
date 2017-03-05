@@ -5,4 +5,7 @@
         <file>resources/life_icon.ico</file>
         <file>resources/quit.png</file>
     </qresource>
+    <qresource prefix="/">
+        <file>resources/no_data.png</file>
+    </qresource>
 </RCC>

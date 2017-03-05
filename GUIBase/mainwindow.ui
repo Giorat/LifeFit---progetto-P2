@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1280</width>
+    <width>1200</width>
     <height>1207</height>
    </rect>
   </property>
@@ -326,14 +326,6 @@ color: rgb(163, 180, 200);</string>
       <bool>true</bool>
      </property>
     </widget>
-    <zorder>settings</zorder>
-    <zorder>avatar</zorder>
-    <zorder>nome</zorder>
-    <zorder>eta</zorder>
-    <zorder>label_4</zorder>
-    <zorder>label_5</zorder>
-    <zorder>logout</zorder>
-    <zorder>content2</zorder>
    </widget>
    <widget class="QWidget" name="top_header" native="true">
     <property name="geometry">
@@ -419,7 +411,7 @@ border: none;</string>
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>590</y>
+       <y>530</y>
        <width>601</width>
        <height>271</height>
       </rect>
@@ -603,8 +595,6 @@ background-color: rgb(255, 255, 255);
        <bool>true</bool>
       </property>
      </widget>
-     <zorder>calendarWidget</zorder>
-     <zorder></zorder>
     </widget>
     <widget class="QLabel" name="calendario_titolo">
      <property name="geometry">
@@ -632,7 +622,7 @@ background-color: rgb(255, 255, 255);
       <rect>
        <x>650</x>
        <y>70</y>
-       <width>331</width>
+       <width>271</width>
        <height>51</height>
       </rect>
      </property>
@@ -690,15 +680,52 @@ padding-left: 10px;</string>
       <string>Classifica Amici</string>
      </property>
     </widget>
-    <zorder>right_progress</zorder>
+    <widget class="QPushButton" name="aggiungi_dati">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>810</y>
+       <width>411</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-width: 1px;
+border-style: solid;
+border-radius: 30px;
+border-color: rgb(53,64,82);
+background: rgb(53,64,82);
+padding-left: 5px;
+color: white;
+</string>
+     </property>
+     <property name="text">
+      <string>Aggiungi nuovi dati Attività Movimento e Sonno</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="no_data_img">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>901</width>
+       <height>781</height>
+      </rect>
+     </property>
+    </widget>
     <zorder>right_calendar</zorder>
     <zorder>calendario_titolo</zorder>
     <zorder>ricc_g</zorder>
     <zorder>user2</zorder>
     <zorder>amici_t</zorder>
-    <zorder></zorder>
-    <zorder>impostazioni</zorder>
-    <zorder>content2</zorder>
+    <zorder>right_progress</zorder>
+    <zorder>aggiungi_dati</zorder>
+    <zorder>no_data_img</zorder>
    </widget>
    <widget class="QWidget" name="content2" native="true">
     <property name="geometry">
@@ -809,12 +836,10 @@ padding-left: 10px;</string>
      </property>
     </widget>
    </widget>
-   <zorder>impostazioni</zorder>
-   <zorder>content</zorder>
    <zorder>left_menu</zorder>
    <zorder>top_header</zorder>
-   <zorder>right_settings</zorder>
    <zorder>content2</zorder>
+   <zorder>content</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

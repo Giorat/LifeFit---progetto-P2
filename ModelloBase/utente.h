@@ -42,8 +42,15 @@ public:
     /**Percentuale di passi effettuati rispetto all'obbiettivo di passi giornaliero impostato dall'admin
     * @param QDate giorno del quale generare il float in frazione compresa tra 0.00 e 1.00
     */
-    float perc_giorno(QDate);
-    giorno * giornoData(QDate);
+    float perc_giorno(const QDate);
+
+    /* Giorno utente in data QDate
+     * @param QDate giorno del quale ritornare le informazioni legate all'attività e alla "situazione di quel giorno"
+    */
+    giorno * giornoData(const QDate);
+
+    giorno * giornoDataConst(const QDate)const;
+
     /**Progressi del Mese totali
     * @param QDate data dal cui mese si parte dall'inizio ricavano il quantitativo di giorni tracciati e se il giorno con 0 steps/non tracked viene non considerato nella divisione della media
     */
@@ -69,7 +76,12 @@ public:
     void setSesso(const bool);
     void setPassword(const QString);
 
-    friend std::ostream& operator<<(std::ostream &output, const utente &s);
+    friend std::ostream& operator<<(std::ostream &output, const utente *s);
+
+
+    static std::vector<std::pair<int,int>>  ultimiSetteGiorniUtenti(const std::vector<const utente*>,const QDate);
+
+    static std::pair<int,int> massimoGiornoUtenti(const std::vector<const utente*>,const QDate);
 
 };
 

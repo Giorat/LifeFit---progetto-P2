@@ -42,7 +42,7 @@ int att_sonno::minDormito()const{
 std::ostream& operator<<(std::ostream &output, const att_sonno &s)
 {
 
-   output << static_cast<const att_base&>( s ) <<  "hai dormito per " << s.getOre() << " ore dalle "<< s.ora_andato_a_letto() << " alle "<< s.ora_svegliato_a_letto()<< "con qualita del " <<s.qualita() <<"%"<<std::endl;
+   output << static_cast<const att_base&>( s ) <<  "hai dormito per " << s.getOre() << " ore dalle "<< s.ora_andato_a_letto() << " alle "<< s.ora_svegliato_a_letto()<< " con qualita del " <<s.qualita() <<"%"<<std::endl;
 
     return output;
 }
