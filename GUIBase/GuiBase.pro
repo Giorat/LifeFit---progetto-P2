@@ -18,12 +18,14 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     circularprogress.cpp \
     loginform.cpp \
-    register.cpp
+    register.cpp \
+    friend_label.cpp
 
 HEADERS  += mainwindow.h \
     circularprogress.h \
     loginform.h \
-    register.h
+    register.h \
+    friend_label.h
 
 FORMS    += mainwindow.ui \
     loginform.ui \

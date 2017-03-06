@@ -3,7 +3,7 @@
 
 #include <QGraphicsPixmapItem>
 
-MainWindow::MainWindow(QString user,bool firstboot,QWidget *parent) :
+MainWindow::MainWindow(utente * user,bool firstboot,QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),inSettings(false)
 {
@@ -47,7 +47,7 @@ MainWindow::MainWindow(QString user,bool firstboot,QWidget *parent) :
 
 loadSettings();
 
-ultima_sess.user = user;
+ultima_sess.user = QString::fromStdString(user->getNome());
 ui->nome->setText(ultima_sess.user);
 
 

@@ -7,12 +7,12 @@
 
 
 #include <iostream>
-#include "utente.h"
+#include "admin.h"
 
 
-#include "inputxmlfit.h"
+#include "iofit.h"
 
-int inputxmlfit::utenteGiaPresente(const utente &user){
+int iofit::utenteGiaPresente(const utente * user){
 
      usersXMLFile.open(QFile::ReadOnly | QFile::Text);
 
@@ -29,9 +29,9 @@ int inputxmlfit::utenteGiaPresente(const utente &user){
                         while(reader.readNextStartElement()){
                             QString qs = reader.readElementText();
                             std::string s = qs.toUtf8().constData();
-                            if(reader.name() == "nome" && user.getNome() == s)
+                            if(reader.name() == "nome" && user->getNome() == s)
                                 nom=true;
-                            if(reader.name() == "cognome" && user.getCognome() == s)
+                            if(reader.name() == "cognome" && user->getCognome() == s)
                                 cognom=true;
                             if(reader.name() == "codiceutente")
                                 codU = std::stoi(s);
@@ -47,7 +47,7 @@ int inputxmlfit::utenteGiaPresente(const utente &user){
 }
 
 
-  inputxmlfit::inputxmlfit(std::string dir):DirectoryToSave(dir), xmlUsers(DirectoryToSave+"users.xml")
+  iofit::iofit(std::string dir):DirectoryToSave(dir), xmlUsers(DirectoryToSave+"users.xml")
 {
 
       usersXMLFile.setFileName(QString::fromStdString(xmlUsers));
@@ -76,26 +76,87 @@ int inputxmlfit::utenteGiaPresente(const utente &user){
                         writer.writeTextElement("nome", "root" );
                         writer.writeTextElement("cognome", "admin");
                         writer.writeTextElement("datanascita", "1996-12-20");
+                        writer.writeTextElement("sesso", "1");
                 QString pass = QString(QCryptographicHash::hash(("root"),QCryptographicHash::Md5).toHex());
                         writer.writeTextElement("password", pass);
+                        writer.writeTextElement("gruppo", "1");
                         writer.writeEndElement();
 
                     writer.writeEndElement();
 
                 writer.writeEndDocument();
 
-                usersXMLFile.close();
+
 
          }
-
+    usersXMLFile.close();
 
 }
 
 
-  bool inputxmlfit::createUser(const utente &user){
+ utente* iofit::loadUser(const std::string u,const std::string p){
+  utente * utenteR;
+  usersXMLFile.open(QFile::ReadOnly | QFile::Text);
+  QString passCh= QString::fromUtf8(p.c_str()),pass = QString(QCryptographicHash::hash((passCh).toUtf8().constData(),QCryptographicHash::Md5).toHex());
+
+
+  std::string userNameC = "";
+  QString passC;
+
+  int codU;
+  std::string nom,cognom;
+  QDate dataNascita;
+  bool sesso,gruppo;
+
+ QXmlStreamReader reader(&usersXMLFile);
+     if (reader.readNextStartElement()) {
+         if (reader.name() == "utenti")
+             while(reader.readNextStartElement())
+                 if(reader.name() == "utente"){
+                     userNameC = "";
+
+                     while(reader.readNextStartElement()){
+                         QString qs = reader.readElementText();
+                         std::string s = qs.toUtf8().constData();
+                         if(reader.name() == "codiceutente")
+                             codU = std::stoi(s);
+                         if(reader.name() == "nome"){
+                             userNameC+=s;
+                             nom=s;
+                         }
+                         if(reader.name() == "cognome"){
+                             userNameC+=s;
+                             cognom=s;
+                         }
+                         if(reader.name() == "password")
+                             passC = qs;
+                         if(reader.name() == "datanascita")
+                             dataNascita = QDate::fromString(qs,"yyyy-MM-dd");
+                         if(reader.name() == "sesso")
+                             sesso = std::stoi(s);
+                         if(reader.name() == "gruppo")
+                             gruppo = std::stoi(s);
+                     }//ricerca utente
+
+                     if(u==userNameC&&pass == passC){
+                        usersXMLFile.close();
+                        if(gruppo)
+                        utenteR = new admin(codU,nom,cognom,dataNascita,sesso,passCh);
+                        else
+                        utenteR = new utente(codU,nom,cognom,dataNascita,sesso,passCh);
+                        return utenteR;
+                     }
+
+                 }//utente
+         }//documento utenti
+usersXMLFile.close();
+return nullptr;
+ }
+
+
+  bool iofit::createUser(const utente *user){
 
       if(utenteGiaPresente(user)== -1){
-        std::cout << "creo l'utente!";
      int nNuovoUtente = this->LastCodUtente();
 
       usersXMLFile.open(QFile::ReadOnly | QFile::Text);
@@ -120,12 +181,16 @@ int inputxmlfit::utenteGiaPresente(const utente &user){
             writer.writeStartElement("utente");
 
             writer.writeTextElement("codiceutente", QString::number(nNuovoUtente+1) );
-            writer.writeTextElement("nome", QString::fromStdString(user.getNome()) );
-            writer.writeTextElement("cognome", QString::fromStdString(user.getCognome()) );
-            writer.writeTextElement("datanascita", user.getDataNascita().toString("yyyy-MM-dd").toUtf8().constData());
-            QString pass = QString(QCryptographicHash::hash(("password"),QCryptographicHash::Md5).toHex());
+            writer.writeTextElement("nome", QString::fromStdString(user->getNome()) );
+            writer.writeTextElement("cognome", QString::fromStdString(user->getCognome()) );
+            writer.writeTextElement("datanascita", user->getDataNascita().toString("yyyy-MM-dd").toUtf8().constData());
+            writer.writeTextElement("sesso", QString::number(user->getSesso()));
+            QString pass = QString(QCryptographicHash::hash((user->getPassword()).toUtf8().constData(),QCryptographicHash::Md5).toHex());
             writer.writeTextElement("password", pass);
-
+            if(dynamic_cast<const admin*>(user))
+            writer.writeTextElement("gruppo", QString::number(1));
+            else
+            writer.writeTextElement("gruppo", QString::number(0));
             writer.writeEndElement();
           }
         }
@@ -153,9 +218,8 @@ int inputxmlfit::utenteGiaPresente(const utente &user){
   
   
   
-  int inputxmlfit::LastCodUtente(){
+  int iofit::LastCodUtente(){
     int codUt = -1;
-    usersXMLFile.close();
     usersXMLFile.open(QFile::ReadOnly | QFile::Text);
     QXmlStreamReader reader(&usersXMLFile);
 
@@ -181,73 +245,103 @@ int inputxmlfit::utenteGiaPresente(const utente &user){
   }
 
 
-  bool inputxmlfit::saveUser(const utente &user){
+  bool iofit::saveUser(const utente * user){
       unsigned int cod = utenteGiaPresente(user);
-      std::cout << "cacca " << (cod == user.getCodiceUtente());
-    if(cod == user.getCodiceUtente()){
-         std::cout << "aggiorno l'utente!";
+    if(cod == user->getCodiceUtente()){
+         usersXMLFile.open(QIODevice::ReadWrite | QIODevice::Text);
 
-          usersXMLFile.open(QFile::ReadOnly | QFile::Text);
+         QByteArray xmlData(usersXMLFile.readAll());
+         QDomDocument doc("saveUser");
+         doc.setContent(xmlData);
 
-          QString outS;
-          QXmlStreamWriter writer(&outS);
-          writer.setAutoFormatting(true);
+         QDomElement root = doc.firstChildElement("utenti");
 
-          QXmlStreamReader reader(&usersXMLFile);
+         for(int i=0; i<root.childNodes().count();i++){
 
-          if (reader.readNextStartElement()) {
-              if (reader.name() == "utenti"){
-                  reader.readNextStartElement();
-                      if(reader.name() == "utente")
-                          while(reader.readNextStartElement()){
-                                  int n;
-                                  QString qs = reader.readElementText();
-                                  std::string s = qs.toUtf8().constData();
-                                  if(reader.name() == "codiceutente")
-                                  n = std::stoi(s);
-                                  if(n == user.getCodiceUtente()){
-                                      writer.writeStartElement("utente");
+                 QDomNode utenteNode = root.childNodes().item(i);
+                 QDomElement utenteE = utenteNode.toElement();
 
-                                      writer.writeTextElement("codiceutente", QString::number(user.getCodiceUtente()) );
-                                      writer.writeTextElement("nome", QString::fromStdString(user.getNome()) );
-                                      writer.writeTextElement("cognome", QString::fromStdString(user.getCognome()) );
-                                      writer.writeTextElement("datanascita", user.getDataNascita().toString("yyyy-MM-dd").toUtf8().constData());
-                                      QString pass = QString(QCryptographicHash::hash(("password"),QCryptographicHash::Md5).toHex());
-                                      writer.writeTextElement("password", pass);
+                 QDomNode childNode = utenteE.childNodes().item(0);
+                 QDomElement e = childNode.toElement();
 
-                                      writer.writeEndElement();
-                                      reader.readNextStartElement();
-                                  }
-                                  }
-                      if(reader.isCharacters())
-                        writer.writeCharacters(reader.text().toString());
+                 if(std::stoi(e.text().toUtf8().constData()) == user->getCodiceUtente()){
 
-                      if(reader.isEndElement())
-                        writer.writeEndElement();
+                  utenteE.childNodes().item(1).firstChild().setNodeValue(QString::fromStdString(user->getNome()));
+                  utenteE.childNodes().item(2).firstChild().setNodeValue(QString::fromStdString(user->getCognome()));
+                  utenteE.childNodes().item(3).firstChild().setNodeValue(user->getDataNascita().toString("yyyy-MM-dd"));
+                  utenteE.childNodes().item(4).firstChild().setNodeValue(QString::number(user->getSesso()));
+                  utenteE.childNodes().item(5).firstChild().setNodeValue(QString(QCryptographicHash::hash((user->getPassword()).toUtf8().constData(),QCryptographicHash::Md5).toHex()));
 
-                      if(reader.isEndDocument())
-                        writer.writeEndElement();
+                }
 
-                      reader.readNext();
-                          }
-                      }
+         }
 
-          }
+      usersXMLFile.close();
+      usersXMLFile.open(QFile::WriteOnly |QFile::Text);
+      QTextStream stream(&usersXMLFile);
+      usersXMLFile.resize(0);
+      doc.save(stream, 4);
+      usersXMLFile.close();
 
-
-
-        usersXMLFile.close();
-        usersXMLFile.open(QFile::WriteOnly |QFile::Text);
-        QTextStream out(&usersXMLFile);
-        out << outS;
-        std::cout << outS.toUtf8().constData();
-        usersXMLFile.flush();
-        usersXMLFile.close();
+    return 1;
     }
-  }
+    return 0;
+    }
 
 
-  void inputxmlfit::inputXMLdatiMovimSleep(std::string fileInputXml,utente& user){
+
+
+   void iofit::deleteUser(const utente * user){
+
+       usersXMLFile.open(QIODevice::ReadWrite | QIODevice::Text);
+
+       QByteArray xmlData(usersXMLFile.readAll());
+       QDomDocument doc("saveUser");
+       doc.setContent(xmlData);
+
+       QDomElement root = doc.firstChildElement("utenti");
+
+
+
+       for(int i=0; i<root.childNodes().count();i++){
+
+               QDomNode utenteNode = root.childNodes().item(i);
+               QDomElement utenteE = utenteNode.toElement();
+
+
+
+               QDomNode childNode = utenteE.childNodes().item(0);
+               QDomElement e = childNode.toElement();
+
+               if(std::stoi(e.text().toUtf8().constData()) == user->getCodiceUtente()){
+                   QDomNode toRemove = e.parentNode();
+                   toRemove.parentNode().removeChild(toRemove);
+              }
+       }
+
+    usersXMLFile.close();
+    usersXMLFile.open(QFile::WriteOnly |QFile::Text);
+    QTextStream stream(&usersXMLFile);
+    usersXMLFile.resize(0);
+    doc.save(stream, 4);
+    usersXMLFile.close();
+
+
+       std::string fileFitXML = DirectoryToSave+std::to_string(user->getCodiceUtente())+"att.xml";
+       QFile fileF;
+       fileF.setFileName(QString::fromStdString(fileFitXML));
+       fileF.remove();
+
+
+   }
+
+
+
+
+
+
+
+  void iofit::inputXMLdatiMovimSleep(std::string fileInputXml,utente * user){
 
     QFile file;
     file.setFileName(QString::fromStdString(fileInputXml));
@@ -315,7 +409,7 @@ QTime t;
                     svegliaLetto = t.hour()*60+t.minute();
                     s = att_sonno(static_cast<int>(t.hour()*1.05180646446),orario(andatoLetto),orario(svegliaLetto),minuti_letto,minuti_dormito);
 
-                   user.insert_gg(d,giorno(d,m,s));
+                   user->insert_gg(d,giorno(d,m,s));
                 }
                 else
                     reader.skipCurrentElement();
@@ -330,8 +424,23 @@ file.close();
 
 }
 
- void inputxmlfit::saveUserFit(const utente& user){
-     std::string fileOutputXml = DirectoryToSave+std::to_string(user.getCodiceUtente())+"att.xml";
+ bool iofit::loadUserFit(utente* user){
+    std::string fileInputXml = DirectoryToSave+std::to_string(user->getCodiceUtente())+"att.xml";
+
+    QFile file;
+    file.setFileName(QString::fromStdString(fileInputXml));
+    if(!file.open(QFile::ReadOnly | QFile::Text)){
+        return false;
+    }
+    file.close();
+
+    this->inputXMLdatiMovimSleep(fileInputXml,user);
+    return true;
+ }
+
+
+ void iofit::saveUserFit(const utente * user){
+     std::string fileOutputXml = DirectoryToSave+std::to_string(user->getCodiceUtente())+"att.xml";
 
      QFile file;
      file.setFileName(QString::fromStdString(fileOutputXml));
@@ -346,7 +455,7 @@ file.close();
      writer.writeStartDocument();
 
      writer.writeStartElement("vita");
-for(auto it = user.fit.begin(); it != user.fit.end(); ++it){
+for(auto it = user->fit.begin(); it != user->fit.end(); ++it){
          writer.writeStartElement("giorno");
 
              writer.writeStartElement("dateTime");

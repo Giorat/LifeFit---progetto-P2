@@ -20,7 +20,7 @@ private:
     QString password;
     bool sesso;
     std::map<QDate,giorno> fit;
-    unsigned int obb_pass_giornalieri = 10000;
+    unsigned int obb_pass_giornalieri;
 public:
 
     virtual ~utente(){}
@@ -78,7 +78,7 @@ public:
 
     friend std::ostream& operator<<(std::ostream &output, const utente *s);
 
-    static std::vector<std::pair<int,int>>  ultimiSetteGiorniUtenti(const std::vector<const utente*>,const QDate);
+    static std::vector<std::pair<int,int> >  ultimiSetteGiorniUtenti(const std::vector<const utente*>,const QDate);
 
     static std::pair<int,int> massimoGiornoUtenti(const std::vector<const utente*>,const QDate);
 
