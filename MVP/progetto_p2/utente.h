@@ -39,6 +39,9 @@ public:
     void modify_gg(QDate,giorno);
     void delete_gg(QDate);
 
+    QDate primaAtt()const;
+    QDate ultimaAtt()const;
+
     /**Percentuale di passi effettuati rispetto all'obbiettivo di passi giornaliero impostato dall'admin
     * @param QDate giorno del quale generare il float in frazione compresa tra 0.00 e 1.00
     */

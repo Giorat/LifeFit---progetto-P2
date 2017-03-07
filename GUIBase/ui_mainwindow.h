@@ -296,6 +296,12 @@ public:
         no_data_img = new QLabel(content);
         no_data_img->setObjectName(QStringLiteral("no_data_img"));
         no_data_img->setGeometry(QRect(30, 20, 901, 781));
+        QSizePolicy sizePolicy5(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy5.setHorizontalStretch(0);
+        sizePolicy5.setVerticalStretch(0);
+        sizePolicy5.setHeightForWidth(no_data_img->sizePolicy().hasHeightForWidth());
+        no_data_img->setSizePolicy(sizePolicy5);
+        no_data_img->setMinimumSize(QSize(901, 781));
         verticalLayoutWidget_2 = new QWidget(content);
         verticalLayoutWidget_2->setObjectName(QStringLiteral("verticalLayoutWidget_2"));
         verticalLayoutWidget_2->setGeometry(QRect(670, 70, 261, 731));
@@ -305,13 +311,13 @@ public:
         friend_list->setObjectName(QStringLiteral("friend_list"));
         friend_list->setSizeConstraint(QLayout::SetMinAndMaxSize);
         friend_list->setContentsMargins(5, 0, 5, 0);
-        no_data_img->raise();
         right_calendar->raise();
         calendario_titolo->raise();
         amici_t->raise();
         right_progress->raise();
         aggiungi_dati->raise();
         verticalLayoutWidget_2->raise();
+        no_data_img->raise();
         content2 = new QWidget(horizontalLayoutWidget);
         content2->setObjectName(QStringLiteral("content2"));
         content2->setGeometry(QRect(300, 80, 941, 400));

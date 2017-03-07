@@ -675,6 +675,18 @@ color: white;
        <height>781</height>
       </rect>
      </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>901</width>
+       <height>781</height>
+      </size>
+     </property>
     </widget>
     <widget class="QWidget" name="verticalLayoutWidget_2">
      <property name="geometry">
@@ -706,13 +718,13 @@ color: white;
       </property>
      </layout>
     </widget>
-    <zorder>no_data_img</zorder>
     <zorder>right_calendar</zorder>
     <zorder>calendario_titolo</zorder>
     <zorder>amici_t</zorder>
     <zorder>right_progress</zorder>
     <zorder>aggiungi_dati</zorder>
     <zorder>verticalLayoutWidget_2</zorder>
+    <zorder>no_data_img</zorder>
    </widget>
    <widget class="QWidget" name="content2" native="true">
     <property name="geometry">

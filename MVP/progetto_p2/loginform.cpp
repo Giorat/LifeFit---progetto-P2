@@ -43,6 +43,7 @@ void LoginForm::loginclick()
     utenteLog = ioutenti.loadUser(usernametext->text().toUtf8().constData(),passtext->text().toUtf8().constData());
 
     if(utenteLog){
+        ioutenti.loadUserFit(utenteLog);
         mainapp = new MainWindow(utenteLog);
         mainapp->setWindowTitle("LIFE-FIT APP");
         mainapp->show();
@@ -77,6 +78,7 @@ void LoginForm::loginclick2()
     utenteLog = ioutenti.loadUser(usernametext->text().toUtf8().constData(),passtext->text().toUtf8().constData());
 
     if(utenteLog){
+        ioutenti.loadUserFit(utenteLog);
         mainapp = new MainWindow(utenteLog);
         mainapp->setWindowTitle("LIFE-FIT APP");
         mainapp->show();

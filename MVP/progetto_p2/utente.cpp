@@ -22,6 +22,17 @@ void utente::delete_gg(QDate d){
 
 }
 
+
+QDate utente::primaAtt()const{
+    auto it= fit.begin();
+    return it->first;
+}
+QDate utente::ultimaAtt()const{
+    auto it= fit.rbegin();
+    return it->first;
+}
+
+
 float utente::perc_giorno(const QDate d){
     return (float)giornoData(d)->movim().totale_passi()/(float)this->obbiettivo_passi();
 }

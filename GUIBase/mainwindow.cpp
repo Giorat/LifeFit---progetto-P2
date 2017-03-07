@@ -12,7 +12,7 @@ MainWindow::MainWindow(QString user,bool firstboot,QWidget *parent) :
     this->ui->content2->hide();
     //solo nel caso si venga reindirizzati dalla registrazione per la prima volta si mostra
     //una serie di azioni per introdurre l'utente all'applicazione
-    if(firstboot){
+    if(1){
         QImage image(":/resources/no_data.png");
         this->ui->no_data_img->setPixmap(QPixmap::fromImage(image));
         this->ui->no_data_img->show();

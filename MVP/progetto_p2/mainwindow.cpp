@@ -10,9 +10,14 @@ MainWindow::MainWindow(utente * user,bool firstboot,QWidget *parent) :
     ui->setupUi(this);
     this->ui->no_data_img->hide();
     this->ui->content2->hide();
-    //solo nel caso si venga reindirizzati dalla registrazione per la prima volta si mostra
-    //una serie di azioni per introdurre l'utente all'applicazione
-    if(firstboot){
+
+    //carico utente
+    ultima_sess.user = QString::fromStdString(user->getNome());
+    ui->eta->setText(QString::number(user->getAge()));
+    ui->nome->setText(ultima_sess.user);
+
+
+    if(firstboot||user->getGiorniFit()==0){
         QImage image(":/resources/no_data.png");
         this->ui->no_data_img->setPixmap(QPixmap::fromImage(image));
         this->ui->no_data_img->show();
@@ -21,8 +26,12 @@ MainWindow::MainWindow(utente * user,bool firstboot,QWidget *parent) :
     QMainWindow::showMaximized();
         calendar = ui->calendarWidget;
         calendar->setGridVisible(true);
-        calendar->setDateRange(QDate(2017,1,1),QDate::currentDate());
         calendar->setStyleSheet("background-color: rgb(255, 255, 255);");
+
+    if(user->getGiorniFit()!=0){
+                calendar->setDateRange(user->primaAtt(),user->ultimaAtt());
+                QMessageBox::information(NULL,"FIT","Fit Utente Att");
+    }
 
  //gestione progressi ultimo giorno o giorno attuale CON FUNZIONE A CUI PASSARE TRE VALORI SEMPRE REALIZZA QUESTO
  CircularProgress *w = ui->progressoMovim;
@@ -47,11 +56,6 @@ MainWindow::MainWindow(utente * user,bool firstboot,QWidget *parent) :
 
 loadSettings();
 
-ultima_sess.user = QString::fromStdString(user->getNome());
-ui->nome->setText(ultima_sess.user);
-
-
-
 //CREO FUNZIONE CHE DATO VETTORE FA QUESTA OPERAZIONE SU MAIN WINDOW
 friend_label *label = new friend_label("Ercole M. 10.000 passi");
 friend_label *label1 = new friend_label("Riccardo Giorato 8.580 passi");
@@ -68,6 +72,10 @@ QObject::connect(this->ui->settings,SIGNAL(clicked()),this,SLOT(vaiImpostazioni(
 QObject::connect(this->ui->logout,SIGNAL(clicked()),this,SLOT(vaiLogout()));
 QObject::connect(this->ui->aggiungi_dati,SIGNAL(clicked()),this,SLOT(caricaDatiFitXml()));
 }
+
+
+
+
 
 void MainWindow::vaiLogout(){
     loginF = new LoginForm();
