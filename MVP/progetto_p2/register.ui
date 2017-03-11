@@ -10,6 +10,18 @@
     <height>310</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>540</width>
+    <height>310</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>540</width>
+    <height>310</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -17,13 +29,16 @@
    <iconset resource="settings_icon.qrc">
     <normaloff>:/new/settings/resources/life_icon.ico</normaloff>:/new/settings/resources/life_icon.ico</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background:white;</string>
+  </property>
   <widget class="QWidget" name="center_form">
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
       <x>50</x>
       <y>20</y>
-      <width>441</width>
+      <width>442</width>
       <height>231</height>
      </rect>
     </property>
@@ -67,6 +82,18 @@
       </widget>
      </item>
      <item>
+      <widget class="QLineEdit" name="password">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="placeholderText">
+        <string>Password</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QDateEdit" name="dataNascita">
        <property name="font">
         <font>
@@ -79,10 +106,20 @@
        <property name="showGroupSeparator" stdset="0">
         <bool>true</bool>
        </property>
+       <property name="date">
+        <date>
+         <year>1791</year>
+         <month>1</month>
+         <day>1</day>
+        </date>
+       </property>
       </widget>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>2</number>
+       </property>
        <item>
         <widget class="QRadioButton" name="man">
          <property name="font">
@@ -111,9 +148,15 @@
      </item>
      <item>
       <widget class="QPushButton" name="register_send">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize">
         <size>
-         <width>0</width>
+         <width>439</width>
          <height>40</height>
         </size>
        </property>
@@ -121,6 +164,11 @@
         <font>
          <pointsize>10</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(45, 59, 85);
+color:white;
+border:none;</string>
        </property>
        <property name="text">
         <string>REGISTRATI</string>
@@ -132,15 +180,21 @@
    <widget class="QPushButton" name="go_back">
     <property name="geometry">
      <rect>
-      <x>19</x>
+      <x>0</x>
       <y>265</y>
-      <width>181</width>
-      <height>40</height>
+      <width>210</width>
+      <height>45</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="minimumSize">
      <size>
-      <width>0</width>
+      <width>181</width>
       <height>40</height>
      </size>
     </property>
@@ -149,8 +203,17 @@
       <pointsize>10</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(232, 233, 236);
+color: rgb(132,140,157);
+padding-left:5px;
+border:none;</string>
+    </property>
     <property name="text">
      <string>TORNA AL LOGIN</string>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
     </property>
    </widget>
   </widget>

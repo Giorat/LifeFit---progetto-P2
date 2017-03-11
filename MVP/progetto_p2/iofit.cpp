@@ -43,7 +43,7 @@ int iofit::utenteGiaPresente(const utente * user){
   if(nom && cognom)
     return (codU);
   else
-    return 0;
+    return -1;
 }
 
 
@@ -157,7 +157,7 @@ return nullptr;
   bool iofit::createUser(const utente *user){
 
       if(utenteGiaPresente(user)== -1){
-     int nNuovoUtente = this->LastCodUtente();
+        int nNuovoUtente = this->LastCodUtente();
 
       usersXMLFile.open(QFile::ReadOnly | QFile::Text);
 
@@ -247,7 +247,7 @@ return nullptr;
 
   bool iofit::saveUser(const utente * user){
       unsigned int cod = utenteGiaPresente(user);
-    if(cod == user->getCodiceUtente()){
+    if(cod == user->getCodiceUtente()||cod == -1){
          usersXMLFile.open(QIODevice::ReadWrite | QIODevice::Text);
 
          QByteArray xmlData(usersXMLFile.readAll());
@@ -355,18 +355,18 @@ return nullptr;
     QDate d;
     att_mov m;
 
-    int cal_mov;
-    int passi;
-    float dist;
+    int cal_mov=0;
+    int passi=0;
+    float dist=0;
     float perc_camminata = 100;
     //float perc_inattivo = 100-perc_camminata
-    int piani;
+    int piani=0;
 
-    int minuti_letto;
-    int minuti_dormito;
+    int minuti_letto=0;
+    int minuti_dormito=0;
     int andatoLetto;
     int svegliaLetto;
-    int eff_sonno;
+    int eff_sonno=0;
 
     att_sonno s;
 QTime t;
@@ -375,7 +375,9 @@ QTime t;
         if (reader.name() == "vita"){
             while(reader.readNextStartElement()){
                 if(reader.name() == "giorno"){
+                    int i=0;
                     while(reader.readNextStartElement()){
+                        i++;
                         QString qs = reader.readElementText();
                         std::string s = qs.toUtf8().constData();
                         if(s.empty())
@@ -386,7 +388,7 @@ QTime t;
                           cal_mov = std::stoi(s);
                         if(reader.name() == "activities-steps")
                            passi = std::stoi(s);
-                        if(reader.name() == "Activities-distance")
+                        if(reader.name() == "activities-distance")
                            dist = std::stoi(s);
                         if(reader.name() == "activities-floors")
                            piani = std::stoi(s);
@@ -404,12 +406,13 @@ QTime t;
                         if(reader.name() == "sleep-efficiency")
                             eff_sonno =  std::stoi(s);
                     }
-                    m = att_mov(cal_mov,passi,dist,perc_camminata,piani);
-                    t=t.addSecs(60*minuti_letto);
-                    svegliaLetto = t.hour()*60+t.minute();
-                    s = att_sonno(static_cast<int>(t.hour()*1.05180646446),orario(andatoLetto),orario(svegliaLetto),minuti_letto,minuti_dormito);
-
-                   user->insert_gg(d,giorno(d,m,s));
+                   if(i==9){//giorno da xml completo
+                        m = att_mov(cal_mov,passi,dist,perc_camminata,piani);
+                        t=t.addSecs(60*minuti_letto);
+                        svegliaLetto = t.hour()*60+t.minute();
+                        s = att_sonno(static_cast<int>(t.hour()*1.05180646446),orario(andatoLetto),orario(svegliaLetto),minuti_letto,minuti_dormito);
+                        user->insert_gg(d,giorno(d,m,s));
+                   }
                 }
                 else
                     reader.skipCurrentElement();
@@ -470,7 +473,7 @@ for(auto it = user->fit.begin(); it != user->fit.end(); ++it){
              writer.writeCharacters (QString::number(it->second.movim().totale_passi()));
              writer.writeEndElement();
 
-             writer.writeStartElement("Activities-distance");
+             writer.writeStartElement("activities-distance");
              writer.writeCharacters (QString::number(it->second.movim().distanza()));
              writer.writeEndElement();
 

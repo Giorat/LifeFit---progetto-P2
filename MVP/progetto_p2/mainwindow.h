@@ -26,11 +26,14 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(utente *user ,bool firstboot=0,QWidget *parent = 0);
+    explicit MainWindow(utente *user ,QWidget *parent = 0);
     ~MainWindow();
 
 private:
+    admin_iofit ioutenti;
+    utente * UtenteOn;
     QCalendarWidget *calendar;
+    QDate dataSel;
     bool inSettings;
     LoginForm *loginF;
     struct SPreferences
@@ -40,20 +43,23 @@ private:
         bool first_boot;
     };
     Ui::MainWindow *ui;
+    SPreferences ultima_sess;
+
+    void loadUserOnUi();
     void loadSettings();
     void saveSettings();
     void closeEvent(QCloseEvent* event);
-    SPreferences ultima_sess;
-
 private slots:
   void vaiImpostazioni();
   void vaiLogout();
   void caricaDatiFitXml();
-  void slotClicked(const QDate& date)
-  {
-    QMessageBox::information(NULL,"New Date Selected!",date.toString());
-  }
+  void loadGiorno(const QDate&);
 
+  //Aggiunti da Designer
+  void on_saveUser_clicked();
+  void on_uomo_clicked();
+  void on_donna_clicked();
+  void on_calendarWidget_currentPageChanged(int year, int month);
 };
 
 #endif // MAINWINDOW_H

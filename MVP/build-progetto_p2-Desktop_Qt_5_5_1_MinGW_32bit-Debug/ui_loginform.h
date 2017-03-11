@@ -40,30 +40,30 @@ public:
     {
         if (LoginForm->objectName().isEmpty())
             LoginForm->setObjectName(QStringLiteral("LoginForm"));
-        LoginForm->resize(404, 254);
+        LoginForm->resize(400, 254);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(LoginForm->sizePolicy().hasHeightForWidth());
         LoginForm->setSizePolicy(sizePolicy);
-        LoginForm->setMinimumSize(QSize(404, 254));
-        LoginForm->setMaximumSize(QSize(404, 254));
+        LoginForm->setMinimumSize(QSize(400, 254));
+        LoginForm->setMaximumSize(QSize(400, 254));
         QIcon icon;
         icon.addFile(QStringLiteral(":/new/settings/resources/life_icon.ico"), QSize(), QIcon::Normal, QIcon::Off);
         LoginForm->setWindowIcon(icon);
-        LoginForm->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
+        LoginForm->setStyleSheet(QStringLiteral("background:white;"));
         login_center = new QWidget(LoginForm);
         login_center->setObjectName(QStringLiteral("login_center"));
         sizePolicy.setHeightForWidth(login_center->sizePolicy().hasHeightForWidth());
         login_center->setSizePolicy(sizePolicy);
-        login_center->setMinimumSize(QSize(404, 254));
+        login_center->setMinimumSize(QSize(400, 254));
         QFont font;
         font.setPointSize(12);
         login_center->setFont(font);
-        login_center->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
+        login_center->setStyleSheet(QStringLiteral("background:white;"));
         form = new QWidget(login_center);
         form->setObjectName(QStringLiteral("form"));
-        form->setGeometry(QRect(0, 40, 401, 161));
+        form->setGeometry(QRect(0, 40, 400, 161));
         verticalLayout = new QVBoxLayout(form);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         username = new QLineEdit(form);
@@ -112,18 +112,20 @@ public:
         label->setStyleSheet(QStringLiteral("color:rgb(102,102,102);"));
         register_n = new QPushButton(login_center);
         register_n->setObjectName(QStringLiteral("register_n"));
-        register_n->setGeometry(QRect(0, 210, 201, 51));
+        register_n->setGeometry(QRect(0, 210, 200, 45));
         sizePolicy.setHeightForWidth(register_n->sizePolicy().hasHeightForWidth());
         register_n->setSizePolicy(sizePolicy);
         register_n->setMinimumSize(QSize(124, 31));
         register_n->setFont(font);
         register_n->setStyleSheet(QLatin1String("background-color: rgb(232, 233, 236);\n"
 "color: rgb(132,140,157);\n"
-"Text-align:left;"));
+"Text-align:left;\n"
+"border:none;\n"
+"padding-left:10px;"));
         register_n->setFlat(false);
         login = new QPushButton(login_center);
         login->setObjectName(QStringLiteral("login"));
-        login->setGeometry(QRect(200, 210, 211, 51));
+        login->setGeometry(QRect(200, 210, 200, 45));
         sizePolicy.setHeightForWidth(login->sizePolicy().hasHeightForWidth());
         login->setSizePolicy(sizePolicy);
         login->setMinimumSize(QSize(124, 31));
@@ -131,7 +133,9 @@ public:
         login->setLayoutDirection(Qt::LeftToRight);
         login->setStyleSheet(QLatin1String("background-color: rgb(45, 59, 85);\n"
 "color:white;\n"
-"Text-align:right;"));
+"Text-align:right;\n"
+"border:none;\n"
+"padding-right:10px;"));
         login->setFlat(false);
         LoginForm->setCentralWidget(login_center);
 

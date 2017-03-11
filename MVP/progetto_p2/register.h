@@ -20,12 +20,22 @@ class Register : public QMainWindow
 public:
     explicit Register(QWidget *parent = 0);
     ~Register();
-
 private:
+    iofit ioutenti;
     utente * user;
     LoginForm* loginF;
     Ui::Register *ui;
     MainWindow *mainw;
+
+    std::string username;
+    std::string nome;
+    std::string cognome;
+    QDate dataNascita;
+    QString password;
+    int sesso;
+
+    void closeEvent(QCloseEvent* event);
+
 private slots :
     void SessoM();
     void SessoD();

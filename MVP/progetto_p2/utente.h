@@ -25,6 +25,10 @@ public:
 
     virtual ~utente(){}
 
+    utente* clone() const {
+        return new utente(*this);
+    }
+
     /**Costruttore completo di utente tranne obb_pass_giornalieri
      * @param int codice utente
      * @param string nome dell'utente

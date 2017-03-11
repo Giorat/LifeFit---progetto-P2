@@ -23,16 +23,14 @@ LoginForm::LoginForm(QWidget *parent) :
     connect(usernametext,SIGNAL(editingFinished()),this,SLOT(psetFocus()));
     connect(passtext,SIGNAL(editingFinished()),this,SLOT(loginclick2()));
     connect(registerbtn,SIGNAL(clicked()),this,SLOT(registerTo()));
+
+    registerapp=nullptr;
+    mainapp = nullptr;
 }
 
 
 void LoginForm::psetFocus(){
 passtext->setFocus();
-}
-
-LoginForm::~LoginForm()
-{
-     delete ui;
 }
 
 void LoginForm::loginclick()
@@ -90,4 +88,16 @@ void LoginForm::loginclick2()
     }
     usernametext->blockSignals(false);
     passtext->blockSignals(false);
+}
+
+void LoginForm::closeEvent(QCloseEvent *event)
+{
+event->accept();
+if((mainapp == nullptr)&&(registerapp == nullptr))
+QCoreApplication::quit();
+}
+
+LoginForm::~LoginForm()
+{
+     delete ui;
 }

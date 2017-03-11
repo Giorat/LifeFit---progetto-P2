@@ -168,7 +168,7 @@ color: rgb(163, 180, 200);</string>
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="nome">
+    <widget class="QLabel" name="username">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -264,9 +264,9 @@ color: rgb(163, 180, 200);</string>
     <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>0</x>
        <y>370</y>
-       <width>241</width>
+       <width>261</width>
        <height>41</height>
       </rect>
      </property>
@@ -276,7 +276,10 @@ color: rgb(163, 180, 200);</string>
       </font>
      </property>
      <property name="text">
-      <string>OBBIETTIVO  questa settimana:</string>
+      <string>OBIETTIVO  questa settimana</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
      </property>
     </widget>
     <widget class="QPushButton" name="logout">
@@ -411,9 +414,9 @@ border: none;</string>
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>530</y>
+       <y>533</y>
        <width>601</width>
-       <height>271</height>
+       <height>250</height>
       </rect>
      </property>
      <widget class="CircularProgress" name="progressoMese" native="true">
@@ -515,7 +518,7 @@ border: none;</string>
        <string notr="true">color: rgb(68, 60, 75);</string>
       </property>
       <property name="text">
-       <string>Progressi complessivi mese</string>
+       <string>Traguardo mese</string>
       </property>
      </widget>
     </widget>
@@ -523,9 +526,9 @@ border: none;</string>
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>70</y>
+       <y>34</y>
        <width>600</width>
-       <height>451</height>
+       <height>445</height>
       </rect>
      </property>
      <property name="minimumSize">
@@ -552,9 +555,9 @@ border: none;</string>
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>44</y>
         <width>600</width>
-        <height>451</height>
+        <height>400</height>
        </rect>
       </property>
       <property name="minimumSize">
@@ -571,13 +574,14 @@ border: none;</string>
       </property>
       <property name="font">
        <font>
-        <pointsize>9</pointsize>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(67, 72, 88);
-background-color: rgb(255, 255, 255);
-</string>
+       <string notr="true">background-color: rgb(53, 64, 82);
+color: white;</string>
       </property>
       <property name="gridVisible">
        <bool>true</bool>
@@ -589,10 +593,36 @@ background-color: rgb(255, 255, 255);
        <enum>QCalendarWidget::NoVerticalHeader</enum>
       </property>
       <property name="navigationBarVisible">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <property name="dateEditEnabled">
        <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="mese_calendario">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>0</y>
+        <width>221</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(53, 64, 82);</string>
+      </property>
+      <property name="text">
+       <string>Mese</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
@@ -600,9 +630,9 @@ background-color: rgb(255, 255, 255);
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>20</y>
+       <y>0</y>
        <width>131</width>
-       <height>41</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="font">
@@ -642,7 +672,7 @@ background-color: rgb(255, 255, 255);
      <property name="geometry">
       <rect>
        <x>130</x>
-       <y>810</y>
+       <y>790</y>
        <width>411</width>
        <height>71</height>
       </rect>
@@ -687,6 +717,11 @@ color: white;
        <height>781</height>
       </size>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
     </widget>
     <widget class="QWidget" name="verticalLayoutWidget_2">
      <property name="geometry">
@@ -718,13 +753,77 @@ color: white;
       </property>
      </layout>
     </widget>
+    <widget class="QLabel" name="mese_calendario_giorno">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>485</y>
+       <width>441</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:rgb(53, 64, 82);</string>
+     </property>
+     <property name="text">
+      <string>Mese</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>490</y>
+       <width>40</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 5px;
+border:2px solid rgb(102,119,129);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="settings_icon.qrc">
+       <normaloff>:/new/settings/resources/trash.png</normaloff>:/new/settings/resources/trash.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>36</width>
+       <height>36</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <zorder>no_data_img</zorder>
     <zorder>right_calendar</zorder>
     <zorder>calendario_titolo</zorder>
     <zorder>amici_t</zorder>
     <zorder>right_progress</zorder>
     <zorder>aggiungi_dati</zorder>
     <zorder>verticalLayoutWidget_2</zorder>
-    <zorder>no_data_img</zorder>
+    <zorder>mese_calendario_giorno</zorder>
+    <zorder>pushButton</zorder>
    </widget>
    <widget class="QWidget" name="content2" native="true">
     <property name="geometry">
@@ -774,12 +873,32 @@ color: white;
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>20</y>
-        <width>321</width>
-        <height>220</height>
+        <y>10</y>
+        <width>381</width>
+        <height>331</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>cambia  nome</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="nome"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>cambia  cognome</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="cognome"/>
+       </item>
        <item>
         <widget class="QLabel" name="label_3">
          <property name="text">
@@ -788,7 +907,7 @@ color: white;
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_3"/>
+        <widget class="QLineEdit" name="password"/>
        </item>
        <item>
         <widget class="QLabel" name="label">
@@ -798,7 +917,7 @@ color: white;
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_2"/>
+        <widget class="QDateEdit" name="datanascita"/>
        </item>
        <item>
         <widget class="QLabel" name="label_2">
@@ -808,7 +927,41 @@ color: white;
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit"/>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QRadioButton" name="uomo">
+           <property name="text">
+            <string>UOMO</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="donna">
+           <property name="text">
+            <string>DONNA</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QPushButton" name="saveUser">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Salva le modifiche Utente</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>

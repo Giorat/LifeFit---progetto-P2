@@ -31,7 +31,9 @@ int main(int argc, char *argv[])
         )
     );
 
+    //w.setAttribute(Qt::WA_QuitOnClose);
     w.show();
+
 
     QPalette pal = a.palette();
     pal.setColor(QPalette::Window, Qt::white);

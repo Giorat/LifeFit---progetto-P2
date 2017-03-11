@@ -4,6 +4,7 @@
         <file>resources/avatar-df.png</file>
         <file>resources/life_icon.ico</file>
         <file>resources/quit.png</file>
+        <file>resources/trash.png</file>
     </qresource>
     <qresource prefix="/">
         <file>resources/no_data.png</file>

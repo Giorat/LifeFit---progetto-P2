@@ -1,7 +1,7 @@
+
 #ifndef LOGINFORM_H
 #define LOGINFORM_H
 
-#include "mainwindow.h"
 #include <QMainWindow>
 #include <QLineEdit>
 #include <QtGui>
@@ -10,6 +10,7 @@
 #include "admin.h"
 #include "admin_iofit.h"
 
+#include "mainwindow.h"
 #include "register.h"
 #include "ui_loginform.h"
 
@@ -40,7 +41,7 @@ public slots:
     void registerTo();
 
 private:
-    admin_iofit ioutenti;
+    iofit ioutenti;
     utente * utenteLog;
 
     QString user;
@@ -48,6 +49,8 @@ private:
     Ui::LoginForm *ui;
     MainWindow *mainapp;
     Register *registerapp;
+
+    void closeEvent(QCloseEvent* event);
 };
 
 #endif // LOGINFORM_H

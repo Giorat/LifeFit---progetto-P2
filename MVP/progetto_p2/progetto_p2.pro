@@ -8,6 +8,7 @@ QT       += core gui
 QT += xml
 
 CONFIG += c++11
+QMAKE_CXXFLAGS += -std=c++11
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -45,9 +46,6 @@ HEADERS  += mainwindow.h \
     loginform.h \
     orario.h \
     register.h \
-    ui_loginform.h \
-    ui_mainwindow.h \
-    ui_register.h \
     utente.h
 
 RESOURCES += \
