@@ -3,8 +3,13 @@
 
 Register::Register(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::Register),sesso(-1),ioutenti("C:\\Users\\giora\\Documents\\GitHub\\progettoP2\\")
+    ui(new Ui::Register),sesso(-1)
 {
+    const QString DEFAULT_DIR_KEY("default_dir");
+    QSettings MySettings;
+    ioutenti= new iofit( MySettings.value(DEFAULT_DIR_KEY).toString().toUtf8().constData());
+
+
     ui->setupUi(this);
      connect( this->ui->man, SIGNAL( clicked() ), this, SLOT(SessoM() ));
      connect( this->ui->woman, SIGNAL( clicked() ), this, SLOT(SessoD() ));
@@ -29,19 +34,18 @@ void Register::tornaLogin(){
     this->close();
 }
 void Register::vaiApp(){
-
-    if(ui->nome->text().isEmpty()||ui->cognome->text().isEmpty()||ui->password->text().isEmpty()||sesso==-1||ui->dataNascita->date() == QDate(1,1,1971))
+    bool d=ui->dataNascita->date() == QDate(1791,1,1);
+    if(ui->nome->text().isEmpty()||ui->cognome->text().isEmpty()||ui->password->text().isEmpty()||sesso==-1||d)
         QMessageBox::information(this,"ATTENZIONE!!","Si prega di inserire dati validi compresa data di nascita corretta");
     else{
-    nome = ui->nome->text().toUtf8().constData();
-    cognome = ui->cognome->text().toUtf8().constData();
-    password = ui->password->text().toUtf8().constData();
+    nome = ui->nome->text().toLower().toUtf8().constData();
+    cognome = ui->cognome->text().toLower().toUtf8().constData();
+    password = ui->password->text().toLower().toUtf8().constData();
     dataNascita = ui->dataNascita->date();
-    user = new utente(ioutenti.LastCodUtente()+1,nome,cognome,dataNascita,sesso,password);
-    QMessageBox::information(this,"ATTENZIONE!!",ui->nome->text());
+    user = new utente(ioutenti->LastCodUtente()+1,nome,cognome,dataNascita,sesso,password);
 
    //Provo a creare un utente con queste informazioni
-    if(ioutenti.createUser(user)){
+    if(ioutenti->createUser(user)){
     mainw = new MainWindow(user);
     mainw->setWindowTitle("LIFE-FIT APP");
     mainw->show();

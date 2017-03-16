@@ -39,8 +39,6 @@ public:
 
     int operator!=(const giorno &g) const;
 
-    int operator<(const giorno &g) const;
-
     friend std::ostream& operator<<(std::ostream& output, const giorno &s);
 
 

@@ -12,6 +12,44 @@
 
 #include "iofit.h"
 
+QString iofit::hash_password_utente(QString usernameU){
+usersXMLFile.open(QFile::ReadOnly | QFile::Text);
+  QString userNameC,password;
+
+   QXmlStreamReader reader(&usersXMLFile);
+       if (reader.readNextStartElement()) {
+           if (reader.name() == "utenti")
+               while(reader.readNextStartElement())
+                   if(reader.name() == "utente"){
+                       userNameC = "";
+                       while(reader.readNextStartElement()){
+                           QString qs = reader.readElementText();
+                           if(reader.name() == "nome"){
+                               userNameC+=qs;
+                           }
+                           if(reader.name() == "cognome"){
+                               userNameC+=qs;
+                           }
+                           if(reader.name() == "password"){
+                               password=qs;
+                           }
+                       }//ricerca utente
+
+                       if(usernameU==userNameC){
+                          usersXMLFile.close();
+                          return password;
+                       }
+
+                   }//utente
+           }//documento utenti
+usersXMLFile.close();
+return "";
+
+}
+
+
+
+
 int iofit::utenteGiaPresente(const utente * user){
 
      usersXMLFile.open(QFile::ReadOnly | QFile::Text);
@@ -213,7 +251,10 @@ return nullptr;
     out << outS;
     usersXMLFile.flush();
     usersXMLFile.close();
+    return 1;
     }//fine if utente non ancora creato
+
+  return 0;
   }
   
   
@@ -247,7 +288,7 @@ return nullptr;
 
   bool iofit::saveUser(const utente * user){
       unsigned int cod = utenteGiaPresente(user);
-    if(cod == user->getCodiceUtente()||cod == -1){
+    if(cod == user->getCodiceUtente()||(int)cod == -1){
          usersXMLFile.open(QIODevice::ReadWrite | QIODevice::Text);
 
          QByteArray xmlData(usersXMLFile.readAll());
@@ -264,7 +305,7 @@ return nullptr;
                  QDomNode childNode = utenteE.childNodes().item(0);
                  QDomElement e = childNode.toElement();
 
-                 if(std::stoi(e.text().toUtf8().constData()) == user->getCodiceUtente()){
+                 if((unsigned int)std::stoi(e.text().toUtf8().constData()) == user->getCodiceUtente()){
 
                   utenteE.childNodes().item(1).firstChild().setNodeValue(QString::fromStdString(user->getNome()));
                   utenteE.childNodes().item(2).firstChild().setNodeValue(QString::fromStdString(user->getCognome()));
@@ -313,7 +354,7 @@ return nullptr;
                QDomNode childNode = utenteE.childNodes().item(0);
                QDomElement e = childNode.toElement();
 
-               if(std::stoi(e.text().toUtf8().constData()) == user->getCodiceUtente()){
+               if((unsigned int)std::stoi(e.text().toUtf8().constData()) == user->getCodiceUtente()){
                    QDomNode toRemove = e.parentNode();
                    toRemove.parentNode().removeChild(toRemove);
               }

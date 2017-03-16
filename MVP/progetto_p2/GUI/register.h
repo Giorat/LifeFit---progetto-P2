@@ -21,7 +21,7 @@ public:
     explicit Register(QWidget *parent = 0);
     ~Register();
 private:
-    iofit ioutenti;
+    iofit * ioutenti;
     utente * user;
     LoginForm* loginF;
     Ui::Register *ui;

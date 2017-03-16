@@ -58,7 +58,3 @@ int giorno::operator!=(const giorno &g) const
     return 1;
 }
 
-int giorno::operator<(const giorno &g) const
-{
-   return 0;
-}

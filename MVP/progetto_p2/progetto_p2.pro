@@ -17,43 +17,43 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    admin.cpp \
-    admin_iofit.cpp \
-    att_base.cpp \
-    att_mov.cpp \
-    att_sonno.cpp \
-    circularprogress.cpp \
-    friend_label.cpp \
-    giorno.cpp \
-    iofit.cpp \
-    loginform.cpp \
-    orario.cpp \
-    register.cpp \
-    utente.cpp
+        GUI\mainwindow.cpp \
+    MODEL\admin.cpp \
+    MODEL\admin_iofit.cpp \
+    MODEL\att_base.cpp \
+    MODEL\att_mov.cpp \
+    MODEL\att_sonno.cpp \
+    GUI\circularprogress.cpp \
+    GUI\friend_label.cpp \
+    MODEL\giorno.cpp \
+    MODEL\iofit.cpp \
+    GUI\loginform.cpp \
+    MODEL\orario.cpp \
+    GUI\register.cpp \
+    MODEL\utente.cpp
 
-HEADERS  += mainwindow.h \
-    admin.h \
-    admin_iofit.h \
-    att_base.h \
-    att_mov.h \
-    att_sonno.h \
-    attivita_base.h \
-    circularprogress.h \
-    friend_label.h \
-    giorno.h \
-    iofit.h \
-    loginform.h \
-    orario.h \
-    register.h \
-    utente.h
+HEADERS  += GUI\mainwindow.h \
+    MODEL\admin.h \
+    MODEL\admin_iofit.h \
+    MODEL\att_base.h \
+    MODEL\att_mov.h \
+    MODEL\att_sonno.h \
+    MODEL\attivita_base.h \
+    GUI\circularprogress.h \
+    GUI\friend_label.h \
+    MODEL\giorno.h \
+    MODEL\iofit.h \
+    GUI\loginform.h \
+    MODEL\orario.h \
+    GUI\register.h \
+    MODEL\utente.h
 
 RESOURCES += \
-    settings_icon.qrc
+    GUI\settings_icon.qrc
 
 FORMS += \
-    loginform.ui \
-    mainwindow.ui \
-    register.ui
+    GUI\loginform.ui \
+    GUI\mainwindow.ui \
+    GUI\register.ui
 
 DISTFILES +=

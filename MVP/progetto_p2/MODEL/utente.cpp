@@ -22,7 +22,6 @@ void utente::delete_gg(QDate d){
 
 }
 
-
 QDate utente::primaAtt()const{
     auto it= fit.begin();
     return it->first;
@@ -31,7 +30,6 @@ QDate utente::ultimaAtt()const{
     auto it= fit.rbegin();
     return it->first;
 }
-
 
 float utente::perc_giorno(const QDate d){
     return (float)giornoData(d)->movim().totale_passi()/(float)this->obbiettivo_passi();
@@ -58,15 +56,12 @@ unsigned int utente::progressi_mese(QDate d){
     int tot_passi =0;
     QDate primoGiornoMeseDataD (d.year(),d.month(),1);
     QDate ultimoGiornoMeseDataD (d.year(),d.month(),primoGiornoMeseDataD.daysInMonth());
-     int i=0;
     for(auto it = fit.begin(); it != fit.end(); ++it){
         QDate dat = it->first;
         giorno g = it->second;
 
        if( (0 >= dat.daysTo(primoGiornoMeseDataD) && dat.daysTo(primoGiornoMeseDataD) >= (-d.daysInMonth())) && (d.daysInMonth() >= dat.daysTo(ultimoGiornoMeseDataD) && dat.daysTo(ultimoGiornoMeseDataD) >= 0 ) ){
            tot_passi+=g.movim().totale_passi();
-            std::cout << "fit[" << dat.toString("yyyy-MM-dd").toUtf8().constData()  << "] = " << g << '\n\n';
-            i++;
        }
     }
     return tot_passi;
@@ -140,7 +135,7 @@ std::vector<std::pair<int,int>> codUpassi;
 for(auto it=utenti.begin();it != utenti.end();it++){
     int numPassiSett=0;
      inizioSetteG= data.addDays(-7);
-        while(inizioSetteG < data){
+        while(inizioSetteG <= data){
         const giorno * g = (*it)->giornoDataConst(inizioSetteG);
         if(g){
             numPassiSett+=(*g).movim().totale_passi();
@@ -175,6 +170,15 @@ std::pair<int,int> utente::massimoGiornoUtenti(const std::vector<const utente*> 
     }//for
 
     return massimoPassi;
+}
+
+
+utente *  utente::utenteCodiceUtente(const std::vector<const utente*> utenti,const int codU){
+       for(auto it=utenti.begin();it != utenti.end();it++){
+           if((*it)->getCodiceUtente() == (unsigned int)codU)
+               return const_cast<utente*>(*it);
+       }
+       return nullptr;
 }
 
 

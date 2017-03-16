@@ -12,6 +12,7 @@ protected:
     std::string DirectoryToSave;
     std::string xmlUsers;
     QFile usersXMLFile;
+
     /**
      * @brief utenteGiaPresente permette di determinare se un utente sia già presente ossia omonimo
      * @param user utente del quale bisogna controllare presenza di un omonimo
@@ -20,6 +21,8 @@ protected:
     int utenteGiaPresente(const utente *);
 
 public:
+
+    QString hash_password_utente(QString);
 
    /**
     *@param string con cartella in cui salvare dati utenti e xml dati attivita utente

@@ -6,9 +6,9 @@
 #include <QLineEdit>
 #include <QtGui>
 
-#include "giorno.h"
-#include "admin.h"
-#include "admin_iofit.h"
+#include "../MODEL/giorno.h"
+#include "../MODEL/admin.h"
+#include "../MODEL/admin_iofit.h"
 
 #include "mainwindow.h"
 #include "register.h"
@@ -40,8 +40,11 @@ public slots:
     void psetFocus();
     void registerTo();
 
+private slots:
+    void on_forgotpass_clicked();
+
 private:
-    iofit ioutenti;
+    iofit * ioutenti;
     utente * utenteLog;
 
     QString user;

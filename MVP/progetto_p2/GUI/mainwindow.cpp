@@ -4,30 +4,27 @@
 #include <QGraphicsPixmapItem>
 
 MainWindow::MainWindow(utente * user,QWidget *parent) :
-    QMainWindow(parent),UtenteOn(user),
-    ui(new Ui::MainWindow),inSettings(false),ioutenti("C:\\Users\\giora\\Documents\\GitHub\\progettoP2\\")
+    QMainWindow(parent),UtenteOn(user),inSettings(false),
+    ui(new Ui::MainWindow)
 {
+    const QString DEFAULT_DIR_KEY("default_dir");
+    QSettings MySettings;
+    ioutenti= new admin_iofit( MySettings.value(DEFAULT_DIR_KEY).toString().toUtf8().constData());
+
     ui->setupUi(this);
-    this->ui->no_data_img->hide();
     this->ui->content2->hide();
 
     QMainWindow::showMaximized();
         calendar = ui->calendarWidget;
         calendar->setGridVisible(true);
         calendar->setStyleSheet("background-color: rgb(255, 255, 255);");
+ if(UtenteOn->getGiorniFit()!=0)
+         ui->mese_calendario->setText(UtenteOn->ultimaAtt().toString("MMMM yyyy"));
 
-    loadUserOnUi();
 
+loadUserOnUi();
+loadFriendList();
 loadSettings();
-
-//CREO FUNZIONE CHE DATO VETTORE FA QUESTA OPERAZIONE SU MAIN WINDOW
-friend_label *label = new friend_label("Ercole M. 10.000 passi");
-friend_label *label1 = new friend_label("Riccardo Giorato 8.580 passi");
-friend_label *label2 = new friend_label("Ercole M. 5.000 passi");
-ui->friend_list->addWidget(label);
-ui->friend_list->addWidget(label1);
-ui->friend_list->addWidget(label2);
-
 
 
 //gestione eventi
@@ -38,31 +35,59 @@ QObject::connect(this->ui->aggiungi_dati,SIGNAL(clicked()),this,SLOT(caricaDatiF
 }
 
 
-void MainWindow::loadUserOnUi(){
-    if(UtenteOn->getGiorniFit()==0){
-        QImage image(":/resources/no_data.png");
-        this->ui->no_data_img->setPixmap(QPixmap::fromImage(image));
-        this->ui->no_data_img->show();
-    }
+void MainWindow::loadFriendList()
+{
+   std::vector<const utente*> amici_u = ioutenti->loadUtenti();
+   std::vector<std::pair<int,int>> amici;
+   amici = utente::ultimiSetteGiorniUtenti(amici_u,QDate::currentDate());
+   int i=0;
+    for ( const auto &p : amici ){
+        QString testo;
+        if( (unsigned int)p.first == UtenteOn->getCodiceUtente())
+        testo =  QString::fromStdString("Te hai fatto "+ std::to_string(p.second)  +" passi");
+        else
+        testo =  QString::fromStdString(utente::utenteCodiceUtente(amici_u,p.first)->getNome()+" ha fatto "+ std::to_string(p.second)  +" passi");
 
+        friend_label *label = new friend_label(testo);
+        ui->friend_list->addWidget(label);
+        i++;
+    }
+     //std::cout << utente::massimoGiornoUtenti(utenti,QDate(2015,4,20)).second << " passi dell'utente: " <<utente::massimoGiornoUtenti(utenti,QDate(2015,4,21)).first ;
+
+
+}
+
+
+void MainWindow::updateCalendarioUtente(){
+
+    if(UtenteOn->getGiorniFit()==0){
+       QImage image(":/resources/no_data.png");
+       this->ui->no_data_img->setPixmap(QPixmap::fromImage(image));
+       this->ui->no_data_img->show();
+    }else{
+       this->ui->no_data_img->hide();
+       calendar->setDateRange(UtenteOn->primaAtt(),UtenteOn->ultimaAtt());
+       loadGiorno(UtenteOn->ultimaAtt());
+    }
+}
+
+void MainWindow::loadUserOnUi(){
     ultima_sess.user = QString::fromStdString(UtenteOn->getNome());
     ui->eta->setText(QString::number(UtenteOn->getAge()));
     ui->username->setText(ultima_sess.user);
 
-    if(UtenteOn->getGiorniFit()!=0){
-                calendar->setDateRange(UtenteOn->primaAtt(),UtenteOn->ultimaAtt());
-                QMessageBox::information(this,"FIT","Fit Utente Att");
-    }
-    loadGiorno(UtenteOn->ultimaAtt());
+    updateCalendarioUtente();
 
 }
 
 void MainWindow::loadGiorno(const QDate& date)
 {
-
-    ui->mese_calendario_giorno->setText("Statistiche del "+date.toString("dd MMMM yyyy"));
-    giorno * selGiorno = UtenteOn->giornoData(date);
+    ui->mese_calendario_giorno->hide();
+    ui->right_progress->hide();
+    ui->elimina_giorno->hide();
+    selGiorno = UtenteOn->giornoData(date);
     if(selGiorno){
+        ui->mese_calendario_giorno->setText("Statistiche del "+date.toString("dd MMMM yyyy"));
         float percP = (float)selGiorno->movim().totale_passi()/10000;
 
     //gestione progressi ultimo giorno o giorno attuale CON FUNZIONE A CUI PASSARE TRE VALORI SEMPRE REALIZZA QUESTO
@@ -90,9 +115,11 @@ void MainWindow::loadGiorno(const QDate& date)
         progm->setLoadingAngle(360*percM);
         progm->setStyleSheet("background-color: rgb(255, 255, 255);");
         progm->show();
+
     ui->right_progress->show();
-    }else
-    ui->right_progress->hide();
+    ui->mese_calendario_giorno->show();
+    ui->elimina_giorno->show();
+    }
 }
 
 void MainWindow::vaiLogout(){
@@ -145,7 +172,8 @@ QString fileScelto;
          if(!fileNames.empty()){
             fileScelto = fileNames.first();
             if(fileScelto.endsWith(".xml", Qt::CaseInsensitive))
-                ioutenti.inputXMLdatiMovimSleep(fileScelto.toUtf8().constData(),UtenteOn);
+                ioutenti->inputXMLdatiMovimSleep(fileScelto.toUtf8().constData(),UtenteOn);
+                updateCalendarioUtente();
          }
     }
     }
@@ -176,7 +204,8 @@ void MainWindow::saveSettings()
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-ioutenti.saveUserFit(UtenteOn);
+if(UtenteOn)
+    ioutenti->saveUserFit(UtenteOn);
 saveSettings();
 event->accept();
 if(!loginF)
@@ -192,34 +221,60 @@ void MainWindow::on_saveUser_clicked()
 {
    utente * copia = UtenteOn->clone();
    if(!ui->nome->text().isEmpty())
-    UtenteOn->setNome(ui->nome->text().toUtf8().constData());
+    UtenteOn->setNome(ui->nome->text().toLower().toUtf8().constData());
    if(!ui->cognome->text().isEmpty())
-       UtenteOn->setCognome(ui->cognome->text().toUtf8().constData());
-   if(!ui->datanascita->date().isNull())
+       UtenteOn->setCognome(ui->cognome->text().toLower().toUtf8().constData());
+   if(ui->datanascita->date() != QDate(1791,1,1))
        UtenteOn->setDataNascita(ui->datanascita->date());
    if(!ui->password->text().isEmpty())
-       UtenteOn->setPassword(ui->password->text());
+       UtenteOn->setPassword(ui->password->text().toLower());
 
-    if(!ioutenti.saveUser(UtenteOn)){
+    if(!ioutenti->saveUser(UtenteOn)){
        QMessageBox::information(this, tr("ATTENZIONE USERNAME!!"), tr("La combinazione nome e cognome è già usata da un altro utente, si prega di usare un nome e cognome univoci tra tutti gli utenti"));
        UtenteOn = copia;
        }
+    else{
+        QMessageBox::information(this, tr("FIT UTENTE SALVATO"), tr("Utente salvato correttamente, ricordarsi di effettuare il login o di chiudere il programma per salvare pure i giorni eliminati o aggiunti"));
+        loadUserOnUi();
+    }
 }
 
 void MainWindow::on_uomo_clicked()
 {
     UtenteOn->setSesso(1);
-    ioutenti.saveUser(UtenteOn);
+    ioutenti->saveUser(UtenteOn);
 }
 
 void MainWindow::on_donna_clicked()
 {
     UtenteOn->setSesso(0);
-    ioutenti.saveUser(UtenteOn);
+    ioutenti->saveUser(UtenteOn);
 }
 
 void MainWindow::on_calendarWidget_currentPageChanged(int year, int month)
 {
     QDate thisMese(year,month,1);
     ui->mese_calendario->setText(thisMese.toString("MMMM yyyy"));
+}
+
+void MainWindow::on_elimina_utente_clicked()
+{
+    if (QMessageBox::Yes == QMessageBox(QMessageBox::Question, "Attenzione!", "NON si può tornare indietro, proseguire eliminando utente?", QMessageBox::Yes|QMessageBox::No).exec())
+    {
+    ioutenti->deleteUser(UtenteOn);
+    UtenteOn = nullptr;
+    vaiLogout();
+    }
+}
+
+void MainWindow::on_elimina_giorno_clicked()
+{
+    if(selGiorno){
+        UtenteOn->delete_gg(selGiorno->dataOd());
+        ui->right_progress->hide();
+        ui->mese_calendario_giorno->hide();
+        ui->elimina_giorno->hide();
+        updateCalendarioUtente();
+
+    }
 }

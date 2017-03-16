@@ -13,7 +13,7 @@ std::vector<const utente*> admin_iofit::loadUtenti(){
      int codU;
      std::string nom,cognom;
      QDate dataNascita;
-     bool sesso,gruppo;
+     bool sesso;
 
     QXmlStreamReader reader(&usersXMLFile);
         if (reader.readNextStartElement()) {
@@ -37,8 +37,6 @@ std::vector<const utente*> admin_iofit::loadUtenti(){
                                 dataNascita = QDate::fromString(qs,"yyyy-MM-dd");
                             if(reader.name() == "sesso")
                                 sesso = std::stoi(s);
-                            if(reader.name() == "gruppo")
-                                gruppo = std::stoi(s);
                         }//ricerca utente
 
                         if(codU != 0){

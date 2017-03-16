@@ -13,7 +13,7 @@
 #include "ui_mainwindow.h"
 #include "loginform.h"
 #include "circularprogress.h"
-#include "utente.h"
+#include "../MODEL/utente.h"
 
 class LoginForm;
 
@@ -30,10 +30,11 @@ public:
     ~MainWindow();
 
 private:
-    admin_iofit ioutenti;
+    admin_iofit * ioutenti;
     utente * UtenteOn;
     QCalendarWidget *calendar;
     QDate dataSel;
+    giorno * selGiorno;
     bool inSettings;
     LoginForm *loginF;
     struct SPreferences
@@ -45,6 +46,8 @@ private:
     Ui::MainWindow *ui;
     SPreferences ultima_sess;
 
+    void loadFriendList();
+    void updateCalendarioUtente();
     void loadUserOnUi();
     void loadSettings();
     void saveSettings();
@@ -60,6 +63,8 @@ private slots:
   void on_uomo_clicked();
   void on_donna_clicked();
   void on_calendarWidget_currentPageChanged(int year, int month);
+  void on_elimina_utente_clicked();
+  void on_elimina_giorno_clicked();
 };
 
 #endif // MAINWINDOW_H

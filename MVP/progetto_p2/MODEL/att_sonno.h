@@ -7,10 +7,10 @@
 class att_sonno : public att_base
 {
 private:
-    unsigned int minuti_letto;
-    unsigned int minuti_dormito;
     orario andatoLetto;
     orario svegliaLetto;
+    unsigned int minuti_letto;
+    unsigned int minuti_dormito;
 
 public:
 

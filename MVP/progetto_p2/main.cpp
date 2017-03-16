@@ -3,11 +3,11 @@
 #include <QStyle>
 #include <QDesktopWidget>
 
-#include "loginform.h"
+#include "GUI/loginform.h"
 
-#include "giorno.h"
-#include "admin.h"
-#include "admin_iofit.h"
+#include "MODEL/giorno.h"
+#include "MODEL/admin.h"
+#include "MODEL/admin_iofit.h"
 
 int main(int argc, char *argv[])
 {

@@ -3,8 +3,12 @@
 
 LoginForm::LoginForm(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::LoginForm),ioutenti("C:\\Users\\giora\\Documents\\GitHub\\progettoP2\\")
+    ui(new Ui::LoginForm)
 {
+    const QString DEFAULT_DIR_KEY("default_dir");
+    QSettings MySettings;
+    ioutenti= new iofit( MySettings.value(DEFAULT_DIR_KEY).toString().toUtf8().constData());
+
     ui->setupUi(this);
 
     loginbtn = ui->login;
@@ -38,10 +42,10 @@ void LoginForm::loginclick()
     usernametext->blockSignals(true);
     passtext->blockSignals(true);
 
-    utenteLog = ioutenti.loadUser(usernametext->text().toUtf8().constData(),passtext->text().toUtf8().constData());
+    utenteLog = ioutenti->loadUser(usernametext->text().toLower().toUtf8().constData(),passtext->text().toLower().toUtf8().constData());
 
     if(utenteLog){
-        ioutenti.loadUserFit(utenteLog);
+        ioutenti->loadUserFit(utenteLog);
         mainapp = new MainWindow(utenteLog);
         mainapp->setWindowTitle("LIFE-FIT APP");
         mainapp->show();
@@ -73,10 +77,10 @@ void LoginForm::loginclick2()
     usernametext->blockSignals(true);
     passtext->blockSignals(true);
 
-    utenteLog = ioutenti.loadUser(usernametext->text().toUtf8().constData(),passtext->text().toUtf8().constData());
+    utenteLog = ioutenti->loadUser(usernametext->text().toLower().toUtf8().constData(),passtext->text().toLower().toUtf8().constData());
 
     if(utenteLog){
-        ioutenti.loadUserFit(utenteLog);
+        ioutenti->loadUserFit(utenteLog);
         mainapp = new MainWindow(utenteLog);
         mainapp->setWindowTitle("LIFE-FIT APP");
         mainapp->show();
@@ -100,4 +104,13 @@ QCoreApplication::quit();
 LoginForm::~LoginForm()
 {
      delete ui;
+}
+
+void LoginForm::on_forgotpass_clicked()
+{
+QString passHashata = ioutenti->hash_password_utente(usernametext->text().toLower());
+       if(!passHashata.isEmpty())
+       QDesktopServices::openUrl(QUrl("https://md5.gromweb.com/?md5="+passHashata));
+       else
+       QMessageBox::information(this, "Failure!", "Username Incorrect");
 }

@@ -17,8 +17,9 @@ private:
     std::string nome;
     std::string cognome;
     QDate dataNascita;
-    QString password;
     bool sesso;
+    QString password;
+
     std::map<QDate,giorno> fit;
     unsigned int obb_pass_giornalieri;
 public:
@@ -88,6 +89,8 @@ public:
     static std::vector<std::pair<int,int> >  ultimiSetteGiorniUtenti(const std::vector<const utente*>,const QDate);
 
     static std::pair<int,int> massimoGiornoUtenti(const std::vector<const utente*>,const QDate);
+
+    static utente *  utenteCodiceUtente(const std::vector<const utente*>,const int);
 
 };
 

@@ -230,7 +230,9 @@ color: rgb(163, 180, 200);</string>
      </property>
      <property name="font">
       <font>
-       <pointsize>14</pointsize>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -251,7 +253,9 @@ color: rgb(163, 180, 200);</string>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -272,7 +276,7 @@ color: rgb(163, 180, 200);</string>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <pointsize>11</pointsize>
       </font>
      </property>
      <property name="text">
@@ -280,6 +284,9 @@ color: rgb(163, 180, 200);</string>
      </property>
      <property name="scaledContents">
       <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QPushButton" name="logout">
@@ -393,7 +400,7 @@ border: none;</string>
     <property name="geometry">
      <rect>
       <x>260</x>
-      <y>70</y>
+      <y>75</y>
       <width>1021</width>
       <height>1181</height>
      </rect>
@@ -469,7 +476,9 @@ border: none;</string>
       </property>
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -490,7 +499,9 @@ border: none;</string>
       </property>
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -511,7 +522,9 @@ border: none;</string>
       </property>
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -651,7 +664,7 @@ color: white;</string>
      <property name="geometry">
       <rect>
        <x>660</x>
-       <y>20</y>
+       <y>0</y>
        <width>221</width>
        <height>41</height>
       </rect>
@@ -700,7 +713,7 @@ color: white;
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>20</y>
+       <y>4</y>
        <width>901</width>
        <height>781</height>
       </rect>
@@ -726,8 +739,8 @@ color: white;
     <widget class="QWidget" name="verticalLayoutWidget_2">
      <property name="geometry">
       <rect>
-       <x>670</x>
-       <y>70</y>
+       <x>660</x>
+       <y>40</y>
        <width>261</width>
        <height>731</height>
       </rect>
@@ -743,13 +756,13 @@ color: white;
        <number>5</number>
       </property>
       <property name="topMargin">
-       <number>0</number>
+       <number>1</number>
       </property>
       <property name="rightMargin">
        <number>5</number>
       </property>
       <property name="bottomMargin">
-       <number>0</number>
+       <number>1</number>
       </property>
      </layout>
     </widget>
@@ -779,7 +792,7 @@ color: white;
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="elimina_giorno">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -823,15 +836,15 @@ border:2px solid rgb(102,119,129);</string>
     <zorder>aggiungi_dati</zorder>
     <zorder>verticalLayoutWidget_2</zorder>
     <zorder>mese_calendario_giorno</zorder>
-    <zorder>pushButton</zorder>
+    <zorder>elimina_giorno</zorder>
    </widget>
    <widget class="QWidget" name="content2" native="true">
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>80</y>
-      <width>941</width>
-      <height>400</height>
+      <y>78</y>
+      <width>601</width>
+      <height>501</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -848,8 +861,8 @@ border:2px solid rgb(102,119,129);</string>
       <rect>
        <x>0</x>
        <y>45</y>
-       <width>700</width>
-       <height>450</height>
+       <width>600</width>
+       <height>454</height>
       </rect>
      </property>
      <property name="minimumSize">
@@ -874,8 +887,8 @@ border:2px solid rgb(102,119,129);</string>
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>381</width>
-        <height>331</height>
+        <width>441</width>
+        <height>431</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -917,7 +930,15 @@ border:2px solid rgb(102,119,129);</string>
         </widget>
        </item>
        <item>
-        <widget class="QDateEdit" name="datanascita"/>
+        <widget class="QDateEdit" name="datanascita">
+         <property name="date">
+          <date>
+           <year>1791</year>
+           <month>1</month>
+           <day>1</day>
+          </date>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_2">
@@ -958,8 +979,47 @@ border:2px solid rgb(102,119,129);</string>
            <height>0</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">border-width: 5px;
+border-style: solid;
+border-radius: 5px;
+border-color: rgb(53,64,82);
+background: rgb(53,64,82);
+color: white;
+</string>
+         </property>
          <property name="text">
           <string>Salva le modifiche Utente</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="elimina_utente">
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius: 5px;
+border:2px solid rgb(102,119,129);</string>
+         </property>
+         <property name="text">
+          <string>ELIMINA IL TUO ACCOUNT (compresi i dati salvati)</string>
+         </property>
+         <property name="icon">
+          <iconset resource="settings_icon.qrc">
+           <normaloff>:/new/settings/resources/trash.png</normaloff>:/new/settings/resources/trash.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>36</width>
+           <height>36</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -988,9 +1048,9 @@ border:2px solid rgb(102,119,129);</string>
      </property>
     </widget>
    </widget>
+   <zorder>content2</zorder>
    <zorder>left_menu</zorder>
    <zorder>top_header</zorder>
-   <zorder>content2</zorder>
    <zorder>content</zorder>
   </widget>
  </widget>
