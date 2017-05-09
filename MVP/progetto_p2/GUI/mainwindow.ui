@@ -828,7 +828,6 @@ border:2px solid rgb(102,119,129);</string>
       <bool>true</bool>
      </property>
     </widget>
-    <zorder>no_data_img</zorder>
     <zorder>right_calendar</zorder>
     <zorder>calendario_titolo</zorder>
     <zorder>amici_t</zorder>
@@ -837,6 +836,7 @@ border:2px solid rgb(102,119,129);</string>
     <zorder>verticalLayoutWidget_2</zorder>
     <zorder>mese_calendario_giorno</zorder>
     <zorder>elimina_giorno</zorder>
+    <zorder>no_data_img</zorder>
    </widget>
    <widget class="QWidget" name="content2" native="true">
     <property name="geometry">

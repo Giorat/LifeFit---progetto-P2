@@ -44,7 +44,7 @@ void MainWindow::loadFriendList()
     for ( const auto &p : amici ){
         QString testo;
         if( (unsigned int)p.first == UtenteOn->getCodiceUtente())
-        testo =  QString::fromStdString("Te hai fatto "+ std::to_string(p.second)  +" passi");
+        testo =  QString::fromStdString("Tu hai fatto "+ std::to_string(p.second)  +" passi");
         else
         testo =  QString::fromStdString(utente::utenteCodiceUtente(amici_u,p.first)->getNome()+" ha fatto "+ std::to_string(p.second)  +" passi");
 
@@ -173,7 +173,11 @@ QString fileScelto;
             fileScelto = fileNames.first();
             if(fileScelto.endsWith(".xml", Qt::CaseInsensitive))
                 ioutenti->inputXMLdatiMovimSleep(fileScelto.toUtf8().constData(),UtenteOn);
+                ioutenti->saveUserFit(UtenteOn);
                 updateCalendarioUtente();
+
+                QMessageBox::about(this, tr("GIORNI AGGIUNTI!"), tr((QString::number(UtenteOn->getGiorniFit())).toUtf8().constData()));
+
          }
     }
     }

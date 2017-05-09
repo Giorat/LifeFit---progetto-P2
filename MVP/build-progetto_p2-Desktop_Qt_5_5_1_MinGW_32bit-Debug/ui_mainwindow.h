@@ -25,7 +25,7 @@
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include "circularprogress.h"
+#include "GUI\circularprogress.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -360,7 +360,6 @@ public:
         elimina_giorno->setIconSize(QSize(36, 36));
         elimina_giorno->setCheckable(false);
         elimina_giorno->setFlat(true);
-        no_data_img->raise();
         right_calendar->raise();
         calendario_titolo->raise();
         amici_t->raise();
@@ -369,6 +368,7 @@ public:
         verticalLayoutWidget_2->raise();
         mese_calendario_giorno->raise();
         elimina_giorno->raise();
+        no_data_img->raise();
         content2 = new QWidget(horizontalLayoutWidget);
         content2->setObjectName(QStringLiteral("content2"));
         content2->setGeometry(QRect(300, 78, 601, 501));

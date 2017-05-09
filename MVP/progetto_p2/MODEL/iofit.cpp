@@ -447,7 +447,7 @@ QTime t;
                         if(reader.name() == "sleep-efficiency")
                             eff_sonno =  std::stoi(s);
                     }
-                   if(i==9){//giorno da xml completo
+                   if(i>=9){//giorno da xml completo
                         m = att_mov(cal_mov,passi,dist,perc_camminata,piani);
                         t=t.addSecs(60*minuti_letto);
                         svegliaLetto = t.hour()*60+t.minute();

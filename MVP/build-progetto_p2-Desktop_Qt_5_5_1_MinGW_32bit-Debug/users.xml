@@ -2,11 +2,11 @@
 <utenti>
     <utente>
         <codiceutente>3</codiceutente>
-        <nome>b</nome>
-        <cognome>a</cognome>
-        <datanascita>1996-12-20</datanascita>
+        <nome>a</nome>
+        <cognome>b</cognome>
+        <datanascita>2000-01-01</datanascita>
         <sesso>1</sesso>
-        <password>07159c47ee1b19ae4fb9c40d480856c4</password>
+        <password>187ef4436122d1cc2f40dc2b92f0eba0</password>
         <gruppo>0</gruppo>
     </utente>
     <utente>
