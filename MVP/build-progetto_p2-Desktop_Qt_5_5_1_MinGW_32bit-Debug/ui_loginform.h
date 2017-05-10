@@ -117,6 +117,7 @@ public:
         register_n->setSizePolicy(sizePolicy);
         register_n->setMinimumSize(QSize(124, 31));
         register_n->setFont(font);
+        register_n->setCursor(QCursor(Qt::PointingHandCursor));
         register_n->setStyleSheet(QLatin1String("background-color: rgb(232, 233, 236);\n"
 "color: rgb(132,140,157);\n"
 "Text-align:left;\n"
@@ -130,6 +131,7 @@ public:
         login->setSizePolicy(sizePolicy);
         login->setMinimumSize(QSize(124, 31));
         login->setFont(font);
+        login->setCursor(QCursor(Qt::PointingHandCursor));
         login->setLayoutDirection(Qt::LeftToRight);
         login->setStyleSheet(QLatin1String("background-color: rgb(45, 59, 85);\n"
 "color:white;\n"

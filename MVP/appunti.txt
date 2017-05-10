@@ -1,0 +1,12 @@
+Il Polimorfismo consente di invocare operazioni su un oggetto, pur non essendo noto a tempo di compilazione il tipo (classe) corrente cui fa riferimento l’oggetto stesso!!!
+
+richiamo metodo che mi dice il mio indice di attività settimanale rapportando numero di passi o altre attività 
+
+
+
+
+
+aggiunte finali:
+-
+-nell'ultima settimana classifica amici
+-bug inserimento dati utente per la prima volta non carica il mese in alto

@@ -199,6 +199,9 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(232, 233, 236);
 color: rgb(132,140,157);
@@ -238,6 +241,9 @@ padding-left:10px;</string>
      <font>
       <pointsize>12</pointsize>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="layoutDirection">
      <enum>Qt::LeftToRight</enum>
