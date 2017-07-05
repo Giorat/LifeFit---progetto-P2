@@ -39,21 +39,36 @@ passtext->setFocus();
 
 void LoginForm::loginclick()
 {
+    LoginUser();
+}
+
+void LoginForm::LoginUser(){
     usernametext->blockSignals(true);
     passtext->blockSignals(true);
 
-    utenteLog = ioutenti->loadUser(usernametext->text().toLower().toUtf8().constData(),passtext->text().toLower().toUtf8().constData());
-
-    if(utenteLog){
-        ioutenti->loadUserFit(utenteLog);
-        mainapp = new MainWindow(utenteLog);
-        mainapp->setWindowTitle("LIFE-FIT APP");
-        mainapp->show();
-        this->close();
+    if(!strcmp(usernametext->text().toLower().toUtf8().constData(),"root")){
+        if(!strcmp(passtext->text().toLower().toUtf8().constData(),"root")){
+            adminapp = new UiAdmin();
+            adminapp->setWindowTitle("LIFE-FIT ADMIN");
+            adminapp->show();
+            //this->close();
+        }
+        else
+            QMessageBox::information(this, "Errore", "Password Amministratore non corretta");
     }
-    else
-    {
-        QMessageBox::information(this, "Failure", "Password or Username Incorrect");
+    else{
+    utenteLog = ioutenti->loadUser(usernametext->text().toLower().toUtf8().constData(),passtext->text().toLower().toUtf8().constData());
+        if(utenteLog){
+            ioutenti->loadUserFit(utenteLog);
+            mainapp = new UiUser(utenteLog);
+            mainapp->setWindowTitle("LIFE-FIT APP");
+            mainapp->show();
+            this->close();
+        }
+        else
+        {
+            QMessageBox::information(this, "Errore", "Password o Username non corretti");
+        }
     }
     usernametext->blockSignals(false);
     passtext->blockSignals(false);
@@ -74,24 +89,7 @@ void LoginForm::registerTo()
 
 void LoginForm::loginclick2()
 {
-    usernametext->blockSignals(true);
-    passtext->blockSignals(true);
-
-    utenteLog = ioutenti->loadUser(usernametext->text().toLower().toUtf8().constData(),passtext->text().toLower().toUtf8().constData());
-
-    if(utenteLog){
-        ioutenti->loadUserFit(utenteLog);
-        mainapp = new MainWindow(utenteLog);
-        mainapp->setWindowTitle("LIFE-FIT APP");
-        mainapp->show();
-        this->close();
-    }
-    else
-    {
-        QMessageBox::information(this, "Failure", "Password or Username Incorrect");
-    }
-    usernametext->blockSignals(false);
-    passtext->blockSignals(false);
+    LoginUser();
 }
 
 void LoginForm::closeEvent(QCloseEvent *event)

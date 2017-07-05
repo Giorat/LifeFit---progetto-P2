@@ -42,11 +42,17 @@ void Register::vaiApp(){
     cognome = ui->cognome->text().toLower().toUtf8().constData();
     password = ui->password->text().toLower().toUtf8().constData();
     dataNascita = ui->dataNascita->date();
-    user = new utente(ioutenti->LastCodUtente()+1,nome,cognome,dataNascita,sesso,password);
+    int gruppo=1,codU=ioutenti->LastCodUtente()+1;
+    if (gruppo == 1)
+        user = new bambino(codU,nome,cognome,dataNascita,sesso,password);
+    else if (gruppo == 2)
+        user = new adolescente(codU,nome,cognome,dataNascita,sesso,password);
+    else if (gruppo == 3)
+        user = new adulto(codU,nome,cognome,dataNascita,sesso,password);
 
    //Provo a creare un utente con queste informazioni
     if(ioutenti->createUser(user)){
-    mainw = new MainWindow(user);
+    mainw = new UiUser(user);
     mainw->setWindowTitle("LIFE-FIT APP");
     mainw->show();
     this->close();

@@ -1,39 +1,8 @@
-<?xml version='1.0'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <utenti>
     <utente>
-        <codiceutente>3</codiceutente>
-        <nome>alessio</nome>
-        <cognome>b</cognome>
-        <datanascita>2000-01-01</datanascita>
-        <sesso>1</sesso>
-        <password>187ef4436122d1cc2f40dc2b92f0eba0</password>
-        <gruppo>0</gruppo>
-    </utente>
-    <utente>
-        <codiceutente>2</codiceutente>
-        <nome>marco</nome>
-        <cognome>rossi</cognome>
-        <datanascita>1955-02-03</datanascita>
-        <sesso>0</sesso>
-        <password>187ef4436122d1cc2f40dc2b92f0eba0</password>
-        <gruppo>0</gruppo>
-    </utente>
-    <utente>
-        <codiceutente>1</codiceutente>
-        <nome>riccardo</nome>
-        <cognome>giorato</cognome>
-        <datanascita>1996-12-20</datanascita>
-        <sesso>1</sesso>
-        <password>187ef4436122d1cc2f40dc2b92f0eba0</password>
-        <gruppo>1</gruppo>
-    </utente>
-    <utente>
         <codiceutente>0</codiceutente>
-        <nome>root</nome>
-        <cognome>admin</cognome>
-        <datanascita>1996-08-24</datanascita>
-        <sesso>1</sesso>
-        <password>1a1dc91c907325c69271ddf0c944bc72</password>
-        <gruppo>1</gruppo>
+        <username>root</username>
+        <password>63a9f0ea7bb98050796b649e85481845</password>
     </utente>
 </utenti>

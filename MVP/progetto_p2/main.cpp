@@ -5,9 +5,6 @@
 
 #include "GUI/loginform.h"
 
-#include "MODEL/giorno.h"
-#include "MODEL/admin.h"
-#include "MODEL/admin_iofit.h"
 
 int main(int argc, char *argv[])
 {
@@ -19,7 +16,7 @@ int main(int argc, char *argv[])
     a.setQuitOnLastWindowClosed(false);
 
     LoginForm w;
-    //MainWindow w("riccardo");
+    //UiUser w("riccardo");
     w.setWindowTitle("LIFE-FIT LOGIN");
 
     w.setGeometry(

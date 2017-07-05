@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'mainwindow.ui'
+** Form generated from reading UI file 'ui_user.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_MAINWINDOW_H
-#define UI_MAINWINDOW_H
+#ifndef UI_UI_USER_H
+#define UI_UI_USER_H
 
 #include <QtCore/QDate>
 #include <QtCore/QVariant>
@@ -29,7 +29,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_MainWindow
+class Ui_UiUser
 {
 public:
     QWidget *horizontalLayoutWidget;
@@ -83,25 +83,25 @@ public:
     QPushButton *elimina_utente;
     QLabel *impostazioni;
 
-    void setupUi(QMainWindow *MainWindow)
+    void setupUi(QMainWindow *UiUser)
     {
-        if (MainWindow->objectName().isEmpty())
-            MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1200, 1207);
+        if (UiUser->objectName().isEmpty())
+            UiUser->setObjectName(QStringLiteral("UiUser"));
+        UiUser->resize(1200, 1207);
         QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(1);
-        sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
-        MainWindow->setSizePolicy(sizePolicy);
-        MainWindow->setMinimumSize(QSize(1200, 750));
+        sizePolicy.setHeightForWidth(UiUser->sizePolicy().hasHeightForWidth());
+        UiUser->setSizePolicy(sizePolicy);
+        UiUser->setMinimumSize(QSize(1200, 750));
         QIcon icon;
         icon.addFile(QStringLiteral(":/new/settings/resources/life_icon.ico"), QSize(), QIcon::Normal, QIcon::Off);
-        MainWindow->setWindowIcon(icon);
-        MainWindow->setAutoFillBackground(false);
-        MainWindow->setStyleSheet(QLatin1String("background-color: rgb(236, 242, 246);\n"
+        UiUser->setWindowIcon(icon);
+        UiUser->setAutoFillBackground(false);
+        UiUser->setStyleSheet(QLatin1String("background-color: rgb(236, 242, 246);\n"
 "border-top-color: rgb(53, 64, 82);\n"
 ";"));
-        horizontalLayoutWidget = new QWidget(MainWindow);
+        horizontalLayoutWidget = new QWidget(UiUser);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
         sizePolicy.setHeightForWidth(horizontalLayoutWidget->sizePolicy().hasHeightForWidth());
         horizontalLayoutWidget->setSizePolicy(sizePolicy);
@@ -482,55 +482,55 @@ public:
         impostazioni->setGeometry(QRect(0, 5, 171, 31));
         impostazioni->setFont(font6);
         impostazioni->setStyleSheet(QStringLiteral("color: rgb(68, 60, 75);"));
-        MainWindow->setCentralWidget(horizontalLayoutWidget);
+        UiUser->setCentralWidget(horizontalLayoutWidget);
         content2->raise();
         left_menu->raise();
         top_header->raise();
         content->raise();
 
-        retranslateUi(MainWindow);
+        retranslateUi(UiUser);
 
-        QMetaObject::connectSlotsByName(MainWindow);
+        QMetaObject::connectSlotsByName(UiUser);
     } // setupUi
 
-    void retranslateUi(QMainWindow *MainWindow)
+    void retranslateUi(QMainWindow *UiUser)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "LIFE-FIT", 0));
+        UiUser->setWindowTitle(QApplication::translate("UiUser", "LIFE-FIT", 0));
         settings->setText(QString());
         avatar->setText(QString());
-        username->setText(QApplication::translate("MainWindow", "RICCARDO GIORATO", 0));
-        eta->setText(QApplication::translate("MainWindow", "20", 0));
-        label_4->setText(QApplication::translate("MainWindow", "ETA", 0));
-        label_5->setText(QApplication::translate("MainWindow", "OBIETTIVO  questa settimana", 0));
+        username->setText(QApplication::translate("UiUser", "RICCARDO GIORATO", 0));
+        eta->setText(QApplication::translate("UiUser", "20", 0));
+        label_4->setText(QApplication::translate("UiUser", "ETA", 0));
+        label_5->setText(QApplication::translate("UiUser", "OBIETTIVO  questa settimana", 0));
         logout->setText(QString());
-        app_name->setText(QApplication::translate("MainWindow", "LIFE-FIT", 0));
-        calendario_titolo_2->setText(QApplication::translate("MainWindow", "Passi", 0));
-        calendario_titolo_3->setText(QApplication::translate("MainWindow", "Sonno", 0));
-        calendario_titolo_4->setText(QApplication::translate("MainWindow", "Traguardo mese", 0));
-        mese_calendario->setText(QApplication::translate("MainWindow", "Mese", 0));
-        calendario_titolo->setText(QApplication::translate("MainWindow", "Calendario", 0));
-        amici_t->setText(QApplication::translate("MainWindow", "Classifica Amici", 0));
-        aggiungi_dati->setText(QApplication::translate("MainWindow", "Aggiungi nuovi dati Attivit\303\240 Movimento e Sonno", 0));
-        mese_calendario_giorno->setText(QApplication::translate("MainWindow", "Mese", 0));
+        app_name->setText(QApplication::translate("UiUser", "LIFE-FIT", 0));
+        calendario_titolo_2->setText(QApplication::translate("UiUser", "Passi", 0));
+        calendario_titolo_3->setText(QApplication::translate("UiUser", "Sonno", 0));
+        calendario_titolo_4->setText(QApplication::translate("UiUser", "Traguardo mese", 0));
+        mese_calendario->setText(QApplication::translate("UiUser", "Mese", 0));
+        calendario_titolo->setText(QApplication::translate("UiUser", "Calendario", 0));
+        amici_t->setText(QApplication::translate("UiUser", "Classifica Amici", 0));
+        aggiungi_dati->setText(QApplication::translate("UiUser", "Aggiungi nuovi dati Attivit\303\240 Movimento e Sonno", 0));
+        mese_calendario_giorno->setText(QApplication::translate("UiUser", "Mese", 0));
         elimina_giorno->setText(QString());
-        label_6->setText(QApplication::translate("MainWindow", "cambia  nome", 0));
-        label_7->setText(QApplication::translate("MainWindow", "cambia  cognome", 0));
-        label_3->setText(QApplication::translate("MainWindow", "cambia password", 0));
-        label->setText(QApplication::translate("MainWindow", "cambia data di nascita", 0));
-        label_2->setText(QApplication::translate("MainWindow", "cambia sesso", 0));
-        uomo->setText(QApplication::translate("MainWindow", "UOMO", 0));
-        donna->setText(QApplication::translate("MainWindow", "DONNA", 0));
-        saveUser->setText(QApplication::translate("MainWindow", "Salva le modifiche Utente", 0));
-        elimina_utente->setText(QApplication::translate("MainWindow", "ELIMINA IL TUO ACCOUNT (compresi i dati salvati)", 0));
-        impostazioni->setText(QApplication::translate("MainWindow", "Impostazioni", 0));
+        label_6->setText(QApplication::translate("UiUser", "cambia  nome", 0));
+        label_7->setText(QApplication::translate("UiUser", "cambia  cognome", 0));
+        label_3->setText(QApplication::translate("UiUser", "cambia password", 0));
+        label->setText(QApplication::translate("UiUser", "cambia data di nascita", 0));
+        label_2->setText(QApplication::translate("UiUser", "cambia sesso", 0));
+        uomo->setText(QApplication::translate("UiUser", "UOMO", 0));
+        donna->setText(QApplication::translate("UiUser", "DONNA", 0));
+        saveUser->setText(QApplication::translate("UiUser", "Salva le modifiche Utente", 0));
+        elimina_utente->setText(QApplication::translate("UiUser", "ELIMINA IL TUO ACCOUNT (compresi i dati salvati)", 0));
+        impostazioni->setText(QApplication::translate("UiUser", "Impostazioni", 0));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class MainWindow: public Ui_MainWindow {};
+    class UiUser: public Ui_UiUser {};
 } // namespace Ui
 
 QT_END_NAMESPACE
 
-#endif // UI_MAINWINDOW_H
+#endif // UI_UI_USER_H

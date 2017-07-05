@@ -98,12 +98,14 @@ public:
         man = new QRadioButton(verticalLayoutWidget);
         man->setObjectName(QStringLiteral("man"));
         man->setFont(font);
+        man->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout->addWidget(man);
 
         woman = new QRadioButton(verticalLayoutWidget);
         woman->setObjectName(QStringLiteral("woman"));
         woman->setFont(font);
+        woman->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout->addWidget(woman);
 
@@ -119,6 +121,7 @@ public:
         register_send->setSizePolicy(sizePolicy);
         register_send->setMinimumSize(QSize(439, 40));
         register_send->setFont(font);
+        register_send->setCursor(QCursor(Qt::PointingHandCursor));
         register_send->setStyleSheet(QLatin1String("background-color: rgb(45, 59, 85);\n"
 "color:white;\n"
 "border:none;"));
@@ -132,6 +135,7 @@ public:
         go_back->setSizePolicy(sizePolicy);
         go_back->setMinimumSize(QSize(181, 40));
         go_back->setFont(font);
+        go_back->setCursor(QCursor(Qt::PointingHandCursor));
         go_back->setStyleSheet(QLatin1String("background-color: rgb(232, 233, 236);\n"
 "color: rgb(132,140,157);\n"
 "padding-left:5px;\n"
@@ -146,7 +150,7 @@ public:
 
     void retranslateUi(QMainWindow *Register)
     {
-        Register->setWindowTitle(QApplication::translate("Register", "MainWindow", 0));
+        Register->setWindowTitle(QApplication::translate("Register", "UiUser", 0));
 #ifndef QT_NO_TOOLTIP
         nome->setToolTip(QString());
 #endif // QT_NO_TOOLTIP

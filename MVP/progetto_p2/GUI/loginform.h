@@ -7,15 +7,16 @@
 #include <QtGui>
 
 #include "../MODEL/giorno.h"
-#include "../MODEL/admin.h"
-#include "../MODEL/admin_iofit.h"
+#include "../MODEL/utente.h"
+#include "../MODEL/iofit.h"
 
-#include "mainwindow.h"
+#include "ui_user.h"
 #include "register.h"
+#include "ui_admin.h"
 #include "ui_loginform.h"
 
 class Register;
-class MainWindow;
+class QMainWindow;
 
 namespace Ui {
 class LoginForm;
@@ -50,9 +51,10 @@ private:
     QString user;
     QString pass;
     Ui::LoginForm *ui;
-    MainWindow *mainapp;
+    UiUser *mainapp;
     Register *registerapp;
-
+    UiAdmin *adminapp;
+    void LoginUser();
     void closeEvent(QCloseEvent* event);
 };
 

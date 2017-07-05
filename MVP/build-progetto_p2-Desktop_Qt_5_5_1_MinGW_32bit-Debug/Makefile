@@ -63,6 +63,20 @@ Makefile: ../progetto_p2/progetto_p2.pro C:/Qt/5.5/mingw492_32/mkspecs/win32-g++
 		C:/Qt/5.5/mingw492_32/mkspecs/qdevice.pri \
 		C:/Qt/5.5/mingw492_32/mkspecs/features/device_config.prf \
 		C:/Qt/5.5/mingw492_32/mkspecs/qconfig.pri \
+		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dcollision.pri \
+		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dcollision_private.pri \
+		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dcore.pri \
+		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dcore_private.pri \
+		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dinput.pri \
+		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dinput_private.pri \
+		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dlogic.pri \
+		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dlogic_private.pri \
+		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dquick.pri \
+		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dquick_private.pri \
+		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dquickrenderer.pri \
+		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dquickrenderer_private.pri \
+		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3drenderer.pri \
+		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3drenderer_private.pri \
 		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_axbase.pri \
 		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_axbase_private.pri \
 		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_axcontainer.pri \
@@ -90,6 +104,8 @@ Makefile: ../progetto_p2/progetto_p2.pro C:/Qt/5.5/mingw492_32/mkspecs/win32-g++
 		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_gui_private.pri \
 		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_help.pri \
 		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_help_private.pri \
+		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_location.pri \
+		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_location_private.pri \
 		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_multimedia.pri \
 		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_multimedia_private.pri \
 		C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_multimediawidgets.pri \
@@ -188,6 +204,20 @@ C:/Qt/5.5/mingw492_32/mkspecs/features/spec_pre.prf:
 C:/Qt/5.5/mingw492_32/mkspecs/qdevice.pri:
 C:/Qt/5.5/mingw492_32/mkspecs/features/device_config.prf:
 C:/Qt/5.5/mingw492_32/mkspecs/qconfig.pri:
+C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dcollision.pri:
+C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dcollision_private.pri:
+C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dcore.pri:
+C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dcore_private.pri:
+C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dinput.pri:
+C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dinput_private.pri:
+C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dlogic.pri:
+C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dlogic_private.pri:
+C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dquick.pri:
+C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dquick_private.pri:
+C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dquickrenderer.pri:
+C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3dquickrenderer_private.pri:
+C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3drenderer.pri:
+C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_3drenderer_private.pri:
 C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_axbase.pri:
 C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_axbase_private.pri:
 C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_axcontainer.pri:
@@ -215,6 +245,8 @@ C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_gui.pri:
 C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_gui_private.pri:
 C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_help.pri:
 C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_help_private.pri:
+C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_location.pri:
+C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_location_private.pri:
 C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_multimedia.pri:
 C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_multimedia_private.pri:
 C:/Qt/5.5/mingw492_32/mkspecs/modules/qt_lib_multimediawidgets.pri:

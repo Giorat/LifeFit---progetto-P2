@@ -16,10 +16,8 @@ TARGET = progetto_p2
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        GUI\mainwindow.cpp \
-    MODEL\admin.cpp \
-    MODEL\admin_iofit.cpp \
+SOURCES +=main.cpp\
+    GUI\ui_user.cpp \
     MODEL\att_base.cpp \
     MODEL\att_mov.cpp \
     MODEL\att_sonno.cpp \
@@ -30,11 +28,13 @@ SOURCES += main.cpp\
     GUI\loginform.cpp \
     MODEL\orario.cpp \
     GUI\register.cpp \
-    MODEL\utente.cpp
+    MODEL\utente.cpp \
+    MODEL\bambino.cpp \
+    MODEL/adolescente.cpp \
+    MODEL/adulto.cpp \
+    GUI/ui_admin.cpp
 
-HEADERS  += GUI\mainwindow.h \
-    MODEL\admin.h \
-    MODEL\admin_iofit.h \
+HEADERS  +=GUI\ui_user.h \
     MODEL\att_base.h \
     MODEL\att_mov.h \
     MODEL\att_sonno.h \
@@ -46,14 +46,19 @@ HEADERS  += GUI\mainwindow.h \
     GUI\loginform.h \
     MODEL\orario.h \
     GUI\register.h \
-    MODEL\utente.h
+    MODEL\utente.h \
+    MODEL\bambino.h \
+    MODEL/adolescente.h \
+    MODEL/adulto.h \
+    GUI/ui_admin.h
 
 RESOURCES += \
     GUI\settings_icon.qrc
 
 FORMS += \
     GUI\loginform.ui \
-    GUI\mainwindow.ui \
-    GUI\register.ui
+    GUI\ui_user.ui \
+    GUI\register.ui \
+    GUI/ui_admin.ui
 
 DISTFILES +=

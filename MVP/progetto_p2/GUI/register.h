@@ -7,7 +7,7 @@
 #include <QMessageBox>
 
 class LoginForm;
-class MainWindow;
+class UiUser;
 
 namespace Ui {
 class Register;
@@ -25,7 +25,7 @@ private:
     utente * user;
     LoginForm* loginF;
     Ui::Register *ui;
-    MainWindow *mainw;
+    UiUser *mainw;
 
     std::string username;
     std::string nome;

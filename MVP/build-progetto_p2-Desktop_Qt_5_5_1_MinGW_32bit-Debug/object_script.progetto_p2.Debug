@@ -1,8 +1,6 @@
 INPUT(
 ./debug\main.o
-./debug\mainwindow.o
-./debug\admin.o
-./debug\admin_iofit.o
+./debug\ui_user.o
 ./debug\att_base.o
 ./debug\att_mov.o
 ./debug\att_sonno.o
@@ -14,10 +12,15 @@ INPUT(
 ./debug\orario.o
 ./debug\register.o
 ./debug\utente.o
+./debug\bambino.o
+./debug\adolescente.o
+./debug\adulto.o
+./debug\ui_admin.o
 ./debug\qrc_settings_icon.o
-./debug\moc_mainwindow.o
+./debug\moc_ui_user.o
 ./debug\moc_circularprogress.o
 ./debug\moc_friend_label.o
 ./debug\moc_loginform.o
 ./debug\moc_register.o
+./debug\moc_ui_admin.o
 );

@@ -6,12 +6,16 @@
 #include <QCryptographicHash>
 #include <string>
 #include "utente.h"
+#include "bambino.h"
+#include "adolescente.h"
+#include "adulto.h"
 
 class iofit{
 protected:
     std::string DirectoryToSave;
     std::string xmlUsers;
     QFile usersXMLFile;
+    bool modifyAllUsers;
 
     /**
      * @brief utenteGiaPresente permette di determinare se un utente sia già presente ossia omonimo
@@ -22,6 +26,10 @@ protected:
 
 public:
 
+    /**
+    *@brief
+    *@param QString
+    */
     QString hash_password_utente(QString);
 
    /**
@@ -86,6 +94,13 @@ public:
     * @param utente del quale salvare i dati di movimento e di sonno
     */
    void saveUserFit(const utente*);
+
+
+   /**
+    * @brief ritorna un array contenente array di utenti con i loro dati fit dai quali ottenere informazioni sul loro fit senza considerare utente root
+   */
+   std::vector<const utente*> loadUtenti();
+
 
 };
 

@@ -148,7 +148,7 @@ public:
 
     void retranslateUi(QMainWindow *LoginForm)
     {
-        LoginForm->setWindowTitle(QApplication::translate("LoginForm", "MainWindow", 0));
+        LoginForm->setWindowTitle(QApplication::translate("LoginForm", "UiUser", 0));
         username->setPlaceholderText(QApplication::translate("LoginForm", "USERNAME", 0));
         password->setPlaceholderText(QApplication::translate("LoginForm", "PASSWORD", 0));
         forgotpass->setText(QApplication::translate("LoginForm", "FORGOT YOUR PASSWORD", 0));
