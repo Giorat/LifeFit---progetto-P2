@@ -21,6 +21,7 @@ public:
     virtual bool settingsEnabled() const;
     virtual QString nomeGruppo() const;
     virtual int codiceGruppo() const;
+    virtual QColor coloreGruppo() const;
 
 };
 

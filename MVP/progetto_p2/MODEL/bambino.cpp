@@ -20,3 +20,6 @@ bambino::bambino(const int codU,const std::string &n,const std::string &cn, QDat
  int bambino::codiceGruppo() const{
    return 1;
  }
+ QColor bambino::coloreGruppo()const{
+    return QColor(249,134,191);
+ }

@@ -20,3 +20,6 @@ adulto::adulto(const int codU,const std::string &n,const std::string &cn, QDate 
  int adulto::codiceGruppo() const{
    return 3;
  }
+ QColor adulto::coloreGruppo()const{
+    return QColor(0,133,184);
+ }

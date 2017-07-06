@@ -10,10 +10,12 @@
 #include "../MODEL/utente.h"
 #include "../MODEL/iofit.h"
 
+#include "ui_loginform.h"
+
 #include "ui_user.h"
 #include "register.h"
 #include "ui_admin.h"
-#include "ui_loginform.h"
+
 
 class Register;
 class QMainWindow;

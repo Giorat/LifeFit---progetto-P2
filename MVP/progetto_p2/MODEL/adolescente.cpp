@@ -20,3 +20,6 @@ adolescente::adolescente(const int codU,const std::string &n,const std::string &
  int adolescente::codiceGruppo() const{
    return 2;
  }
+ QColor adolescente::coloreGruppo()const{
+    return QColor(0,184,68);
+ }

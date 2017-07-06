@@ -2,22 +2,17 @@
 #include "ui_register.h"
 
 Register::Register(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::Register),sesso(-1)
+    QMainWindow(parent),ui(new Ui::Register),sesso(-1),loginF(nullptr),mainw(nullptr)
 {
     const QString DEFAULT_DIR_KEY("default_dir");
     QSettings MySettings;
     ioutenti= new iofit( MySettings.value(DEFAULT_DIR_KEY).toString().toUtf8().constData());
-
 
     ui->setupUi(this);
      connect( this->ui->man, SIGNAL( clicked() ), this, SLOT(SessoM() ));
      connect( this->ui->woman, SIGNAL( clicked() ), this, SLOT(SessoD() ));
      connect( this->ui->go_back, SIGNAL( clicked() ), this, SLOT(tornaLogin() ));
      connect( this->ui->register_send, SIGNAL( clicked() ), this, SLOT(vaiApp() ));
-
-     loginF=nullptr;
-     mainw = nullptr;
 }
 
 void Register::SessoM(){
@@ -34,7 +29,7 @@ void Register::tornaLogin(){
     this->close();
 }
 void Register::vaiApp(){
-    bool d=ui->dataNascita->date() == QDate(1791,1,1);
+    bool d=ui->dataNascita->date() == QDate(1990,1,1);
     if(ui->nome->text().isEmpty()||ui->cognome->text().isEmpty()||ui->password->text().isEmpty()||sesso==-1||d)
         QMessageBox::information(this,"ATTENZIONE!!","Si prega di inserire dati validi compresa data di nascita corretta");
     else{

@@ -1,4 +1,3 @@
-#include "friend_label.h"
 #include "ui_user.h"
 
 #include <QGraphicsPixmapItem>

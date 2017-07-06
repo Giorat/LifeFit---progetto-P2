@@ -1,5 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <utenti>
+    <utente>
+        <codiceutente>1</codiceutente>
+        <nome>pro</nome>
+        <cognome>va</cognome>
+        <datanascita>1792-02-02</datanascita>
+        <sesso>0</sesso>
+        <password>189bbbb00c5f1fb7fba9ad9285f193d1</password>
+        <gruppo>1</gruppo>
+    </utente>
     <utente>
         <codiceutente>0</codiceutente>
         <username>root</username>

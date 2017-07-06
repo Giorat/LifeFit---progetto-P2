@@ -16,6 +16,7 @@ INPUT(
 ./debug\adolescente.o
 ./debug\adulto.o
 ./debug\ui_admin.o
+./debug\utenteitem.o
 ./debug\qrc_settings_icon.o
 ./debug\moc_ui_user.o
 ./debug\moc_circularprogress.o
@@ -23,4 +24,5 @@ INPUT(
 ./debug\moc_loginform.o
 ./debug\moc_register.o
 ./debug\moc_ui_admin.o
+./debug\moc_utenteitem.o
 );

@@ -85,12 +85,10 @@ int iofit::utenteGiaPresente(const utente * user){
 {
       usersXMLFile.setFileName(QString::fromStdString(xmlUsers));
 
-         if(!usersXMLFile.open(QFile::ReadOnly |
-                       QFile::Text))
+      if(!usersXMLFile.open(QFile::ReadOnly | QFile::Text)||usersXMLFile.size()==0)
          {
             usersXMLFile.close();
-                if(!usersXMLFile.open(QFile::WriteOnly |
-                              QFile::Text)){
+                if(!usersXMLFile.open(QFile::WriteOnly | QFile::Text)){
                     qDebug() << " Could not open file for writing";
                     return;
                 }
@@ -208,6 +206,7 @@ return nullptr;
             QString pass = QString(QCryptographicHash::hash((user->getPassword()).toUtf8().constData(),QCryptographicHash::Md5).toHex());
             writer.writeTextElement("password", pass);
             writer.writeTextElement("gruppo", QString::number(user->codiceGruppo()));
+
             writer.writeEndElement();
           }
         }

@@ -2,6 +2,7 @@
 #define UTENTE_H
 
 #include <QDate>
+#include <QColor>
 #include <map>
 #include <string>
 #include "giorno.h"
@@ -39,6 +40,7 @@ public:
     virtual bool settingsEnabled() const=0;
     virtual QString nomeGruppo() const=0;
     virtual int codiceGruppo() const=0;
+    virtual QColor coloreGruppo() const=0;
 
     void insert_gg(QDate,giorno);
     void modify_gg(QDate,giorno);

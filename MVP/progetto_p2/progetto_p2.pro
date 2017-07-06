@@ -32,7 +32,8 @@ SOURCES +=main.cpp\
     MODEL\bambino.cpp \
     MODEL/adolescente.cpp \
     MODEL/adulto.cpp \
-    GUI/ui_admin.cpp
+    GUI/ui_admin.cpp \
+    GUI/utenteitem.cpp
 
 HEADERS  +=GUI\ui_user.h \
     MODEL\att_base.h \
@@ -50,7 +51,8 @@ HEADERS  +=GUI\ui_user.h \
     MODEL\bambino.h \
     MODEL/adolescente.h \
     MODEL/adulto.h \
-    GUI/ui_admin.h
+    GUI/ui_admin.h \
+    GUI/utenteitem.h
 
 RESOURCES += \
     GUI\settings_icon.qrc
@@ -59,6 +61,7 @@ FORMS += \
     GUI\loginform.ui \
     GUI\ui_user.ui \
     GUI\register.ui \
-    GUI/ui_admin.ui
+    GUI/ui_admin.ui \
+    GUI/utenteitem.ui
 
 DISTFILES +=

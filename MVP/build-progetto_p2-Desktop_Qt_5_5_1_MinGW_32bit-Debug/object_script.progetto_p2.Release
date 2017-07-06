@@ -16,6 +16,7 @@ INPUT(
 ./release\adolescente.o
 ./release\adulto.o
 ./release\ui_admin.o
+./release\utenteitem.o
 ./release\qrc_settings_icon.o
 ./release\moc_ui_user.o
 ./release\moc_circularprogress.o
@@ -23,4 +24,5 @@ INPUT(
 ./release\moc_loginform.o
 ./release\moc_register.o
 ./release\moc_ui_admin.o
+./release\moc_utenteitem.o
 );

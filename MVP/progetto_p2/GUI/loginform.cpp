@@ -3,7 +3,7 @@
 
 LoginForm::LoginForm(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::LoginForm)
+    ui(new Ui::LoginForm),registerapp(nullptr),mainapp(nullptr)
 {
     const QString DEFAULT_DIR_KEY("default_dir");
     QSettings MySettings;
@@ -27,9 +27,6 @@ LoginForm::LoginForm(QWidget *parent) :
     connect(usernametext,SIGNAL(editingFinished()),this,SLOT(psetFocus()));
     connect(passtext,SIGNAL(editingFinished()),this,SLOT(loginclick2()));
     connect(registerbtn,SIGNAL(clicked()),this,SLOT(registerTo()));
-
-    registerapp=nullptr;
-    mainapp = nullptr;
 }
 
 
@@ -51,7 +48,7 @@ void LoginForm::LoginUser(){
             adminapp = new UiAdmin();
             adminapp->setWindowTitle("LIFE-FIT ADMIN");
             adminapp->show();
-            //this->close();
+            this->close();
         }
         else
             QMessageBox::information(this, "Errore", "Password Amministratore non corretta");
@@ -95,7 +92,7 @@ void LoginForm::loginclick2()
 void LoginForm::closeEvent(QCloseEvent *event)
 {
 event->accept();
-if((mainapp == nullptr)&&(registerapp == nullptr))
+if((mainapp == nullptr)&&(registerapp == nullptr)&&(adminapp == nullptr))
 QCoreApplication::quit();
 }
 
