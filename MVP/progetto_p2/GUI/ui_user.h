@@ -9,16 +9,20 @@
 #include <QCloseEvent>
 #include <QPlainTextEdit>
 #include <QMessageBox>
+#include <QGraphicsPixmapItem>
 
 #include "ui_ui_user.h"
+
 #include "loginform.h"
 #include "circularprogress.h"
+
 #include "../MODEL/utente.h"
 
+class UiUser;
 class LoginForm;
 
 namespace Ui {
-class QMainWindow;
+class UiUser;
 }
 
 class UiUser : public QMainWindow

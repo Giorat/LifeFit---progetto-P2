@@ -33,11 +33,11 @@ QT_MOC_LITERAL(0, 0, 8), // "Register"
 QT_MOC_LITERAL(1, 9, 6), // "SessoM"
 QT_MOC_LITERAL(2, 16, 0), // ""
 QT_MOC_LITERAL(3, 17, 6), // "SessoD"
-QT_MOC_LITERAL(4, 24, 10), // "tornaLogin"
+QT_MOC_LITERAL(4, 24, 10), // "tornaAdmin"
 QT_MOC_LITERAL(5, 35, 6) // "vaiApp"
 
     },
-    "Register\0SessoM\0\0SessoD\0tornaLogin\0"
+    "Register\0SessoM\0\0SessoD\0tornaAdmin\0"
     "vaiApp"
 };
 #undef QT_MOC_LITERAL
@@ -78,7 +78,7 @@ void Register::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         switch (_id) {
         case 0: _t->SessoM(); break;
         case 1: _t->SessoD(); break;
-        case 2: _t->tornaLogin(); break;
+        case 2: _t->tornaAdmin(); break;
         case 3: _t->vaiApp(); break;
         default: ;
         }

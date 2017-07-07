@@ -1,8 +1,8 @@
 #include "register.h"
 #include "ui_register.h"
 
-Register::Register(QWidget *parent) :
-    QMainWindow(parent),ui(new Ui::Register),sesso(-1),loginF(nullptr),mainw(nullptr)
+Register::Register(UiAdmin *adm,QWidget *parent) :
+    QMainWindow(parent),ui(new Ui::Register),adminapp(adm),mainw(nullptr),sesso(-1)
 {
     const QString DEFAULT_DIR_KEY("default_dir");
     QSettings MySettings;
@@ -11,7 +11,7 @@ Register::Register(QWidget *parent) :
     ui->setupUi(this);
      connect( this->ui->man, SIGNAL( clicked() ), this, SLOT(SessoM() ));
      connect( this->ui->woman, SIGNAL( clicked() ), this, SLOT(SessoD() ));
-     connect( this->ui->go_back, SIGNAL( clicked() ), this, SLOT(tornaLogin() ));
+     connect( this->ui->go_back, SIGNAL( clicked() ), this, SLOT(tornaAdmin() ));
      connect( this->ui->register_send, SIGNAL( clicked() ), this, SLOT(vaiApp() ));
 }
 
@@ -22,10 +22,7 @@ void Register::SessoM(){
 void Register::SessoD(){
         sesso=0;
 }
-void Register::tornaLogin(){
-    loginF = new LoginForm();
-    loginF->setWindowTitle("LIFE-FIT LOGIN");
-    loginF->show();
+void Register::tornaAdmin(){
     this->close();
 }
 void Register::vaiApp(){
@@ -47,6 +44,7 @@ void Register::vaiApp(){
 
    //Provo a creare un utente con queste informazioni
     if(ioutenti->createUser(user)){
+    adminapp->close();
     mainw = new UiUser(user);
     mainw->setWindowTitle("LIFE-FIT APP");
     mainw->show();
@@ -59,7 +57,7 @@ void Register::vaiApp(){
 void Register::closeEvent(QCloseEvent *event)
 {
 event->accept();
-if((mainw == nullptr )&&(loginF == nullptr))
+if((mainw == nullptr )&&(adminapp == nullptr))
 QCoreApplication::quit();
 }
 

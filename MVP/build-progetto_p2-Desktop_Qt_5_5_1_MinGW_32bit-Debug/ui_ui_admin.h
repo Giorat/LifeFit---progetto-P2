@@ -33,7 +33,7 @@ public:
     QWidget *horizontalLayoutWidget;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
-    QSpacerItem *horizontalSpacer_2;
+    QSpacerItem *spazio0;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QWidget *verticalLayoutWidget;
@@ -41,14 +41,12 @@ public:
     QListWidget *listUsers;
     QWidget *horizontalLayoutWidget_2;
     QHBoxLayout *horizontalLayout_2;
-    QPushButton *pushButton_2;
-    QSpacerItem *horizontalSpacer;
-    QPushButton *pushButton;
+    QPushButton *newUserCreate;
+    QSpacerItem *spazio1;
+    QPushButton *downloadXmlUser;
     QWidget *horizontalLayoutWidget_3;
     QHBoxLayout *horizontalLayout_3;
-    QPushButton *pushButton_3;
-    QSpacerItem *horizontalSpacer_3;
-    QPushButton *pushButton_5;
+    QPushButton *deleteUser;
 
     void setupUi(QMainWindow *UiAdmin)
     {
@@ -77,9 +75,9 @@ public:
 
         horizontalLayout->addWidget(label);
 
-        horizontalSpacer_2 = new QSpacerItem(50, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
+        spazio0 = new QSpacerItem(50, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
 
-        horizontalLayout->addItem(horizontalSpacer_2);
+        horizontalLayout->addItem(spazio0);
 
         scrollArea = new QScrollArea(container);
         scrollArea->setObjectName(QStringLiteral("scrollArea"));
@@ -118,38 +116,38 @@ public:
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         horizontalLayout_2->setSizeConstraint(QLayout::SetMaximumSize);
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButton_2 = new QPushButton(horizontalLayoutWidget_2);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        newUserCreate = new QPushButton(horizontalLayoutWidget_2);
+        newUserCreate->setObjectName(QStringLiteral("newUserCreate"));
         QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Preferred);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
-        pushButton_2->setSizePolicy(sizePolicy1);
-        pushButton_2->setStyleSheet(QLatin1String("background-color: rgb(45, 59, 85);\n"
+        sizePolicy1.setHeightForWidth(newUserCreate->sizePolicy().hasHeightForWidth());
+        newUserCreate->setSizePolicy(sizePolicy1);
+        newUserCreate->setStyleSheet(QLatin1String("background-color: rgb(45, 59, 85);\n"
 "color:white;\n"
 "\n"
 "border:none;\n"
 "\n"
 ""));
 
-        horizontalLayout_2->addWidget(pushButton_2);
+        horizontalLayout_2->addWidget(newUserCreate);
 
-        horizontalSpacer = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
+        spazio1 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
 
-        horizontalLayout_2->addItem(horizontalSpacer);
+        horizontalLayout_2->addItem(spazio1);
 
-        pushButton = new QPushButton(horizontalLayoutWidget_2);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        sizePolicy1.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
-        pushButton->setSizePolicy(sizePolicy1);
-        pushButton->setStyleSheet(QLatin1String("background-color: rgb(45, 59, 85);\n"
+        downloadXmlUser = new QPushButton(horizontalLayoutWidget_2);
+        downloadXmlUser->setObjectName(QStringLiteral("downloadXmlUser"));
+        sizePolicy1.setHeightForWidth(downloadXmlUser->sizePolicy().hasHeightForWidth());
+        downloadXmlUser->setSizePolicy(sizePolicy1);
+        downloadXmlUser->setStyleSheet(QLatin1String("background-color: rgb(45, 59, 85);\n"
 "color:white;\n"
 "\n"
 "border:none;\n"
 "\n"
 ""));
 
-        horizontalLayout_2->addWidget(pushButton);
+        horizontalLayout_2->addWidget(downloadXmlUser);
 
         horizontalLayoutWidget_3 = new QWidget(container);
         horizontalLayoutWidget_3->setObjectName(QStringLiteral("horizontalLayoutWidget_3"));
@@ -159,35 +157,18 @@ public:
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         horizontalLayout_3->setSizeConstraint(QLayout::SetMaximumSize);
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
-        pushButton_3 = new QPushButton(horizontalLayoutWidget_3);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        sizePolicy1.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
-        pushButton_3->setSizePolicy(sizePolicy1);
-        pushButton_3->setStyleSheet(QLatin1String("background-color: rgb(45, 59, 85);\n"
+        deleteUser = new QPushButton(horizontalLayoutWidget_3);
+        deleteUser->setObjectName(QStringLiteral("deleteUser"));
+        sizePolicy1.setHeightForWidth(deleteUser->sizePolicy().hasHeightForWidth());
+        deleteUser->setSizePolicy(sizePolicy1);
+        deleteUser->setStyleSheet(QLatin1String("background-color: rgb(45, 59, 85);\n"
 "color:white;\n"
 "\n"
 "border:none;\n"
 "\n"
 ""));
 
-        horizontalLayout_3->addWidget(pushButton_3);
-
-        horizontalSpacer_3 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
-
-        horizontalLayout_3->addItem(horizontalSpacer_3);
-
-        pushButton_5 = new QPushButton(horizontalLayoutWidget_3);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        sizePolicy1.setHeightForWidth(pushButton_5->sizePolicy().hasHeightForWidth());
-        pushButton_5->setSizePolicy(sizePolicy1);
-        pushButton_5->setStyleSheet(QLatin1String("background-color: rgb(45, 59, 85);\n"
-"color:white;\n"
-"\n"
-"border:none;\n"
-"\n"
-""));
-
-        horizontalLayout_3->addWidget(pushButton_5);
+        horizontalLayout_3->addWidget(deleteUser);
 
         UiAdmin->setCentralWidget(container);
 
@@ -200,10 +181,9 @@ public:
     {
         container->setWindowTitle(QApplication::translate("UiAdmin", "Form", 0));
         label->setText(QApplication::translate("UiAdmin", "Bentornato Admin", 0));
-        pushButton_2->setText(QApplication::translate("UiAdmin", "Aggiungi nuovo Utente", 0));
-        pushButton->setText(QApplication::translate("UiAdmin", "Scarica XML per input  Utente", 0));
-        pushButton_3->setText(QApplication::translate("UiAdmin", "Vedi/Modifica Utente", 0));
-        pushButton_5->setText(QApplication::translate("UiAdmin", "Elimina Utente", 0));
+        newUserCreate->setText(QApplication::translate("UiAdmin", "Aggiungi nuovo Utente", 0));
+        downloadXmlUser->setText(QApplication::translate("UiAdmin", "Scarica XML per input  Utente", 0));
+        deleteUser->setText(QApplication::translate("UiAdmin", "Elimina Utente Selezionato", 0));
         Q_UNUSED(UiAdmin);
     } // retranslateUi
 

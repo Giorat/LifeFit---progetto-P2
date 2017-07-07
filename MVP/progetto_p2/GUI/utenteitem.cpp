@@ -3,7 +3,7 @@
 
 UtenteItem::UtenteItem(QWidget *parent,utente* us) :
     QWidget(parent),
-    ui(new Ui::UtenteItem),user(us)
+    ui(new Ui::UtenteItem),deleteUser(false),user(us)
 {
     ui->setupUi(this);
     QColor col=user->coloreGruppo();
@@ -12,8 +12,14 @@ UtenteItem::UtenteItem(QWidget *parent,utente* us) :
     QObject::connect(this,SIGNAL(deleteUtente(UtenteItem*)),QWidget::parentWidget(),SIGNAL(deleteUtenteItem(UtenteItem* )));
 }
 
+void UtenteItem::setDeleteUser(bool d){deleteUser=d;}
+
+utente* UtenteItem::getUser()const{return user;}
 
 UtenteItem::~UtenteItem()
 {
+    if(deleteUser){
+        delete user;
+    }
     delete ui;
 }

@@ -51,7 +51,7 @@
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer_2">
+      <spacer name="spazio0">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -151,7 +151,7 @@
       <number>0</number>
      </property>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="newUserCreate">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -172,7 +172,7 @@ border:none;
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer">
+      <spacer name="spazio1">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -188,7 +188,7 @@ border:none;
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="downloadXmlUser">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -233,7 +233,7 @@ border:none;
       <number>0</number>
      </property>
      <item>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="deleteUser">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -249,44 +249,7 @@ border:none;
 </string>
        </property>
        <property name="text">
-        <string>Vedi/Modifica Utente</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_3">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Minimum</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_5">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(45, 59, 85);
-color:white;
-
-border:none;
-
-</string>
-       </property>
-       <property name="text">
-        <string>Elimina Utente</string>
+        <string>Elimina Utente Selezionato</string>
        </property>
       </widget>
      </item>

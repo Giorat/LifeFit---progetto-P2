@@ -11,17 +11,13 @@
 #include "../MODEL/iofit.h"
 
 #include "ui_loginform.h"
-
-#include "ui_user.h"
-#include "register.h"
 #include "ui_admin.h"
 
-
-class Register;
-class QMainWindow;
+class UiAdmin;
+class UiUser;
 
 namespace Ui {
-class LoginForm;
+    class LoginForm;
 }
 
 class LoginForm : public QMainWindow
@@ -41,21 +37,20 @@ public slots:
     void loginclick();
     void loginclick2();
     void psetFocus();
-    void registerTo();
 
 private slots:
     void on_forgotpass_clicked();
 
 private:
-    iofit * ioutenti;
-    utente * utenteLog;
-
-    QString user;
-    QString pass;
     Ui::LoginForm *ui;
     UiUser *mainapp;
-    Register *registerapp;
     UiAdmin *adminapp;
+    iofit *ioutenti;
+    utente *utenteLog;
+    QString user;
+    QString pass;
+
+    //functions
     void LoginUser();
     void closeEvent(QCloseEvent* event);
 };

@@ -1,12 +1,12 @@
 #ifndef REGISTER_H
 #define REGISTER_H
 
-#include "loginform.h"
-
 #include <QMainWindow>
 #include <QMessageBox>
 
-class LoginForm;
+#include "ui_admin.h"
+
+class UiAdmin;
 class UiUser;
 
 namespace Ui {
@@ -18,13 +18,13 @@ class Register : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Register(QWidget *parent = 0);
+    explicit Register(UiAdmin *adm,QWidget *parent=0);
     ~Register();
 private:
+    Ui::Register *ui;
     iofit * ioutenti;
     utente * user;
-    LoginForm* loginF;
-    Ui::Register *ui;
+    UiAdmin* adminapp;
     UiUser *mainw;
 
     std::string username;
@@ -39,7 +39,7 @@ private:
 private slots :
     void SessoM();
     void SessoD();
-    void tornaLogin();
+    void tornaAdmin();
     void vaiApp();
 };
 

@@ -102,6 +102,7 @@ int iofit::utenteGiaPresente(const utente * user){
                         writer.writeTextElement("username", "root" );
                         QString pass = QString(QCryptographicHash::hash(("root"),QCryptographicHash::Md5).toHex());
                         writer.writeTextElement("password", pass);
+                        writer.writeTextElement("gruppo", "0" );
                         writer.writeEndElement();
                     writer.writeEndElement();
                 writer.writeEndDocument();

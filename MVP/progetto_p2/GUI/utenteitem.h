@@ -15,10 +15,13 @@ class UtenteItem : public QWidget
 
 public:
     explicit UtenteItem(QWidget *parent,utente* user);
+    void setDeleteUser(bool d);
+    utente* getUser()const;
     ~UtenteItem();
 
 private:
     Ui::UtenteItem *ui;
+    bool deleteUser;
     utente* user;
 };
 

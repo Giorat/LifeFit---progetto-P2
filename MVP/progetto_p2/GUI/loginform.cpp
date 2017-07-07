@@ -3,7 +3,7 @@
 
 LoginForm::LoginForm(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::LoginForm),registerapp(nullptr),mainapp(nullptr)
+    ui(new Ui::LoginForm),mainapp(nullptr),adminapp(nullptr)
 {
     const QString DEFAULT_DIR_KEY("default_dir");
     QSettings MySettings;
@@ -12,8 +12,6 @@ LoginForm::LoginForm(QWidget *parent) :
     ui->setupUi(this);
 
     loginbtn = ui->login;
-
-    registerbtn = ui->register_n;
 
     usernametext = ui->username;
 
@@ -26,7 +24,6 @@ LoginForm::LoginForm(QWidget *parent) :
     connect(loginbtn, SIGNAL(clicked()), this, SLOT(loginclick()));
     connect(usernametext,SIGNAL(editingFinished()),this,SLOT(psetFocus()));
     connect(passtext,SIGNAL(editingFinished()),this,SLOT(loginclick2()));
-    connect(registerbtn,SIGNAL(clicked()),this,SLOT(registerTo()));
 }
 
 
@@ -71,19 +68,6 @@ void LoginForm::LoginUser(){
     passtext->blockSignals(false);
 }
 
-void LoginForm::registerTo()
-{
-    usernametext->blockSignals(true);
-    passtext->blockSignals(true);
-        registerapp = new Register();
-        registerapp->setWindowTitle("LIFE-FIT REGISTER");
-        registerapp->show();
-        this->close();
-    usernametext->blockSignals(false);
-    passtext->blockSignals(false);
-}
-
-
 void LoginForm::loginclick2()
 {
     LoginUser();
@@ -92,7 +76,7 @@ void LoginForm::loginclick2()
 void LoginForm::closeEvent(QCloseEvent *event)
 {
 event->accept();
-if((mainapp == nullptr)&&(registerapp == nullptr)&&(adminapp == nullptr))
+if((mainapp == nullptr)&&(adminapp == nullptr))
 QCoreApplication::quit();
 }
 

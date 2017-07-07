@@ -16,7 +16,6 @@ int main(int argc, char *argv[])
     a.setQuitOnLastWindowClosed(false);
 
     LoginForm w;
-    //UiUser w("riccardo");
     w.setWindowTitle("LIFE-FIT LOGIN");
 
     w.setGeometry(

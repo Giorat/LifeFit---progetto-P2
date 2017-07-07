@@ -1,10 +1,28 @@
 <?xml version="1.0"?>
 <utenti>
     <utente>
+        <codiceutente>3</codiceutente>
+        <nome>antonio</nome>
+        <cognome>giunta</cognome>
+        <datanascita>1765-06-01</datanascita>
+        <sesso>1</sesso>
+        <password>4a181673429f0b6abbfd452f0f3b5950</password>
+        <gruppo>1</gruppo>
+    </utente>
+  <utente>
+      <codiceutente>2</codiceutente>
+      <nome>cavallo</nome>
+      <cognome>umano</cognome>
+      <datanascita>1990-02-02</datanascita>
+      <sesso>1</sesso>
+      <password>189bbbb00c5f1fb7fba9ad9285f193d1</password>
+      <gruppo>2</gruppo>
+  </utente>
+    <utente>
         <codiceutente>1</codiceutente>
         <nome>pro</nome>
         <cognome>va</cognome>
-        <datanascita>1792-02-02</datanascita>
+        <datanascita>1996-02-02</datanascita>
         <sesso>0</sesso>
         <password>189bbbb00c5f1fb7fba9ad9285f193d1</password>
         <gruppo>1</gruppo>
@@ -13,5 +31,6 @@
         <codiceutente>0</codiceutente>
         <username>root</username>
         <password>63a9f0ea7bb98050796b649e85481845</password>
+        <gruppo>0</gruppo>
     </utente>
 </utenti>

@@ -1,7 +1,5 @@
 #include "ui_user.h"
 
-#include <QGraphicsPixmapItem>
-
 UiUser::UiUser(utente * user,QWidget *parent) :
     QMainWindow(parent),UtenteOn(user),inSettings(false),
     ui(new Ui::UiUser)

@@ -33,7 +33,6 @@ public:
     QLineEdit *password;
     QPushButton *forgotpass;
     QLabel *label;
-    QPushButton *register_n;
     QPushButton *login;
 
     void setupUi(QMainWindow *LoginForm)
@@ -110,23 +109,9 @@ public:
         label->setSizePolicy(sizePolicy2);
         label->setFont(font);
         label->setStyleSheet(QStringLiteral("color:rgb(102,102,102);"));
-        register_n = new QPushButton(login_center);
-        register_n->setObjectName(QStringLiteral("register_n"));
-        register_n->setGeometry(QRect(0, 210, 200, 45));
-        sizePolicy.setHeightForWidth(register_n->sizePolicy().hasHeightForWidth());
-        register_n->setSizePolicy(sizePolicy);
-        register_n->setMinimumSize(QSize(124, 31));
-        register_n->setFont(font);
-        register_n->setCursor(QCursor(Qt::PointingHandCursor));
-        register_n->setStyleSheet(QLatin1String("background-color: rgb(232, 233, 236);\n"
-"color: rgb(132,140,157);\n"
-"Text-align:left;\n"
-"border:none;\n"
-"padding-left:10px;"));
-        register_n->setFlat(false);
         login = new QPushButton(login_center);
         login->setObjectName(QStringLiteral("login"));
-        login->setGeometry(QRect(200, 210, 200, 45));
+        login->setGeometry(QRect(-1, 210, 401, 45));
         sizePolicy.setHeightForWidth(login->sizePolicy().hasHeightForWidth());
         login->setSizePolicy(sizePolicy);
         login->setMinimumSize(QSize(124, 31));
@@ -153,7 +138,6 @@ public:
         password->setPlaceholderText(QApplication::translate("LoginForm", "PASSWORD", 0));
         forgotpass->setText(QApplication::translate("LoginForm", "FORGOT YOUR PASSWORD", 0));
         label->setText(QApplication::translate("LoginForm", "LOGIN", 0));
-        register_n->setText(QApplication::translate("LoginForm", "  REGISTER", 0));
         login->setText(QApplication::translate("LoginForm", "LOGIN   ", 0));
     } // retranslateUi
 
