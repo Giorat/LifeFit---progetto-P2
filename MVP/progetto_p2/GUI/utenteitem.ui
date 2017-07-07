@@ -45,7 +45,7 @@ border:none;
     <number>0</number>
    </property>
    <item row="0" column="0">
-    <layout class="QVBoxLayout" name="verticalLayout">
+    <layout class="QVBoxLayout" name="contenitore">
      <property name="spacing">
       <number>0</number>
      </property>
@@ -65,7 +65,7 @@ border:none;
       <number>0</number>
      </property>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <layout class="QHBoxLayout" name="utenteBlocco">
        <property name="spacing">
         <number>0</number>
        </property>

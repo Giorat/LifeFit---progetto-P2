@@ -9,7 +9,6 @@ UtenteItem::UtenteItem(QWidget *parent,utente* us) :
     QColor col=user->coloreGruppo();
     this->setStyleSheet(QString("background:rgb(%1,%2,%3);").arg(col.red()).arg(col.green()).arg(col.blue()));
     ui->username->setText(user->nomeGruppo()+": "+QString::fromStdString(user->getUsername()));
-    QObject::connect(this,SIGNAL(deleteUtente(UtenteItem*)),QWidget::parentWidget(),SIGNAL(deleteUtenteItem(UtenteItem* )));
 }
 
 void UtenteItem::setDeleteUser(bool d){deleteUser=d;}

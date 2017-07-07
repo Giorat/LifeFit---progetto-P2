@@ -59,7 +59,7 @@
    <property name="styleSheet">
     <string notr="true">background:white;</string>
    </property>
-   <widget class="QWidget" name="form" native="true">
+   <widget class="QWidget" name="login_form" native="true">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -146,7 +146,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="login_info">
     <property name="geometry">
      <rect>
       <x>10</x>

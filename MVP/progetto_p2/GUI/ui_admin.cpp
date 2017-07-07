@@ -33,6 +33,12 @@ UiAdmin::UiAdmin(QMainWindow *parent) :
 
 }
 
+void UiAdmin::closeEvent(QCloseEvent *event)
+{
+    event->accept();
+    if((mainapp == nullptr ))
+        QCoreApplication::quit();
+}
 
 UiAdmin::~UiAdmin()
 {
@@ -48,16 +54,12 @@ void UiAdmin::on_listUsers_itemDoubleClicked(QListWidgetItem *item)
 {
     if(item == ui->listUsers->currentItem()){
     UtenteItem* userDoubleClicked = dynamic_cast<UtenteItem*>(ui->listUsers->itemWidget(ui->listUsers->currentItem()));
-    if(userDoubleClicked){
-
-        ioutenti->loadUserFit(userDoubleClicked->getUser());
-        mainapp = new UiUser(userDoubleClicked->getUser(),this);
-        mainapp->setWindowTitle("LIFE-FIT APP");
-        mainapp->show();
-        this->close();
-
-    }
-        QMessageBox::information(this, tr("CARICAMENTO UTENTE"), QString::fromStdString(userDoubleClicked->getUser()->getUsername()));
+        if(userDoubleClicked){
+            mainapp = new UiUser(userDoubleClicked->getUser(),this);
+            mainapp->setWindowTitle("LIFE-FIT APP");
+            mainapp->show();
+            this->close();
+        }
     }
 }
 

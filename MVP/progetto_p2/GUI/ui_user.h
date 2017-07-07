@@ -5,7 +5,6 @@
 #include <QCalendarWidget>
 #include <QDate>
 #include <QFileDialog>
-#include <QSettings>
 #include <QCloseEvent>
 #include <QPlainTextEdit>
 #include <QMessageBox>
@@ -41,21 +40,13 @@ private:
     giorno * selGiorno;
     bool inSettings;
     LoginForm *loginF;
-    struct SPreferences
-    {
-        QString user;
-        unsigned int obb_pass_giorn;
-        bool first_boot;
-    };
     Ui::UiUser *ui;
-    SPreferences ultima_sess;
 
     void loadFriendList();
     void updateCalendarioUtente();
     void loadUserOnUi();
-    void loadSettings();
-    void saveSettings();
     void closeEvent(QCloseEvent* event);
+
 private slots:
   void vaiImpostazioni();
   void vaiLogout();

@@ -2,7 +2,7 @@
 #include "ui_register.h"
 
 Register::Register(UiAdmin *adm,QWidget *parent) :
-    QMainWindow(parent),ui(new Ui::Register),adminapp(adm),mainw(nullptr),sesso(-1)
+    QMainWindow(parent),ui(new Ui::Register),adminapp(adm),mainw(nullptr),sesso(-1),gruppo(-1)
 {
     const QString DEFAULT_DIR_KEY("default_dir");
     QSettings MySettings;
@@ -27,14 +27,14 @@ void Register::tornaAdmin(){
 }
 void Register::vaiApp(){
     bool d=ui->dataNascita->date() == QDate(1990,1,1);
-    if(ui->nome->text().isEmpty()||ui->cognome->text().isEmpty()||ui->password->text().isEmpty()||sesso==-1||d)
-        QMessageBox::information(this,"ATTENZIONE!!","Si prega di inserire dati validi compresa data di nascita corretta");
+    if(ui->nome->text().isEmpty()||ui->cognome->text().isEmpty()||ui->password->text().isEmpty()||sesso==-1||gruppo==-1||d)
+        QMessageBox::information(this,"ATTENZIONE!!","Si prega di inserire dati validi compresa data di nascita corretta, gruppo e sesso");
     else{
     nome = ui->nome->text().toLower().toUtf8().constData();
     cognome = ui->cognome->text().toLower().toUtf8().constData();
     password = ui->password->text().toLower().toUtf8().constData();
     dataNascita = ui->dataNascita->date();
-    int gruppo=1,codU=ioutenti->LastCodUtente()+1;
+    int codU=ioutenti->LastCodUtente()+1;
     if (gruppo == 1)
         user = new bambino(codU,nome,cognome,dataNascita,sesso,password);
     else if (gruppo == 2)
@@ -49,8 +49,8 @@ void Register::vaiApp(){
     mainw->setWindowTitle("LIFE-FIT APP");
     mainw->show();
     this->close();
-    }else //utente non creato presente già utente con questo nome se non si ricorda la password tornare al login e cliccare FORGOT PASSWORD
-        QMessageBox::information(this,"ATTENZIONE!!","Utente non registrato perchè già presente un utente con questo nome se non si ricorda la password tornare al login e cliccare FORGOT PASSWORD");
+    }else //utente non creato presente già utente con questo username
+        QMessageBox::information(this,"ATTENZIONE!!","Utente non registrato perchè già presente un utente con questo username");
     }
 }
 
@@ -58,10 +58,25 @@ void Register::closeEvent(QCloseEvent *event)
 {
 event->accept();
 if((mainw == nullptr )&&(adminapp == nullptr))
-QCoreApplication::quit();
+    QCoreApplication::quit();
 }
 
 Register::~Register()
 {
     delete ui;
+}
+
+void Register::on_bambino_clicked()
+{
+    gruppo=1;
+}
+
+void Register::on_adolescente_clicked()
+{
+    gruppo=2;
+}
+
+void Register::on_adulto_clicked()
+{
+    gruppo=3;
 }

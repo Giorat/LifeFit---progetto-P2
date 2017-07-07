@@ -22,6 +22,7 @@ public:
     virtual QString nomeGruppo() const;
     virtual int codiceGruppo() const;
     virtual QColor coloreGruppo() const;
+    virtual bool viewCalendar() const;
 };
 
 #endif // ADOLESCENTE_H

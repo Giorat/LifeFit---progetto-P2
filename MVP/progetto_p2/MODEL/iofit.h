@@ -9,6 +9,7 @@
 #include "bambino.h"
 #include "adolescente.h"
 #include "adulto.h"
+#include "utenteadminview.h"
 
 class iofit{
 protected:

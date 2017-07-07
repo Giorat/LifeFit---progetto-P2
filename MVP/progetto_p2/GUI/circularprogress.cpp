@@ -4,6 +4,7 @@
 #include <QPainter>
 #include <QLinearGradient>
 #include <QPen>
+#include <QDebug>
 
 CircularProgress::CircularProgress(QWidget *parent) :
     QWidget(parent),
@@ -71,5 +72,8 @@ void CircularProgress::paintEvent(QPaintEvent *)
     painter.setPen(pen);
     painter.drawArc(drawingRect, 90 * 16 - arcLengthApproximation, -m_loadingAngle * 16);
      float perc= round(((float)m_loadingAngle/360)*100);
-    painter.drawText(drawingRect,Qt::AlignCenter, QString::fromStdString(std::to_string(perc)).left(2)+ " %");
+    if(perc >= 100)
+        painter.drawText(drawingRect,Qt::AlignCenter, QString::fromStdString(std::to_string(perc)).left(3)+ " %");
+    else
+        painter.drawText(drawingRect,Qt::AlignCenter, QString::fromStdString(std::to_string(perc)).left(2)+ " %");
 }

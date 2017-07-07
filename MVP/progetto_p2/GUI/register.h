@@ -33,6 +33,7 @@ private:
     QDate dataNascita;
     QString password;
     int sesso;
+    int gruppo;
 
     void closeEvent(QCloseEvent* event);
 
@@ -41,6 +42,9 @@ private slots :
     void SessoD();
     void tornaAdmin();
     void vaiApp();
+    void on_bambino_clicked();
+    void on_adolescente_clicked();
+    void on_adulto_clicked();
 };
 
 #endif // REGISTER_H

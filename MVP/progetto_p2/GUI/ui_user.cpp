@@ -9,6 +9,16 @@ UiUser::UiUser(utente * user,QWidget *parent) :
     ioutenti= new iofit( MySettings.value(DEFAULT_DIR_KEY).toString().toUtf8().constData());
 
     ui->setupUi(this);
+
+    if(!UtenteOn->settingsEnabled())
+        this->ui->settings->hide();
+    if(!UtenteOn->aggiungiAttivita())
+        this->ui->aggiungi_dati->hide();
+    if(!UtenteOn->viewCalendar()){
+        this->ui->top_title->setText();
+        this->ui->right_progress->move(0,80);
+        this->ui->right_ui->hide();
+    }
     this->ui->content2->hide();
 
     QMainWindow::showMaximized();
@@ -21,8 +31,6 @@ UiUser::UiUser(utente * user,QWidget *parent) :
 
 loadUserOnUi();
 //loadFriendList();
-loadSettings();
-
 
 //gestione eventi
 QObject::connect(calendar,SIGNAL(clicked(const QDate)),this,SLOT(loadGiorno(const QDate)));
@@ -54,7 +62,6 @@ QObject::connect(this->ui->aggiungi_dati,SIGNAL(clicked()),this,SLOT(caricaDatiF
 
 
 void UiUser::updateCalendarioUtente(){
-
     if(UtenteOn->getGiorniFit()==0){
        QImage image(":/resources/no_data.png");
        this->ui->no_data_img->setPixmap(QPixmap::fromImage(image));
@@ -70,9 +77,7 @@ void UiUser::loadUserOnUi(){
     ultima_sess.user = QString::fromStdString(UtenteOn->getNome());
     ui->eta->setText(QString::number(UtenteOn->getAge()));
     ui->username->setText(ultima_sess.user);
-
     updateCalendarioUtente();
-
 }
 
 void UiUser::loadGiorno(const QDate& date)
@@ -125,35 +130,15 @@ void UiUser::vaiLogout(){
 }
 
 void UiUser::vaiImpostazioni(){
-if(inSettings){
-    this->ui->content2->hide();
-    this->ui->content->show();
-}
-else{
-    this->ui->content->hide();
-    this->ui->content2->show();
-}
-inSettings=!inSettings;
-}
-
-void UiUser::loadSettings()
-{
-  QSettings settings;
-  QString config_dir = QFileInfo(settings.fileName()).filePath() + "/";
-  //cartella settings config_dir.toUtf8().constData();
-
-  settings.beginGroup("app");
-  ultima_sess.user = (settings.value("user","root").toString()).toUtf8().constData();
-  ultima_sess.first_boot = settings.value("firstboot", 0).toInt();
-  ultima_sess.obb_pass_giorn = settings.value("obb_pass_giorn", 10000).toInt();
-  settings.endGroup();
-
-  QMessageBox::about(this, tr("PASSI CONSIGLIATI:"), tr((QString::number(ultima_sess.obb_pass_giorn)).toUtf8().constData()));
-
-  settings.beginGroup("UiUser");
-  resize(settings.value("size", QSize(400, 400)).toSize());
-  move(settings.value("pos", QPoint(0, 0)).toPoint());
-  settings.endGroup();
+    if(inSettings){
+        this->ui->content2->hide();
+        this->ui->content->show();
+    }
+    else{
+        this->ui->content->hide();
+        this->ui->content2->show();
+    }
+    inSettings=!inSettings;
 }
 
 void UiUser::caricaDatiFitXml(){
@@ -170,45 +155,19 @@ QString fileScelto;
                 ioutenti->inputXMLdatiMovimSleep(fileScelto.toUtf8().constData(),UtenteOn);
                 ioutenti->saveUserFit(UtenteOn);
                 updateCalendarioUtente();
-
-                QMessageBox::about(this, tr("GIORNI AGGIUNTI!"), tr((QString::number(UtenteOn->getGiorniFit())).toUtf8().constData()));
-
          }
     }
     }
-    //else
-    //    qDebug() << "Yes was *not* clicked";
 }
 
-
-
-
-void UiUser::saveSettings()
-{
-    ultima_sess.obb_pass_giorn = 10000;
-    ultima_sess.user = ui->nome->text();
-    QSettings settings;
-
-    settings.beginGroup("app");
-    settings.setValue("user", ultima_sess.user);
-    settings.setValue("firstboot", ultima_sess.first_boot);
-    settings.setValue("obb_pass_giorn", ultima_sess.obb_pass_giorn);
-    settings.endGroup();
-
-    settings.beginGroup("UiUser");
-    settings.setValue("size", size());
-    settings.setValue("pos", pos());
-    settings.endGroup();
-}
 
 void UiUser::closeEvent(QCloseEvent *event)
 {
+event->accept();
 if(UtenteOn)
     ioutenti->saveUserFit(UtenteOn);
-saveSettings();
-event->accept();
 if(!loginF)
-QCoreApplication::quit();
+    QCoreApplication::quit();
 }
 
 UiUser::~UiUser()
@@ -220,20 +179,19 @@ void UiUser::on_saveUser_clicked()
 {
    utente * copia = UtenteOn->clone();
    if(!ui->nome->text().isEmpty())
-    UtenteOn->setNome(ui->nome->text().toLower().toUtf8().constData());
+       UtenteOn->setNome(ui->nome->text().toLower().toUtf8().constData());
    if(!ui->cognome->text().isEmpty())
        UtenteOn->setCognome(ui->cognome->text().toLower().toUtf8().constData());
-   if(ui->datanascita->date() != QDate(1791,1,1))
-       UtenteOn->setDataNascita(ui->datanascita->date());
    if(!ui->password->text().isEmpty())
        UtenteOn->setPassword(ui->password->text().toLower());
+    UtenteOn->setDataNascita(ui->datanascita->date());
 
     if(!ioutenti->saveUser(UtenteOn)){
        QMessageBox::information(this, tr("ATTENZIONE USERNAME!!"), tr("La combinazione nome e cognome è già usata da un altro utente, si prega di usare un nome e cognome univoci tra tutti gli utenti"));
        UtenteOn = copia;
        }
     else{
-        QMessageBox::information(this, tr("FIT UTENTE SALVATO"), tr("Utente salvato correttamente, ricordarsi di effettuare il login o di chiudere il programma per salvare pure i giorni eliminati o aggiunti"));
+        QMessageBox::information(this, tr("FIT UTENTE SALVATO"), tr("Utente salvato correttamente, ricordarsi di effettuare il logout o di chiudere il programma per salvare pure i giorni eliminati o aggiunti"));
         loadUserOnUi();
     }
 }

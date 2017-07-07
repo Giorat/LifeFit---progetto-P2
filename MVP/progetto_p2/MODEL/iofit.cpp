@@ -99,7 +99,8 @@ int iofit::utenteGiaPresente(const utente * user){
                     writer.writeStartElement("utenti");
                         writer.writeStartElement("utente");
                         writer.writeTextElement("codiceutente", "0" );
-                        writer.writeTextElement("username", "root" );
+                        writer.writeTextElement("nome", "ro" );
+                        writer.writeTextElement("cognome", "ot" );
                         QString pass = QString(QCryptographicHash::hash(("root"),QCryptographicHash::Md5).toHex());
                         writer.writeTextElement("password", pass);
                         writer.writeTextElement("gruppo", "0" );
@@ -549,7 +550,6 @@ for(auto it = user->fit.begin(); it != user->fit.end(); ++it){
                              if(reader.name() == "gruppo")
                                  gruppo = std::stoi(s);
                          }//ricerca utente
-
                          if(gruppo != 0){
                              if (gruppo == 1)
                                  utenteR.push_back(new bambino(codU,nom,cognom,dataNascita,sesso,passC));
@@ -557,9 +557,7 @@ for(auto it = user->fit.begin(); it != user->fit.end(); ++it){
                                  utenteR.push_back(new adolescente(codU,nom,cognom,dataNascita,sesso,passC));
                              else if (gruppo == 3)
                                  utenteR.push_back(new adulto(codU,nom,cognom,dataNascita,sesso,passC));
-
-                            utente * userF=const_cast<utente*>(*(&utenteR.back()));
-                            std::cout << "userALL: " << userF->getCodiceUtente() << std::endl;
+                            utente * userF=const_cast<utente*>(*(&utenteR.back()));                   
                             iofit::loadUserFit(userF);
                          }
 

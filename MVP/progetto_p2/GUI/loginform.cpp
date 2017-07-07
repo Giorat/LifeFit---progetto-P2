@@ -53,7 +53,6 @@ void LoginForm::LoginUser(){
     else{
     utenteLog = ioutenti->loadUser(usernametext->text().toLower().toUtf8().constData(),passtext->text().toLower().toUtf8().constData());
         if(utenteLog){
-            ioutenti->loadUserFit(utenteLog);
             mainapp = new UiUser(utenteLog);
             mainapp->setWindowTitle("LIFE-FIT APP");
             mainapp->show();

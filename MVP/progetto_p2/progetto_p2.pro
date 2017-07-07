@@ -33,7 +33,8 @@ SOURCES +=main.cpp\
     MODEL/adolescente.cpp \
     MODEL/adulto.cpp \
     GUI/ui_admin.cpp \
-    GUI/utenteitem.cpp
+    GUI/utenteitem.cpp \
+    MODEL/utenteadminview.cpp
 
 HEADERS  +=GUI\ui_user.h \
     MODEL\att_base.h \
@@ -52,7 +53,8 @@ HEADERS  +=GUI\ui_user.h \
     MODEL/adolescente.h \
     MODEL/adulto.h \
     GUI/ui_admin.h \
-    GUI/utenteitem.h
+    GUI/utenteitem.h \
+    MODEL/utenteadminview.h
 
 RESOURCES += \
     GUI\settings_icon.qrc

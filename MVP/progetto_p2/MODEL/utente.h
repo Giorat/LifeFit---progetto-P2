@@ -41,6 +41,7 @@ public:
     virtual QString nomeGruppo() const=0;
     virtual int codiceGruppo() const=0;
     virtual QColor coloreGruppo() const=0;
+    virtual bool viewCalendar() const=0;
 
     void insert_gg(QDate,giorno);
     void modify_gg(QDate,giorno);

@@ -37,9 +37,9 @@
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>20</y>
+      <y>10</y>
       <width>442</width>
-      <height>231</height>
+      <height>251</height>
      </rect>
     </property>
     <property name="font">
@@ -106,6 +106,9 @@
        <property name="showGroupSeparator" stdset="0">
         <bool>true</bool>
        </property>
+       <property name="displayFormat">
+        <string>dd/MM/yyyy</string>
+       </property>
        <property name="date">
         <date>
          <year>1791</year>
@@ -116,7 +119,7 @@
       </widget>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
+      <layout class="QHBoxLayout" name="sesso">
        <property name="spacing">
         <number>2</number>
        </property>
@@ -151,6 +154,46 @@
         </widget>
        </item>
       </layout>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="tipo_utente_padre">
+       <property name="title">
+        <string>Tipologia Utente</string>
+       </property>
+       <widget class="QWidget" name="horizontalLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>19</y>
+          <width>441</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="tipo_utente">
+         <item>
+          <widget class="QRadioButton" name="bambino">
+           <property name="text">
+            <string>Bambino</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="adolescente">
+           <property name="text">
+            <string>Adolescente</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="adulto">
+           <property name="text">
+            <string>Adulto</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
      </item>
      <item>
       <widget class="QPushButton" name="register_send">
@@ -190,9 +233,9 @@ border:none;</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>265</y>
-      <width>210</width>
-      <height>45</height>
+      <y>270</y>
+      <width>241</width>
+      <height>40</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -222,7 +265,7 @@ padding-left:5px;
 border:none;</string>
     </property>
     <property name="text">
-     <string>TORNA AL LOGIN</string>
+     <string>CHIUDI</string>
     </property>
     <property name="flat">
      <bool>false</bool>

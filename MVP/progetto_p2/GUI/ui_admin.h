@@ -42,6 +42,8 @@ private:
     iofit *ioutenti;
     UiUser *mainapp;
     Register* registerapp;
+
+    void closeEvent(QCloseEvent* event);
 };
 
 #endif // UI_ADMIN_H

@@ -1,21 +1,21 @@
-#ifndef BAMBINO_H
-#define BAMBINO_H
+#ifndef UTENTEADMINVIEW_H
+#define UTENTEADMINVIEW_H
 
 #include "utente.h"
 
-class bambino : public utente
+class utenteAdminView : public utente
 {
 public:
-    /**Costruttore completo di bambino
+    /**Costruttore completo di utenteAdminView
     * @param int codice utente
     * @param string nome dell'utente
     * @param string cognome utente
     * @param QDate data di nascita
     * @param bool sesso della persona ==1 se uomo ==0 se donna
     */
-    bambino(const int codU,const std::string &n,const std::string &cn, QDate dN,bool s,QString pass);
+    utenteAdminView(const int codU,const std::string &n,const std::string &cn, QDate dN,bool s,QString pass);
 
-    virtual bambino* clone() const;
+    virtual utenteAdminView* clone() const;
     virtual bool aggiungiAttivita() const;
     virtual int passiConsigliati() const;
     virtual bool settingsEnabled() const;
@@ -25,4 +25,4 @@ public:
     virtual bool viewCalendar() const;
 };
 
-#endif // BAMBINO_H
+#endif // UTENTEADMINVIEW_H

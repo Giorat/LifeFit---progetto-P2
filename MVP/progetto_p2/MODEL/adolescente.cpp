@@ -23,3 +23,6 @@ adolescente::adolescente(const int codU,const std::string &n,const std::string &
  QColor adolescente::coloreGruppo()const{
     return QColor(0,184,68);
  }
+ bool adolescente::viewCalendar()const{
+     return true;
+ }
