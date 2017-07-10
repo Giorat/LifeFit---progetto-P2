@@ -1,6 +1,6 @@
 #ifndef ATT_MOV_H
 #define ATT_MOV_H
-#include <iostream>
+
 #include "att_base.h"
 
 class att_mov : public att_base
@@ -9,14 +9,9 @@ private:
     unsigned int passi;
     float dist;
     float perc_camminata;
-    //float perc_inattivo = 100-perc_camminata
     unsigned int piani;
 
-
 public:
-
-    friend std::ostream& operator<<(std::ostream& output, const att_mov &s);
-
     att_mov(){}
 
     /** Costruttore completo di una attivita di movimento
@@ -28,10 +23,19 @@ public:
      */
     att_mov(unsigned int,unsigned int,float,float,unsigned int);
 
+    /** @return unsigned int totale passi */
     unsigned int totale_passi() const;
+
+    /** @return float percentuale camminata */
     float camminata() const;
+
+    /** @return float percentuale non attivo senza camminare da sedentario */
     float inattivo() const;
+
+    /** @return float distanza km percorsi */
     float distanza() const;
+
+    /** @return unsigned int numero di piani fatti*/
     unsigned int piani_fatti();
 
     int operator==(const att_mov &g) const;

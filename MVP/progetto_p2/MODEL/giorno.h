@@ -1,6 +1,6 @@
 #ifndef GIORNO_H
 #define GIORNO_H
-#include <iostream>
+
 #include <vector>
 #include <QDate>
 #include <string>
@@ -14,7 +14,7 @@ public:
 
     giorno();
 
-    /** Costruttore completo di un giorno
+    /** @brief Costruttore completo di un giorno
      *  @param QDate data del giorno
      *  @param att_mov giornata movimento
      *  @param att_sonno riposo sonno da ieri notte alla mattina del giorno attuale
@@ -27,20 +27,20 @@ public:
     /** @return la data di questo giorno in formato stringa ANNO MESE GIORNO*/
     std::string getDate() const;
 
+    /** @brief ritorna attività movimento di questo giorno
+     *  @return att_mov di questo giorno
+     */
     att_mov movim()const {return awake;}
 
+    /** @brief ritorna attività sonno di questo giorno
+     *  @return att_sonno di questo giorno
+     */
     att_sonno dormit()const {return sleep;}
 
+    /** @brief costruttore di copia di giorno
+     *  @param giorno di cui effettuare la copia
+     */
     giorno(const giorno &copyin);
-
-    giorno& operator=(const giorno &g);
-
-    int operator==(const giorno &g) const;
-
-    int operator!=(const giorno &g) const;
-
-    friend std::ostream& operator<<(std::ostream& output, const giorno &s);
-
 
 private:
     QDate data;

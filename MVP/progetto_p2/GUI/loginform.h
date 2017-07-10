@@ -5,6 +5,7 @@
 #include <QMainWindow>
 #include <QLineEdit>
 #include <QtGui>
+#include <string>
 
 #include "../MODEL/giorno.h"
 #include "../MODEL/utente.h"
@@ -39,6 +40,7 @@ public slots:
     void psetFocus();
 
 private slots:
+    /** @brief se cliccato su password dimenticata */
     void on_forgotpass_clicked();
 
 private:
@@ -51,7 +53,9 @@ private:
     QString pass;
 
     //functions
+    /** @brief login dell'utente con informazioni messe nella ui */
     void LoginUser();
+
     void closeEvent(QCloseEvent* event);
 };
 

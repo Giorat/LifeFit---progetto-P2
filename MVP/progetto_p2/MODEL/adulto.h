@@ -6,7 +6,8 @@
 class adulto : public utente
 {
 public:
-    /**Costruttore completo di adulto
+    /**
+    * @brief Costruttore completo di adulto
     * @param int codice utente
     * @param string nome dell'utente
     * @param string cognome utente

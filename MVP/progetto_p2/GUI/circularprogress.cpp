@@ -4,19 +4,11 @@
 #include <QPainter>
 #include <QLinearGradient>
 #include <QPen>
-#include <QDebug>
 
 CircularProgress::CircularProgress(QWidget *parent) :
-    QWidget(parent),
-    m_loadingAngle(0),
-    m_width(0)
-{
-    this->setStyleSheet("background:white;");
-}
-
-CircularProgress::~CircularProgress()
-{
-}
+    QWidget(parent), m_loadingAngle(0), m_width(20){
+        this->setStyleSheet("background:white;");
+    }
 
 void CircularProgress::setColors(QString start, QString end){
     gradient.setColorAt(0,start);
@@ -26,21 +18,6 @@ void CircularProgress::setColors(QString start, QString end){
 void CircularProgress::setLoadingAngle(int loadingAngle)
 {
     m_loadingAngle = loadingAngle;
-}
-
-int CircularProgress::loadingAngle() const
-{
-    return m_loadingAngle;
-}
-
-void CircularProgress::setDiscWidth(int width)
-{
-    m_width = width;
-}
-
-int CircularProgress::discWidth() const
-{
-    return m_width;
 }
 
 void CircularProgress::paintEvent(QPaintEvent *)
@@ -71,9 +48,13 @@ void CircularProgress::paintEvent(QPaintEvent *)
     pen.setCapStyle(Qt::RoundCap);
     painter.setPen(pen);
     painter.drawArc(drawingRect, 90 * 16 - arcLengthApproximation, -m_loadingAngle * 16);
-     float perc= round(((float)m_loadingAngle/360)*100);
+
+    float perc= round(((float)m_loadingAngle/360)*100);
+
     if(perc >= 100)
         painter.drawText(drawingRect,Qt::AlignCenter, QString::fromStdString(std::to_string(perc)).left(3)+ " %");
     else
         painter.drawText(drawingRect,Qt::AlignCenter, QString::fromStdString(std::to_string(perc)).left(2)+ " %");
+
+    this->setStyleSheet("background-color: rgb(255, 255, 255);");
 }

@@ -21,7 +21,7 @@ bambino::bambino(const int codU,const std::string &n,const std::string &cn, QDat
    return 1;
  }
  QColor bambino::coloreGruppo()const{
-    return QColor(249,134,191);
+    return QColor(255,204,255);
  }
  bool bambino::viewCalendar()const{
      return false;

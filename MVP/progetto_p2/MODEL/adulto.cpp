@@ -21,7 +21,7 @@ adulto::adulto(const int codU,const std::string &n,const std::string &cn, QDate 
    return 3;
  }
  QColor adulto::coloreGruppo()const{
-    return QColor(0,133,184);
+    return QColor(204,229,255);
  }
  bool adulto::viewCalendar()const{
      return true;

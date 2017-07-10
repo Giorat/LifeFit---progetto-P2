@@ -4,15 +4,23 @@
 Register::Register(UiAdmin *adm,QWidget *parent) :
     QMainWindow(parent),ui(new Ui::Register),adminapp(adm),mainw(nullptr),sesso(-1),gruppo(-1)
 {
+
+    adminapp->setEnabled(false);
+
     const QString DEFAULT_DIR_KEY("default_dir");
     QSettings MySettings;
     ioutenti= new iofit( MySettings.value(DEFAULT_DIR_KEY).toString().toUtf8().constData());
 
+
     ui->setupUi(this);
+    this->setWindowFlags(Qt::WindowStaysOnTopHint);
+
+     //gestione eventi
      connect( this->ui->man, SIGNAL( clicked() ), this, SLOT(SessoM() ));
      connect( this->ui->woman, SIGNAL( clicked() ), this, SLOT(SessoD() ));
      connect( this->ui->go_back, SIGNAL( clicked() ), this, SLOT(tornaAdmin() ));
      connect( this->ui->register_send, SIGNAL( clicked() ), this, SLOT(vaiApp() ));
+     connect (this,SIGNAL(closeReg()),adminapp,SLOT(closeRegister()));
 }
 
 void Register::SessoM(){
@@ -26,13 +34,12 @@ void Register::tornaAdmin(){
     this->close();
 }
 void Register::vaiApp(){
-    bool d=ui->dataNascita->date() == QDate(1990,1,1);
-    if(ui->nome->text().isEmpty()||ui->cognome->text().isEmpty()||ui->password->text().isEmpty()||sesso==-1||gruppo==-1||d)
-        QMessageBox::information(this,"ATTENZIONE!!","Si prega di inserire dati validi compresa data di nascita corretta, gruppo e sesso");
+    if(ui->nome->text().isEmpty()||ui->cognome->text().isEmpty()||ui->password->text().isEmpty()||sesso==-1||gruppo==-1)
+        QMessageBox::warning(this,"Attenzione!","Si prega di inserire dati validi compresa data di nascita corretta, gruppo e sesso");
     else{
     nome = ui->nome->text().toLower().toUtf8().constData();
     cognome = ui->cognome->text().toLower().toUtf8().constData();
-    password = ui->password->text().toLower().toUtf8().constData();
+    password = QString(QCryptographicHash::hash(ui->password->text().toLower().toUtf8().constData(),QCryptographicHash::Md5).toHex());
     dataNascita = ui->dataNascita->date();
     int codU=ioutenti->LastCodUtente()+1;
     if (gruppo == 1)
@@ -44,26 +51,14 @@ void Register::vaiApp(){
 
    //Provo a creare un utente con queste informazioni
     if(ioutenti->createUser(user)){
-    adminapp->close();
-    mainw = new UiUser(user);
-    mainw->setWindowTitle("LIFE-FIT APP");
-    mainw->show();
-    this->close();
+        mainw = new UiUser(user,true);
+        mainw->setWindowTitle("LIFE-FIT APP");
+        mainw->show();
+        adminapp->close();
+        this->close();
     }else //utente non creato presente già utente con questo username
-        QMessageBox::information(this,"ATTENZIONE!!","Utente non registrato perchè già presente un utente con questo username");
+        QMessageBox::critical(this,"Errore!","Utente non registrato per presenza di un utente con identico username");
     }
-}
-
-void Register::closeEvent(QCloseEvent *event)
-{
-event->accept();
-if((mainw == nullptr )&&(adminapp == nullptr))
-    QCoreApplication::quit();
-}
-
-Register::~Register()
-{
-    delete ui;
 }
 
 void Register::on_bambino_clicked()
@@ -79,4 +74,16 @@ void Register::on_adolescente_clicked()
 void Register::on_adulto_clicked()
 {
     gruppo=3;
+}
+
+void Register::closeEvent(QCloseEvent *event)
+{
+    event->accept();
+    adminapp->setEnabled(true);
+    this->closeReg();
+}
+
+Register::~Register()
+{
+    delete ui;
 }

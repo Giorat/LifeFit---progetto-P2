@@ -22,7 +22,8 @@ protected:
     std::map<QDate,giorno> fit;
 public:
 
-    /**Costruttore completo di bambino
+    /**
+    * @brief Costruttore completo di bambino
     * @param int codice utente
     * @param string nome dell'utente
     * @param string cognome utente
@@ -46,15 +47,23 @@ public:
     void insert_gg(QDate,giorno);
     void modify_gg(QDate,giorno);
     void delete_gg(QDate);
+    void setFit(utente*);
 
     QDate primaAtt()const;
     QDate ultimaAtt()const;
 
-    /* Giorno utente in data QDate
+    /**
+     * @brief Giorno utente in data QDate
      * @param QDate giorno del quale ritornare le informazioni legate all'attività e alla "situazione di quel giorno"
+     * @return giorno* della giornata passata se esiste altrimenti puntatore nullo
     */
     giorno * giornoData(const QDate);
 
+    /**
+     * @brief Giorno utente in data QDate
+     * @param QDate giorno del quale ritornare le informazioni legate all'attività e alla "situazione di quel giorno"
+     * @return giorno* const della giornata passata se esiste altrimenti puntatore nullo
+    */
     giorno * giornoDataConst(const QDate)const;
 
     //METODI GET UTENTE
@@ -76,10 +85,13 @@ public:
     void setSesso(const bool);
     void setPassword(const QString);
 
-    static std::pair<int,int> massimoGiornoUtenti(const std::vector<const utente*>,const QDate);
+    //Progressi in un mese Utente
+    unsigned int progressi_mese(QDate d);
 
+    static std::pair<int,int> massimoGiornoUtenti(const std::vector<const utente*>,const QDate);
     //ritorna l'utente con il codiceUtente passato preso dal vettore utenti
     static utente *  utenteCodiceUtente(const std::vector<const utente*>,const int);
+    static std::vector<std::pair<int,int>> ultimiSetteGiorniUtenti(const std::vector<const utente*> utenti ,const QDate data);
 
 };
 

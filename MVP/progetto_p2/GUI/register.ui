@@ -7,19 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>540</width>
-    <height>310</height>
+    <height>420</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>540</width>
-    <height>310</height>
+    <height>420</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>540</width>
-    <height>310</height>
+    <height>420</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -39,7 +39,7 @@
       <x>50</x>
       <y>10</y>
       <width>442</width>
-      <height>251</height>
+      <height>361</height>
      </rect>
     </property>
     <property name="font">
@@ -47,129 +47,201 @@
       <pointsize>10</pointsize>
      </font>
     </property>
-    <layout class="QVBoxLayout" name="form">
+    <layout class="QVBoxLayout" name="form" stretch="0,0,0,0,0,0,0">
      <property name="spacing">
+      <number>1</number>
+     </property>
+     <property name="topMargin">
       <number>0</number>
      </property>
      <item>
-      <widget class="QLineEdit" name="nome">
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="placeholderText">
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
         <string>Nome</string>
        </property>
+       <widget class="QLineEdit" name="nome">
+        <property name="geometry">
+         <rect>
+          <x>5</x>
+          <y>20</y>
+          <width>430</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>Nome</string>
+        </property>
+       </widget>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="cognome">
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="placeholderText">
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="title">
         <string>Cognome</string>
        </property>
+       <widget class="QLineEdit" name="cognome">
+        <property name="geometry">
+         <rect>
+          <x>5</x>
+          <y>20</y>
+          <width>430</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>Cognome</string>
+        </property>
+       </widget>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="password">
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="placeholderText">
+      <widget class="QGroupBox" name="groupBox_3">
+       <property name="title">
         <string>Password</string>
        </property>
+       <widget class="QLineEdit" name="password">
+        <property name="geometry">
+         <rect>
+          <x>5</x>
+          <y>20</y>
+          <width>430</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="placeholderText">
+         <string>Password</string>
+        </property>
+       </widget>
+       <zorder>password</zorder>
+       <zorder>password</zorder>
       </widget>
      </item>
      <item>
-      <widget class="QDateEdit" name="dataNascita">
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
+      <widget class="QGroupBox" name="groupBox_4">
+       <property name="title">
+        <string>Data di nascita</string>
        </property>
-       <property name="buttonSymbols">
-        <enum>QAbstractSpinBox::PlusMinus</enum>
-       </property>
-       <property name="showGroupSeparator" stdset="0">
-        <bool>true</bool>
-       </property>
-       <property name="displayFormat">
-        <string>dd/MM/yyyy</string>
-       </property>
-       <property name="date">
-        <date>
-         <year>1791</year>
-         <month>1</month>
-         <day>1</day>
-        </date>
-       </property>
+       <widget class="QDateEdit" name="dataNascita">
+        <property name="geometry">
+         <rect>
+          <x>5</x>
+          <y>20</y>
+          <width>430</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="buttonSymbols">
+         <enum>QAbstractSpinBox::PlusMinus</enum>
+        </property>
+        <property name="showGroupSeparator" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="minimumDate">
+         <date>
+          <year>1753</year>
+          <month>1</month>
+          <day>1</day>
+         </date>
+        </property>
+        <property name="displayFormat">
+         <string>dd/MM/yyyy</string>
+        </property>
+        <property name="date">
+         <date>
+          <year>1990</year>
+          <month>1</month>
+          <day>1</day>
+         </date>
+        </property>
+       </widget>
       </widget>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="sesso">
-       <property name="spacing">
-        <number>2</number>
+      <widget class="QGroupBox" name="tipo_sesso_utente">
+       <property name="title">
+        <string>Sesso utente</string>
        </property>
-       <item>
-        <widget class="QRadioButton" name="man">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
+       <widget class="QWidget" name="orizz_1">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>19</y>
+          <width>421</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="tipo_sesso">
+         <property name="spacing">
+          <number>1</number>
          </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
+         <property name="leftMargin">
+          <number>6</number>
          </property>
-         <property name="text">
-          <string>MASCHIO</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QRadioButton" name="woman">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>FEMMINA</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+         <item>
+          <widget class="QRadioButton" name="man">
+           <property name="text">
+            <string>Uomo</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="woman">
+           <property name="text">
+            <string>Donna</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
      </item>
      <item>
       <widget class="QGroupBox" name="tipo_utente_padre">
        <property name="title">
-        <string>Tipologia Utente</string>
+        <string>Tipologia utente</string>
        </property>
-       <widget class="QWidget" name="horizontalLayoutWidget">
+       <widget class="QWidget" name="orizz_2">
         <property name="geometry">
          <rect>
-          <x>0</x>
+          <x>10</x>
           <y>19</y>
-          <width>441</width>
+          <width>421</width>
           <height>31</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="tipo_utente">
+         <property name="spacing">
+          <number>1</number>
+         </property>
+         <property name="leftMargin">
+          <number>6</number>
+         </property>
          <item>
           <widget class="QRadioButton" name="bambino">
            <property name="text">
@@ -233,7 +305,7 @@ border:none;</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>270</y>
+      <y>380</y>
       <width>241</width>
       <height>40</height>
      </rect>

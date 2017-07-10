@@ -11,23 +11,27 @@ class CircularProgress : public QWidget
 
 public:
     explicit CircularProgress(QWidget *parent = 0);
-    ~CircularProgress();
 
+    /**
+    * @brief imposta i due colori dominanti per progress circolare
+    * @param QString primo colore fascia circolare formato #000000
+    * @param QString secondo colore fascia circolare in formato formato #000000
+    */
     void setColors(QString, QString);
 
+    /**
+    * @param imposta l'angolo di caricamento del progresso circolare
+    * @param percentuale angolo di caricamento in centesimi interi
+    */
     void setLoadingAngle(int loadingAngle);
-    int loadingAngle() const;
-
-    void setDiscWidth(int width);
-    int discWidth() const;
-
-protected:
-    void paintEvent(QPaintEvent *);
 
 private:
     int m_loadingAngle;
     int m_width;
     QLinearGradient gradient;
+    int disc_width;
+
+    void paintEvent(QPaintEvent *);
 };
 
 #endif // WIDGET_H

@@ -8,5 +8,6 @@
     </qresource>
     <qresource prefix="/">
         <file>resources/no_data.png</file>
+        <file>resources/no_data_ask.png</file>
     </qresource>
 </RCC>

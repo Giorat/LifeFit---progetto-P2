@@ -16,45 +16,11 @@ std::string giorno::getDate() const{
     return s;
 }
 
-std::ostream& operator<<(std::ostream &output, const giorno &s)
-{
-    output << s.getDate() << '\n';
-    output << s.awake;
-    output << s.sleep;
-    return output;
-}
-
-giorno::giorno(const giorno &copyin)   // Copy constructor to handle pass by value.
+giorno::giorno(const giorno &copyin)
 {
    data = copyin.data;
    awake = copyin.awake;
    sleep = copyin.sleep;
 }
 
-
-giorno& giorno::operator=(const giorno &g)
-{
-   this->data = g.data;
-   this->awake = g.awake;
-   this->sleep = g.sleep;
-   return *this;
-}
-
-int giorno::operator==(const giorno &g) const
-{
-   if(!(this->data == g.data)) return 0;
-   if(!(this->awake == g.awake)) return 0;
-   if(!(this->sleep == g.sleep)) return 0;
-
-   return 1;
-}
-
-
-int giorno::operator!=(const giorno &g) const
-{
-    if((this->data == g.data)) return 0;
-    if((this->awake == g.awake)) return 0;
-    if((this->sleep == g.sleep)) return 0;
-    return 1;
-}
 

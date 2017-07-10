@@ -8,15 +8,13 @@ private:
     unsigned int cal;
 public:
 
-    friend std::ostream& operator<<(std::ostream &output, const att_base &s);
-
     /** Costruttore di attivita base solo calorie
      * @param int numero di calorie usate per attivita
      */
     att_base(unsigned int =0);
-    virtual unsigned int calorie()const{return cal;}
+    virtual unsigned int calorie()const;
 
-
+    virtual ~att_base(){}
 };
 
 

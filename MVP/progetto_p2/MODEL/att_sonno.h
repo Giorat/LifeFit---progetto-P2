@@ -1,6 +1,6 @@
 #ifndef ATT_SONNO_H
 #define ATT_SONNO_H
-#include <iostream>
+
 #include "att_base.h"
 #include "orario.h"
 
@@ -11,11 +11,9 @@ private:
     orario svegliaLetto;
     unsigned int minuti_letto;
     unsigned int minuti_dormito;
+    unsigned int efficacia;
 
 public:
-
-    friend std::ostream& operator<<(std::ostream& output, const att_sonno &s);
-
     att_sonno(){}
     /** Costruttore completo attivita sonno
      * @param int calorie bruciate dormendo
@@ -23,10 +21,16 @@ public:
      * @param orario ora svegliato
      * @param int minuti a letto
      * @param int minuti dormito deve essere maggiore di minuti a letto
+     * @param int efficacia sonno
      */
-    att_sonno(unsigned int,orario,orario,unsigned int,unsigned int);
+    att_sonno(unsigned int,orario,orario,unsigned int,unsigned int,unsigned int);
 
+    virtual unsigned int calorie()const;
+
+    /** @return float qualità del sonno in base a percentuale sonno REM profondo */
     float qualita() const;
+
+    /** @return numero di ore passate a letto dormendo */
     unsigned int getOre()const;
 
     int operator==(const att_sonno &g) const;
@@ -37,9 +41,11 @@ public:
     /** @return orario ,del giorno attuale, in cui mi sono svegliato*/
     orario ora_svegliato_a_letto()const;
 
+    /** @return int minuti passati a letto sia da svegli che dormendo */
     int minLetto()const;
-    int minDormito()const;
 
+    /** @return int minuti passati a letto dormendo */
+    int minDormito()const;
 
 };
 

@@ -33,16 +33,9 @@ UiAdmin::UiAdmin(QMainWindow *parent) :
 
 }
 
-void UiAdmin::closeEvent(QCloseEvent *event)
-{
-    event->accept();
-    if((mainapp == nullptr ))
-        QCoreApplication::quit();
-}
-
-UiAdmin::~UiAdmin()
-{
-    delete ui;
+void UiAdmin::closeRegister(){
+    delete registerapp;
+    registerapp=nullptr;
 }
 
 void UiAdmin::on_listUsers_itemPressed(QListWidgetItem *item)
@@ -55,7 +48,7 @@ void UiAdmin::on_listUsers_itemDoubleClicked(QListWidgetItem *item)
     if(item == ui->listUsers->currentItem()){
     UtenteItem* userDoubleClicked = dynamic_cast<UtenteItem*>(ui->listUsers->itemWidget(ui->listUsers->currentItem()));
         if(userDoubleClicked){
-            mainapp = new UiUser(userDoubleClicked->getUser(),this);
+            mainapp = new UiUser(userDoubleClicked->getUser(),true);
             mainapp->setWindowTitle("LIFE-FIT APP");
             mainapp->show();
             this->close();
@@ -66,7 +59,7 @@ void UiAdmin::on_listUsers_itemDoubleClicked(QListWidgetItem *item)
 void UiAdmin::on_deleteUser_clicked()
 {
     if(ui->listUsers->currentItem() == nullptr){
-        QMessageBox::information(this, tr("ATTENZIONE!"), tr("Per eliminare un utente si deve selezionare utente da elenco sottostante"));
+        QMessageBox::warning(this, tr("ATTENZIONE!"), tr("Per eliminare un utente si deve selezionare utente da elenco sottostante"));
     }else{
         UtenteItem* userDelete = dynamic_cast<UtenteItem*>( ui->listUsers->itemWidget(ui->listUsers->currentItem()));
         if(userDelete){
@@ -92,4 +85,16 @@ void UiAdmin::on_newUserCreate_clicked()
             registerapp = new Register(this);
             registerapp->setWindowTitle("LIFE-FIT REGISTER");
             registerapp->show();
+}
+
+void UiAdmin::closeEvent(QCloseEvent *event)
+{
+    event->accept();
+    if((mainapp == nullptr)&&(registerapp == nullptr))
+        QCoreApplication::quit();
+}
+
+UiAdmin::~UiAdmin()
+{
+    delete ui;
 }

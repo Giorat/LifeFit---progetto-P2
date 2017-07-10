@@ -37,6 +37,7 @@ void LoginForm::loginclick()
 }
 
 void LoginForm::LoginUser(){
+    if(adminapp==nullptr && mainapp==nullptr){
     usernametext->blockSignals(true);
     passtext->blockSignals(true);
 
@@ -51,7 +52,8 @@ void LoginForm::LoginUser(){
             QMessageBox::information(this, "Errore", "Password Amministratore non corretta");
     }
     else{
-    utenteLog = ioutenti->loadUser(usernametext->text().toLower().toUtf8().constData(),passtext->text().toLower().toUtf8().constData());
+    std::string pass = QString(QCryptographicHash::hash((passtext->text()).toLower().toUtf8().constData(),QCryptographicHash::Md5).toHex()).toUtf8().constData();
+    utenteLog = ioutenti->loadUser(usernametext->text().toLower().toUtf8().constData(),pass);
         if(utenteLog){
             mainapp = new UiUser(utenteLog);
             mainapp->setWindowTitle("LIFE-FIT APP");
@@ -65,6 +67,7 @@ void LoginForm::LoginUser(){
     }
     usernametext->blockSignals(false);
     passtext->blockSignals(false);
+    }
 }
 
 void LoginForm::loginclick2()

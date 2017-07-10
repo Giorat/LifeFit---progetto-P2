@@ -26,6 +26,9 @@ public:
     explicit UiAdmin(QMainWindow *parent = 0);
     ~UiAdmin();
 
+public slots:
+    void closeRegister();
+
 private slots:
     void on_listUsers_itemPressed(QListWidgetItem *item);
 

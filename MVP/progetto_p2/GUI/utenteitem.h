@@ -15,7 +15,13 @@ class UtenteItem : public QWidget
 
 public:
     explicit UtenteItem(QWidget *parent,utente* user);
+
+    /** @brief imposta l'eliminazione dell'utente quando è distrutto UtenteItem
+     *  @param d se true si dovrà eliminare l'utente altrimenti no quando sarà richiamato il disturttore di UtenteItem
+     */
     void setDeleteUser(bool d);
+
+    /** @brief ritorna l'utente collegato all'UtenteItem*/
     utente* getUser()const;
     ~UtenteItem();
 

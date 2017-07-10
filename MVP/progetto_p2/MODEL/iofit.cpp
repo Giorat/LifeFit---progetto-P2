@@ -1,12 +1,3 @@
-#include <QFile>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
-#include <QDebug>
-#include <QDate>
-#include <QTime>
-
-#include <iostream>
-
 #include "iofit.h"
 
 QString iofit::hash_password_utente(QString usernameU){
@@ -89,7 +80,6 @@ int iofit::utenteGiaPresente(const utente * user){
          {
             usersXMLFile.close();
                 if(!usersXMLFile.open(QFile::WriteOnly | QFile::Text)){
-                    qDebug() << " Could not open file for writing";
                     return;
                 }
                 QXmlStreamWriter writer;
@@ -101,8 +91,7 @@ int iofit::utenteGiaPresente(const utente * user){
                         writer.writeTextElement("codiceutente", "0" );
                         writer.writeTextElement("nome", "ro" );
                         writer.writeTextElement("cognome", "ot" );
-                        QString pass = QString(QCryptographicHash::hash(("root"),QCryptographicHash::Md5).toHex());
-                        writer.writeTextElement("password", pass);
+                        writer.writeTextElement("password", "63a9f0ea7bb98050796b649e85481845");
                         writer.writeTextElement("gruppo", "0" );
                         writer.writeEndElement();
                     writer.writeEndElement();
@@ -115,15 +104,15 @@ int iofit::utenteGiaPresente(const utente * user){
  utente* iofit::loadUser(const std::string u,const std::string p){
   utente * utenteR=0;
   usersXMLFile.open(QFile::ReadOnly | QFile::Text);
-  QString passCh= QString::fromUtf8(p.c_str()),pass = QString(QCryptographicHash::hash((passCh).toUtf8().constData(),QCryptographicHash::Md5).toHex());
+  QString pass= QString::fromUtf8(p.c_str());
 
   std::string userNameC = "";
-  QString passC;
+  QString passC="";
 
-  int codU,gruppo;
-  std::string nom,cognom;
-  QDate dataNascita;
-  bool sesso;
+  int codU=-1,gruppo=-1;
+  std::string nom="",cognom="";
+  QDate dataNascita = QDate::currentDate();
+  bool sesso=false;
 
  QXmlStreamReader reader(&usersXMLFile);
      if (reader.readNextStartElement()) {
@@ -156,15 +145,15 @@ int iofit::utenteGiaPresente(const utente * user){
                      }//ricerca utente
 
                      //controllo se username e pass inserite coincidono con utente login possible
-                     if(u==userNameC&&pass == passC){
+                     if(u==userNameC && pass == passC){
                         usersXMLFile.close();
 
                         if (gruppo == 1)
-                            utenteR = new bambino(codU,nom,cognom,dataNascita,sesso,passCh);
+                            utenteR = new bambino(codU,nom,cognom,dataNascita,sesso,pass);
                         else if (gruppo == 2)
-                            utenteR = new adolescente(codU,nom,cognom,dataNascita,sesso,passCh);
+                            utenteR = new adolescente(codU,nom,cognom,dataNascita,sesso,pass);
                         else if (gruppo == 3)
-                            utenteR = new adulto(codU,nom,cognom,dataNascita,sesso,passCh);
+                            utenteR = new adulto(codU,nom,cognom,dataNascita,sesso,pass);
                         return utenteR;
                      }
 
@@ -205,8 +194,7 @@ return nullptr;
             writer.writeTextElement("cognome", QString::fromStdString(user->getCognome()) );
             writer.writeTextElement("datanascita", user->getDataNascita().toString("yyyy-MM-dd").toUtf8().constData());
             writer.writeTextElement("sesso", QString::number(user->getSesso()));
-            QString pass = QString(QCryptographicHash::hash((user->getPassword()).toUtf8().constData(),QCryptographicHash::Md5).toHex());
-            writer.writeTextElement("password", pass);
+            writer.writeTextElement("password", user->getPassword());
             writer.writeTextElement("gruppo", QString::number(user->codiceGruppo()));
 
             writer.writeEndElement();
@@ -291,8 +279,8 @@ return nullptr;
                   utenteE.childNodes().item(2).firstChild().setNodeValue(QString::fromStdString(user->getCognome()));
                   utenteE.childNodes().item(3).firstChild().setNodeValue(user->getDataNascita().toString("yyyy-MM-dd"));
                   utenteE.childNodes().item(4).firstChild().setNodeValue(QString::number(user->getSesso()));
-                  utenteE.childNodes().item(5).firstChild().setNodeValue(QString(QCryptographicHash::hash((user->getPassword()).toUtf8().constData(),QCryptographicHash::Md5).toHex()));
-
+                  utenteE.childNodes().item(5).firstChild().setNodeValue(user->getPassword());
+                  utenteE.childNodes().item(6).firstChild().setNodeValue(QString::number(user->codiceGruppo()));
                 }
 
          }
@@ -356,7 +344,6 @@ return nullptr;
     QFile file;
     file.setFileName(QString::fromStdString(fileInputXml));
     if(!file.open(QFile::ReadOnly | QFile::Text)){
-        qDebug() << "Cannot read file" << file.errorString();
         exit(0);
     }
 
@@ -420,7 +407,7 @@ return nullptr;
                         m = att_mov(cal_mov,passi,dist,perc_camminata,piani);
                         t=t.addSecs(60*minuti_letto);
                         svegliaLetto = t.hour()*60+t.minute();
-                        s = att_sonno(static_cast<int>(t.hour()*1.05180646446),orario(andatoLetto),orario(svegliaLetto),minuti_letto,minuti_dormito);
+                        s = att_sonno(static_cast<int>(t.hour()*1.05180646446),orario(andatoLetto),orario(svegliaLetto),minuti_letto,minuti_dormito,eff_sonno);
                         user->insert_gg(d,giorno(d,m,s));
                    }
                 }
@@ -458,7 +445,6 @@ file.close();
      QFile file;
      file.setFileName(QString::fromStdString(fileOutputXml));
      if(!file.open(QFile::WriteOnly | QFile::Text)){
-         qDebug() << "Cannot write to file" << file.errorString();
          exit(0);
      }
 
@@ -520,7 +506,7 @@ for(auto it = user->fit.begin(); it != user->fit.end(); ++it){
 
       QString passC;
 
-      int codU,gruppo;
+      int codU=-1,gruppo=-1;
       std::string nom,cognom;
       QDate dataNascita;
       bool sesso;

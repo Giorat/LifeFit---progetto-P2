@@ -1,48 +1,30 @@
-<?xml version="1.0"?>
+<?xml version='1.0'?>
 <utenti>
     <utente>
-        <codiceutente>5</codiceutente>
-        <nome>fe</nome>
-        <cognome>ff</cognome>
-        <datanascita>1791-01-01</datanascita>
-        <sesso>0</sesso>
-        <password>ab1e030554da084ed633318dd10b540f</password>
-        <gruppo>2</gruppo>
-    </utente>
-    <utente>
-        <codiceutente>4</codiceutente>
-        <nome>giuliano</nome>
-        <cognome>fiocco</cognome>
-        <datanascita>1807-01-01</datanascita>
+        <codiceutente>3</codiceutente>
+        <nome>nome3</nome>
+        <cognome>cognome3</cognome>
+        <datanascita>1990-01-01</datanascita>
         <sesso>1</sesso>
-        <password>905f0c7ede83b17dcbf309e9e6d2b6f0</password>
+        <password>5f4dcc3b5aa765d61d8327deb882cf99</password>
         <gruppo>3</gruppo>
     </utente>
     <utente>
-        <codiceutente>3</codiceutente>
-        <nome>antonio</nome>
-        <cognome>giunta</cognome>
-        <datanascita>1765-06-01</datanascita>
-        <sesso>1</sesso>
-        <password>4a181673429f0b6abbfd452f0f3b5950</password>
-        <gruppo>1</gruppo>
-    </utente>
-    <utente>
         <codiceutente>2</codiceutente>
-        <nome>cavallo</nome>
-        <cognome>umano</cognome>
-        <datanascita>1990-02-02</datanascita>
-        <sesso>1</sesso>
-        <password>189bbbb00c5f1fb7fba9ad9285f193d1</password>
+        <nome>nome2</nome>
+        <cognome>cognome2</cognome>
+        <datanascita>1990-01-01</datanascita>
+        <sesso>0</sesso>
+        <password>5f4dcc3b5aa765d61d8327deb882cf99</password>
         <gruppo>2</gruppo>
     </utente>
     <utente>
         <codiceutente>1</codiceutente>
-        <nome>pro</nome>
-        <cognome>va</cognome>
-        <datanascita>1996-02-02</datanascita>
-        <sesso>0</sesso>
-        <password>189bbbb00c5f1fb7fba9ad9285f193d1</password>
+        <nome>nome1</nome>
+        <cognome>cognome1</cognome>
+        <datanascita>1990-01-01</datanascita>
+        <sesso>1</sesso>
+        <password>5f4dcc3b5aa765d61d8327deb882cf99</password>
         <gruppo>1</gruppo>
     </utente>
     <utente>

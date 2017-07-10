@@ -3,13 +3,19 @@
 
 #include <QFile>
 #include <QDomDocument>
-#include <QCryptographicHash>
+#include <QXmlStreamReader>
+#include <QXmlStreamWriter>
+#include <QDate>
+#include <QTime>
+#include <QTextStream>
+
+#include <iostream>
 #include <string>
 #include "utente.h"
 #include "bambino.h"
 #include "adolescente.h"
 #include "adulto.h"
-#include "utenteadminview.h"
+
 
 class iofit{
 protected:
@@ -28,8 +34,9 @@ protected:
 public:
 
     /**
-    *@brief
+    *@brief ritorna l' hash della password in MD5 dell'utente
     *@param QString
+    *@return QString password in formato hash dell'utente passato
     */
     QString hash_password_utente(QString);
 

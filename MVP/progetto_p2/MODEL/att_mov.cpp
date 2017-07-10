@@ -1,11 +1,5 @@
 #include "att_mov.h"
 
-/**
- * @param int numero di calorie
- * @param int numero di passi
- * @param float distanza percorsa
- * @param float perc_camminata
- */
 att_mov::att_mov(unsigned int cal,unsigned int pass,float distperc,float percamm,unsigned int p):att_base(cal),passi(pass),dist(distperc),perc_camminata(percamm),piani(p){
 }
 
@@ -24,11 +18,3 @@ int att_mov::operator==(const att_mov &g) const
    return 1;
 }
 
-
-std::ostream& operator<<(std::ostream &output, const att_mov &s)
-{
-
-   output << static_cast<const att_base&>( s ) <<  "hai fatto "<< s.totale_passi()<< " passi per una distanza di "<< s.distanza() << " km facendo ben "<< s.piani  <<" piani."<<std::endl;
-
-    return output;
-}

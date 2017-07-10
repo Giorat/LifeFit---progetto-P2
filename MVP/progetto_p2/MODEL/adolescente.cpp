@@ -21,7 +21,7 @@ adolescente::adolescente(const int codU,const std::string &n,const std::string &
    return 2;
  }
  QColor adolescente::coloreGruppo()const{
-    return QColor(0,184,68);
+    return QColor(204,255,204);
  }
  bool adolescente::viewCalendar()const{
      return true;

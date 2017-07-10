@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QCryptographicHash>
 
 #include "ui_admin.h"
 
@@ -36,7 +37,9 @@ private:
     int gruppo;
 
     void closeEvent(QCloseEvent* event);
-
+signals:
+    /** chiusura registrazione segnalata a Ui_Admin */
+    void closeReg();
 private slots :
     void SessoM();
     void SessoD();
