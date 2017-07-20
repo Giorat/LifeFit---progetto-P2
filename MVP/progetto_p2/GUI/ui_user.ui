@@ -487,7 +487,7 @@ border: none;
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>562</y>
+       <y>536</y>
        <width>601</width>
        <height>241</height>
       </rect>
@@ -496,7 +496,7 @@ border: none;
       <property name="geometry">
        <rect>
         <x>408</x>
-        <y>50</y>
+        <y>45</y>
         <width>191</width>
         <height>191</height>
        </rect>
@@ -509,7 +509,7 @@ border: none;
       <property name="geometry">
        <rect>
         <x>208</x>
-        <y>50</y>
+        <y>45</y>
         <width>191</width>
         <height>191</height>
        </rect>
@@ -522,7 +522,7 @@ border: none;
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>50</y>
+        <y>45</y>
         <width>191</width>
         <height>191</height>
        </rect>
@@ -535,7 +535,7 @@ border: none;
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>10</y>
+        <y>5</y>
         <width>131</width>
         <height>41</height>
        </rect>
@@ -558,7 +558,7 @@ border: none;
       <property name="geometry">
        <rect>
         <x>210</x>
-        <y>10</y>
+        <y>5</y>
         <width>131</width>
         <height>41</height>
        </rect>
@@ -581,7 +581,7 @@ border: none;
       <property name="geometry">
        <rect>
         <x>410</x>
-        <y>10</y>
+        <y>5</y>
         <width>201</width>
         <height>41</height>
        </rect>
@@ -1067,7 +1067,7 @@ border: none;
               </size>
              </property>
              <property name="text">
-              <string>DONNA</string>
+              <string>DO&amp;NNA</string>
              </property>
             </widget>
            </item>
@@ -1169,7 +1169,7 @@ color:black;</string>
          <x>10</x>
          <y>29</y>
          <width>551</width>
-         <height>21</height>
+         <height>22</height>
         </rect>
        </property>
        <layout class="QHBoxLayout" name="tipo_utente">
@@ -1192,7 +1192,7 @@ color:black;</string>
         <item>
          <widget class="QRadioButton" name="adolescente">
           <property name="text">
-           <string>Adolescente</string>
+           <string>Ado&amp;lescente</string>
           </property>
          </widget>
         </item>

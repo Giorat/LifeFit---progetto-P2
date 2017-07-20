@@ -12,6 +12,10 @@ UiAdmin::UiAdmin(QMainWindow *parent) :
     std::vector<const utente*> users = ioutenti->loadUtenti();
 
     ui->setupUi(this);
+
+    //imposta la finestra al centro dello schermo
+    this->move(QApplication::desktop()->screen()->rect().center() - this->rect().center());
+
     QListWidgetItem *listWidgetItem;
     for(unsigned int i = 0; i < users.size(); i++) {
 
@@ -28,7 +32,6 @@ UiAdmin::UiAdmin(QMainWindow *parent) :
 
            //Finally adding the itemWidget to the list
            ui->listUsers->setItemWidget(listWidgetItem, theWidgetItem);
-
     }
 
 }

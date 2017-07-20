@@ -2,8 +2,7 @@
 
 
 LoginForm::LoginForm(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::LoginForm),mainapp(nullptr),adminapp(nullptr)
+    QMainWindow(parent),ui(new Ui::LoginForm),mainapp(nullptr),adminapp(nullptr)
 {
     const QString DEFAULT_DIR_KEY("default_dir");
     QSettings MySettings;
@@ -11,16 +10,21 @@ LoginForm::LoginForm(QWidget *parent) :
 
     ui->setupUi(this);
 
+    //imposta la finestra al centro dello schermo
+    this->move(QApplication::desktop()->screen()->rect().center() - this->rect().center());
+
     loginbtn = ui->login;
 
     usernametext = ui->username;
 
+    //imposta la casella della password con modalita' password nascosta
     passtext = ui->password;
     passtext->setInputMask(QString::fromUtf8(""));
     passtext->setMaxLength(32767);
     passtext->setEchoMode(QLineEdit::Password);
     passtext->setFocusPolicy(Qt::StrongFocus);
 
+    //gestione eventi
     connect(loginbtn, SIGNAL(clicked()), this, SLOT(loginclick()));
     connect(usernametext,SIGNAL(editingFinished()),this,SLOT(psetFocus()));
     connect(passtext,SIGNAL(editingFinished()),this,SLOT(loginclick2()));
@@ -28,7 +32,7 @@ LoginForm::LoginForm(QWidget *parent) :
 
 
 void LoginForm::psetFocus(){
-passtext->setFocus();
+    passtext->setFocus();
 }
 
 void LoginForm::loginclick()
@@ -90,8 +94,9 @@ LoginForm::~LoginForm()
 void LoginForm::on_forgotpass_clicked()
 {
 QString passHashata = ioutenti->hash_password_utente(usernametext->text().toLower());
+       //se pass diversa da vuoto allora utente trovato e si cerca sul web hash inverso dell' MD5 della password
        if(!passHashata.isEmpty())
-       QDesktopServices::openUrl(QUrl("https://md5.gromweb.com/?md5="+passHashata));
+        QDesktopServices::openUrl(QUrl("https://md5.gromweb.com/?md5="+passHashata));
        else
-       QMessageBox::information(this, "Failure!", "Username Incorrect");
+        QMessageBox::information(this, "Errore!", "Password non corretta");
 }

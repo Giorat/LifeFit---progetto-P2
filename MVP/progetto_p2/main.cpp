@@ -18,18 +18,7 @@ int main(int argc, char *argv[])
     LoginForm w;
     w.setWindowTitle("LIFE-FIT LOGIN");
 
-    w.setGeometry(
-        QStyle::alignedRect(
-            Qt::LeftToRight,
-            Qt::AlignCenter,
-            w.size(),
-            a.desktop()->availableGeometry()
-        )
-    );
-
-    //w.setAttribute(Qt::WA_QuitOnClose);
     w.show();
-
 
     QPalette pal = a.palette();
     pal.setColor(QPalette::Window, Qt::white);

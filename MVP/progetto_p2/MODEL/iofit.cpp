@@ -361,8 +361,8 @@ return nullptr;
 
     int minuti_letto=0;
     int minuti_dormito=0;
-    int andatoLetto;
-    int svegliaLetto;
+    int andatoLetto=0;
+    int svegliaLetto=0;
     int eff_sonno=0;
 
     att_sonno s;
@@ -498,7 +498,6 @@ for(auto it = user->fit.begin(); it != user->fit.end(); ++it){
  file.close();
  }
 
-
  std::vector<const utente*> iofit::loadUtenti(){
       std::vector<const utente*> utenteR;
 
@@ -509,7 +508,7 @@ for(auto it = user->fit.begin(); it != user->fit.end(); ++it){
       int codU=-1,gruppo=-1;
       std::string nom,cognom;
       QDate dataNascita;
-      bool sesso;
+      bool sesso=false;
 
      QXmlStreamReader reader(&usersXMLFile);
          if (reader.readNextStartElement()) {

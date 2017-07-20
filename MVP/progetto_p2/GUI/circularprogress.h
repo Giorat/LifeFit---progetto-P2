@@ -2,6 +2,11 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <QPaintEvent>
+#include <QPainter>
+#include <QLinearGradient>
+#include <QPen>
+#include <iostream>
 
 class QPaintEvent;
 

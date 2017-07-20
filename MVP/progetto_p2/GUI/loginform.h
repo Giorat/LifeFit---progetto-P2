@@ -3,6 +3,7 @@
 #define LOGINFORM_H
 
 #include <QMainWindow>
+#include <QDesktopWidget>
 #include <QLineEdit>
 #include <QtGui>
 #include <string>

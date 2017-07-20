@@ -1,9 +1,4 @@
 #include "circularprogress.h"
-#include <iostream>
-#include <QPaintEvent>
-#include <QPainter>
-#include <QLinearGradient>
-#include <QPen>
 
 CircularProgress::CircularProgress(QWidget *parent) :
     QWidget(parent), m_loadingAngle(0), m_width(20){
